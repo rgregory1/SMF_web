@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<p> Time to choose a name for your hero, choose well.  A good name is integral to a long career as a hero or villain.</p>
+<form method='POST' action='/archetype_picker'>
+
+  <p>Choose your name:</p>
+  <input type="text" name="heroname">
+
+  <p><input value='Make Choice' type='SUBMIT'></p>
+</form>
+
+
+
+{% endblock %}
