@@ -241,8 +241,8 @@
     "power_type": "minor",
     "description": "+1 Re-roll on melee attack rolls, +1 Re-roll on melee defense rolls, and +2D on any checks to break objects or escape entangles.",
     "stat_changes": {
-      "melee_attack": 1,
-      "melee_defence": 1
+      "melee_attack_rr": 1,
+      "melee_defence_rr": 1
     },
     "notes": ["Melee Speicialist - +2D on any checks to break objects or escape entangles."]
   },
@@ -451,7 +451,7 @@
   "X-Factor": {
     "power_name": "X-Factor",
     "power_type": "minor",
-    "description": "You’re a life-draining vampire!",
+    "description": "You’re as resourceful as they come! You will choose a new maneuver before each battle.",
     "stat_changes": {},
     "notes": [
       "X-Factor - At the beginning of each game, before any characters have been placed, select one of the archetype maneuvers from Chapter 3 as a minor power for the game. "]

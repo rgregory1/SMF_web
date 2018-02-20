@@ -7,4 +7,13 @@
 <p>You submitted the following data:</p>
 <p>{{ the_archetype_choice }}</p>
 
+<p> the timestamp is <b> {{ timestamp }}  </b></p>
+
+{% for archetype in arch_dict %}
+<div class="{{ loop.cycle('odd', 'even') }}">
+  <p>{{ arch_dict[archetype]['power_name'] }} - {{ arch_dict[archetype]['description']}}
+  </p>
+</div>
+{% endfor %}
+
 {% endblock %}
