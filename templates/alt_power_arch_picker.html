@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+
+<p>You submitted the following data:</p>
+<p>{{ the_archetype_choice }}</p>
+
+
+
+
+
+<h3>begin second block</h3>
+
+<h2>{{ the_title }}</h2>
+
+<form method='POST' action='/not_sure'>
+
+  <p>Do to your archetype choice of {{ the_archetype_choice }} you will be able to choose {{ loops }} additional archetype(s).</p>
+  <p>Please select the Archetype you would like to add:</p>
+
+  {% for archetype in new_arch_dict %}
+  <div class="picker {{ loop.cycle('odd', 'even') }}">
+    <label class="container"><span class="big_deal">{{ new_arch_dict[archetype]['power_name'] }}</span> - {{ new_arch_dict[archetype]['description']}}
+      <input type="radio" name="current_arch" value="{{ new_arch_dict[archetype]['power_name'] }}">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  {% endfor %}
+  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+  <p><input value='Make Choice' type='SUBMIT'></p>
+</form>
+
+{% endblock %}
