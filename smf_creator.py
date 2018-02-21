@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, escape, jsonify, Re
 import json
 import os
 import datetime
-from functions import simplify_timestamp, arch_dict_adjustment, assign_base_points, assign_max_points
+from functions import *
 
 
 app = Flask(__name__)
@@ -42,9 +42,13 @@ def entry_page():
         hero = json.load(f)
     with open('data/archetype_data.json') as f:
         arch_dict = json.load(f)
+    with open('data/major_power_data.json') as f:
+        major_power_data = json.load(f)
+
 
     temp_dump(hero, timestamp, 'hero')
     temp_dump(arch_dict, timestamp, 'arch_dict')
+    temp_dump(major_power_data, timestamp, 'major_power_data')
 
     return render_template('home.html', the_title='SMF Character Creator', timestamp=timestamp)
 
@@ -99,8 +103,11 @@ def setup_arch():
     title = 'Here are your results for Henchmen and standard archetypes:'
     title2 = 'Here are your results for Powerhouse and Super archetypes:'
     loops = hero['loops']
+    # this totally works, just seeing about a different path below
+    # if hero['hero_archetype_list'][0]['power_type'] == 'Standard' or hero['hero_archetype_list'][0]['power_type'] == 'Henchmen':
+    #     return render_template('results.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title)
     if hero['hero_archetype_list'][0]['power_type'] == 'Standard' or hero['hero_archetype_list'][0]['power_type'] == 'Henchmen':
-        return render_template('results.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title)
+        return render_template('arch_results.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title)
     if hero['hero_archetype_list'][0]['power_type'] == 'Super' or hero['hero_archetype_list'][0]['power_type'] == 'Powerhouse':
         return render_template('alt_power_arch_picker.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title2, loops=loops, new_arch_dict=new_arch_dict)
     # if hero['hero_archetype_list'][0]['power_type'] == 'Super' or hero['hero_archetype_list'][0]['power_type'] == 'Powerhouse':
@@ -135,5 +142,48 @@ def not_sure():
         return render_template('not_sure.html', the_title=title)
     if hero['loops'] > 0:
         return render_template('alt_power_arch_picker.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title2, loops=loops, new_arch_dict=new_arch_dict)
+
+@app.route('/begin_major_power', methods=['POST'])
+def begin_major_power():
+    timestamp = request.form['timestamp']
+    hero = grab_from_temp(timestamp, 'hero')
+    major_power_data = grab_from_temp(timestamp, 'major_power_data')
+    mutable_archetype_list = hero['hero_archetype_list']
+
+    # drop powerhouse and super from list
+    if len(mutable_archetype_list) == 2:
+        del mutable_archetype_list[0]
+    # second if equals powerhouse
+    if len(mutable_archetype_list) == 3:
+        del mutable_archetype_list[0]
+
+    arch = mutable_archetype_list[0]
+
+    if len(arch['maj-p']) == 0:
+        # del mutable_archetype_list[0]
+        return render_template('begin_minor_power.html', timestamp=timestamp)
+    elif len(arch['maj-p']) == 1:
+        current_major_power_name = arch['maj-p'][0]
+        for majorpower in major_power_data:
+            if current_major_power_name == major_power_data[majorpower]['power_name']:
+                current_major_power = major_power_data[majorpower].copy()
+                break
+        temp_dump(current_major_power, timestamp, 'current_major_power')   # just for testing
+        # assign major power choice to the hero dict
+        hero['hero_major_power_list'].append(current_major_power)
+
+        # adjust stats based on major power choosen
+        hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
+        # Add notes from Major Power
+        hero['hero_notes'].extend(current_major_power['notes'])
+        temp_dump(hero, timestamp, 'hero')
+        return 'Finished up a major power'
+        # return render_template('begin_minor_power.html', timestamp=timestamp, the_current_major_power_name=current_major_power_name)
+    else:
+        return render_template('major_power_chooser.html')
+
+@app.route('/begin_minor_power', methods=['POST'])
+def begin_minor_power():
+    return 'begin minor power'
 
 app.run(debug=True)

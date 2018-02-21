@@ -28,3 +28,9 @@ def assign_max_points(hero_info, new):
     hero_info['psych_points'] = max(new['psych_points'], hero_info['psych_points'])
     hero_info['move'] = max(new['move'], hero_info['move'])
     return(hero_info)
+
+def hero_stat_adjust(base,adjusts):
+    """retrun hero dict with adjusted stats"""
+    for key in adjusts:
+        base[key] = base.get(key, 4) + adjusts[key]
+    return base

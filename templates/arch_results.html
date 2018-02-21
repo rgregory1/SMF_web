@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<p>You choose the following Archetype:</p>
+<p>{{ the_archetype_choice }}</p>
+
+<p> the timestamp is <b> {{ timestamp }}  </b></p>
+
+<form method='POST' action='/begin_major_power'>
+  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+  <p><button type='SUBMIT'>Continue</button></p>
+</form>
+
+
+
+
+
+{% endblock %}
