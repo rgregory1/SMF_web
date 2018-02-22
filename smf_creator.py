@@ -7,18 +7,7 @@ from functions import *
 
 app = Flask(__name__)
 
-def temp_dump(hero, timestamp, datatype):
-    """takes hero dict and turns it into a json file in the temp directory"""
-    suffix = '.json'
-    with open(os.path.join('temp', timestamp, datatype + suffix), 'w') as f:
-        json.dump(hero, f, indent=2)
 
-def grab_from_temp(timestamp, datatype):
-    """grabs hero dict from json file in temp folder"""
-    suffix = '.json'
-    with open(os.path.join('temp', timestamp, datatype + suffix)) as f:
-        hero = json.load(f)
-    return hero
 
 # load information into dictionaries ---------------------------------------------------------------
 with open('data/archetype_data.json') as f:
@@ -44,8 +33,8 @@ def entry_page():
         arch_dict = json.load(f)
     with open('data/major_power_data.json') as f:
         major_power_data = json.load(f)
-    with open('data/major_power_data.json') as f:
-        major_power_data = json.load(f)
+    with open('data/minor_power_data.json') as f:
+        minor_power_data = json.load(f)
 
 
     temp_dump(hero, timestamp, 'hero')
@@ -106,18 +95,16 @@ def setup_arch():
     title = 'Here are your results for Henchmen and standard archetypes:'
     title2 = 'Here are your results for Powerhouse and Super archetypes:'
     loops = hero['loops']
-    # this totally works, just seeing about a different path below
-    # if hero['hero_archetype_list'][0]['power_type'] == 'Standard' or hero['hero_archetype_list'][0]['power_type'] == 'Henchmen':
-    #     return render_template('results.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title)
-    if hero['hero_archetype_list'][0]['power_type'] == 'Standard' or hero['hero_archetype_list'][0]['power_type'] == 'Henchmen':
-        return render_template('arch_results.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title)
     if hero['hero_archetype_list'][0]['power_type'] == 'Super' or hero['hero_archetype_list'][0]['power_type'] == 'Powerhouse':
         return render_template('alt_power_arch_picker.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title2, loops=loops, new_arch_dict=new_arch_dict)
-    # if hero['hero_archetype_list'][0]['power_type'] == 'Super' or hero['hero_archetype_list'][0]['power_type'] == 'Powerhouse':
-    #     return render_template('alt_power_arch_picker.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title2)
 
-@app.route('/not_sure', methods=['POST'])
-def not_sure():
+    #if hero['hero_archetype_list'][0]['power_type'] == 'Standard' or hero['hero_archetype_list'][0]['power_type'] == 'Henchmen':
+    else:
+        return render_template('arch_results.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title)
+
+
+@app.route('/archetype_loop', methods=['POST'])
+def archetype_loop():
     # grab info from form
     timestamp = request.form['timestamp']
     archetype_choice = request.form['current_arch']
@@ -137,14 +124,20 @@ def not_sure():
     temp_dump(new_arch_dict, timestamp, 'new_arch_dict')
     temp_dump(hero, timestamp, 'hero')
 
-    title = "not sure what's next"
+    title = "Finished with Archetypes"
 
-    title2 = "here we go again"
+    title2 = "Additional Archetype Choice"
+    powerhouse_archetype_choice = "Powerhouse"
     loops = hero['loops']
     if hero['loops'] == 0:
-        return render_template('not_sure.html', the_title=title)
+        if hero['hero_archetype_list'][0]['power_type'] == 'Powerhouse':
+            hero_archetype_list = hero['hero_archetype_list']
+            return render_template('arch_results_powerhouse.html', hero_archetype_list=hero_archetype_list, timestamp=timestamp, the_title=title)
+        if hero['hero_archetype_list'][0]['power_type'] == 'Super':
+            return render_template('arch_results_super.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title)
+        # return render_template('not_sure.html', the_title=title)
     if hero['loops'] > 0:
-        return render_template('alt_power_arch_picker.html', the_archetype_choice=archetype_choice, timestamp=timestamp, the_title=title2, loops=loops, new_arch_dict=new_arch_dict)
+        return render_template('alt_power_arch_picker.html', the_archetype_choice=powerhouse_archetype_choice, timestamp=timestamp, the_title=title2, loops=loops, new_arch_dict=new_arch_dict)
 
 @app.route('/begin_major_power', methods=['POST'])
 def begin_major_power():
@@ -161,11 +154,14 @@ def begin_major_power():
         del mutable_archetype_list[0]
 
     arch = mutable_archetype_list[0]
+    # holy cow, highly exprimental deletion here, I think it can help me with the loop
+    del mutable_archetype_list[0]
     temp_dump(mutable_archetype_list, timestamp, 'mutable_archetype_list')
 
     if len(arch['maj-p']) == 0:
-        # del mutable_archetype_list[0]
-        return render_template('begin_minor_power.html', timestamp=timestamp)
+
+        title = 'You have no Major Power with this Archetype...'
+        return render_template('minor_power_begin_no_major.html', timestamp=timestamp, the_current_arch=arch, the_title=title)
     elif len(arch['maj-p']) == 1:
         current_major_power_name = arch['maj-p'][0]
         for majorpower in major_power_data:
@@ -180,22 +176,28 @@ def begin_major_power():
         hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
         # Add notes from Major Power
         hero['hero_notes'].extend(current_major_power['notes'])
+        temp_dump(current_major_power, timestamp, 'current_major_power')   # just for testing
+        temp_dump(arch, timestamp, 'current_arch')
         temp_dump(hero, timestamp, 'hero')
         title = 'Now let us work on the minor powers'
-        return render_template('begin_minor_power.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
+        return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
     else:
         return render_template('major_power_chooser.html')
 
 @app.route('/minor_power_launch', methods=['POST'])
 def minor_power_launch():
     timestamp = request.form['timestamp']
-    arch = request.form['the_current_arch']
-    current_major_power = request.form['current_major_power']
+
+    arch = grab_from_temp(timestamp, 'current_arch')
     hero = grab_from_temp(timestamp, 'hero')
-    min_power_dict = grab_from_temp(timestamp, 'min_power_dict')
+    min_power_dict = grab_from_temp(timestamp, 'minor_power_data')
+
+    #temp_dump(current_major_power, timestamp, 'current_major_power')   # just for testing
+    #temp_dump(arch, timestamp, 'arch')   # just for testing
 
     # check for archery exception
     if arch['archetype'] == 'Blaster' and current_major_power['power_name'] == 'Archery':
+        current_major_power = grab_from_temp(timestamp, 'current_major_power')
         current_minor_power_dict = {}
         for x in min_power_dict:
             for y in arch['archer_minor_p_list']:
@@ -225,10 +227,14 @@ def minor_power_launch():
             for y in current_minor_power_dict.copy():
                 if x['power_name'] == y:
                     del current_minor_power_dict[y]
-    return render_template('minor_power_picker.html')
+    temp_dump(hero, timestamp, 'hero')
+    temp_dump(current_minor_power_dict, timestamp, 'current_minor_power_dict')
+    heroname = hero['hero_name']
+    return render_template('minor_power_picker.html', timestamp=timestamp,current_minor_power_dict=current_minor_power_dict, heroname=heroname)
 
 @app.route('/minor_power_loop', methods=['POST'])
 def minor_power_loop():
     return 'begin minor power loop'
 
+# app.run(debug=True, host= '0.0.0.0')
 app.run(debug=True)

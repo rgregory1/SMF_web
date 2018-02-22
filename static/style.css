@@ -4,6 +4,7 @@ input {
 
 body {
   padding: 25px;
+  font-family: 'Comfortaa', cursive;
 }
 
 /* The container -------------------------------------------*/
@@ -71,7 +72,11 @@ body {
 }
 label.container span {
 	font-weight: bold;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    /* font-family: 'Bangers', cursive; */
+    font-family: 'Architects Daughter', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
 .picker {

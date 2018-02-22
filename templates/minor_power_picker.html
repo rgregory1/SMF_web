@@ -4,15 +4,15 @@
 
 <h2>{{ the_title }}</h2>
 
-<form method='POST' action='/setup_arch'>
+<form method='POST' action='/minor_power_loop'>
 
   <p>Now that {{ heroname }} has a name, let's continue...</p>
-  <p>Please select the Archetype you would like to build:</p>
+  <p>Please select the minor power you would like to add to your character:</p>
 
-  {% for archetype in arch_dict %}
+  {% for power in current_minor_power_dict %}
   <div class="picker {{ loop.cycle('odd', 'even') }}">
-    <label class="container"><span class="big_deal">{{ arch_dict[archetype]['power_name'] }}</span> - {{ arch_dict[archetype]['description']}}
-      <input type="radio" name="current_arch" value="{{ arch_dict[archetype]['power_name'] }}">
+    <label class="container"><span class="big_deal">{{ current_minor_power_dict[power]['power_name'] }}</span> - {{ current_minor_power_dict[power]['description']}}
+      <input type="radio" name="current_arch" value="{{ current_minor_power_dict[power]['description'] }}">
       <span class="checkmark"></span>
     </label>
   </div>

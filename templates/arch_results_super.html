@@ -4,12 +4,12 @@
 
 <h2>{{ the_title }}</h2>
 
-<p>Your Major Power is:</p>
-<p>{{ the_current_major_power_name }}</p>
+<p>You choose a Super Archetype the following Archetype as your base:</p>
+<p>{{ the_archetype_choice }}</p>
 
 <p> the timestamp is <b> {{ timestamp }}  </b></p>
 
-<form method='POST' action='/minor_power_begin'>
+<form method='POST' action='/begin_major_power'>
   <input type="hidden" name="timestamp" value="{{ timestamp }}">
   <p><button type='SUBMIT'>Continue</button></p>
 </form>

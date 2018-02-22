@@ -3,19 +3,9 @@
 {% block body %}
 
 
-
-<p>You submitted the following data:</p>
-<p>{{ the_archetype_choice }}</p>
-
-
-
-
-
-<h3>begin second block</h3>
-
 <h2>{{ the_title }}</h2>
 
-<form method='POST' action='/not_sure'>
+<form method='POST' action='/archetype_loop'>
 
   <p>Do to your archetype choice of {{ the_archetype_choice }} you will be able to choose {{ loops }} additional archetype(s).</p>
   <p>Please select the Archetype you would like to add:</p>

@@ -1,3 +1,7 @@
+import os
+import json
+
+
 def simplify_timestamp(timestamp):
     chars = '-:. '
     for c in chars:
@@ -34,3 +38,16 @@ def hero_stat_adjust(base,adjusts):
     for key in adjusts:
         base[key] = base.get(key, 4) + adjusts[key]
     return base
+
+def temp_dump(hero, timestamp, datatype):
+    """takes hero dict and turns it into a json file in the temp directory"""
+    suffix = '.json'
+    with open(os.path.join('temp', timestamp, datatype + suffix), 'w') as f:
+        json.dump(hero, f, indent=2)
+
+def grab_from_temp(timestamp, datatype):
+    """grabs hero dict from json file in temp folder"""
+    suffix = '.json'
+    with open(os.path.join('temp', timestamp, datatype + suffix)) as f:
+        hero = json.load(f)
+    return hero

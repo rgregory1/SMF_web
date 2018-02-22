@@ -1,4 +1,35 @@
 {
+  "Blaster": {
+    "archetype": "Blaster",
+    "power_name": "Blaster",
+    "power_type": "Standard",
+    "description": "You project destructive energies...",
+    "move": 6,
+    "body_points": 6,
+    "psych_points": 6,
+    "maj-p": [
+      "Archery",
+      "Power Blasts"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Damage_Field",
+      "Explosion",
+      "Flight",
+      "Force-Field",
+      "Iron_Will",
+      "Resistance",
+      "Reflection",
+      "Super-Strength_(Minor)"
+    ],
+    "archer_minor_p_list": [
+      "Enhance_(Minor)",
+      "Fortune",
+      "Iron_Will",
+      "Savant",
+      "Super-Strength_(Minor)"
+    ]
+  },
   "Brawler": {
     "archetype": "Brawler",
     "power_name": "Brawler",
@@ -67,29 +98,6 @@
       "Savant",
       "Telekinesis",
       "Teleport"
-    ]
-  },
-  "Metamorph": {
-    "archetype": "Metamorph",
-    "power_name": "Metamorph",
-    "power_type": "Standard",
-    "description": "Your versatile body makes you the Swiss-Army knife of supers! You might possess stretching powers, elastic skin, shape-shifting powers, adaptive nanites, or something else, but no matter what, you can get the job done.",
-    "move": 6,
-    "body_points": 6,
-    "psych_points": 6,
-    "maj-p": [
-      "Metamorph"
-    ],
-    "min_p_num": 1,
-    "minor_p_list": [
-      "Armor",
-      "Enhanced_Senses",
-      "Iron_Will",
-      "Mimic",
-      "Resistance",
-      "Savant",
-      "Super-Agility",
-      "Super-Strength_(Minor)"
     ]
   },
   "Sorcerer": {
