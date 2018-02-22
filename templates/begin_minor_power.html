@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<p>You choose the following Archetype:</p>
+<p>{{ the_current_arch['power_name'] }}</p>
+<p>You have the following Major Power:</p>
+<p>{{ current_major_power['power_name'] }}</p>
+
+<p> the timestamp is <b> {{ timestamp }}  </b></p>
+
+<form method='POST' action='/minor_power_launch'>
+  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+  <input type="hidden" name="the_current_arch" value="{{ the_current_arch }}">
+  <input type="hidden" name="current_major_power" value="{{ current_major_power }}">
+  <p><button type='SUBMIT'>Continue</button></p>
+</form>
+
+
+
+
+
+{% endblock %}

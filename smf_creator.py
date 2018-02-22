@@ -44,11 +44,14 @@ def entry_page():
         arch_dict = json.load(f)
     with open('data/major_power_data.json') as f:
         major_power_data = json.load(f)
+    with open('data/major_power_data.json') as f:
+        major_power_data = json.load(f)
 
 
     temp_dump(hero, timestamp, 'hero')
     temp_dump(arch_dict, timestamp, 'arch_dict')
     temp_dump(major_power_data, timestamp, 'major_power_data')
+    temp_dump(minor_power_data, timestamp, 'minor_power_data')
 
     return render_template('home.html', the_title='SMF Character Creator', timestamp=timestamp)
 
@@ -158,6 +161,7 @@ def begin_major_power():
         del mutable_archetype_list[0]
 
     arch = mutable_archetype_list[0]
+    temp_dump(mutable_archetype_list, timestamp, 'mutable_archetype_list')
 
     if len(arch['maj-p']) == 0:
         # del mutable_archetype_list[0]
@@ -177,13 +181,54 @@ def begin_major_power():
         # Add notes from Major Power
         hero['hero_notes'].extend(current_major_power['notes'])
         temp_dump(hero, timestamp, 'hero')
-        return 'Finished up a major power'
-        # return render_template('begin_minor_power.html', timestamp=timestamp, the_current_major_power_name=current_major_power_name)
+        title = 'Now let us work on the minor powers'
+        return render_template('begin_minor_power.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
     else:
         return render_template('major_power_chooser.html')
 
-@app.route('/begin_minor_power', methods=['POST'])
-def begin_minor_power():
-    return 'begin minor power'
+@app.route('/minor_power_launch', methods=['POST'])
+def minor_power_launch():
+    timestamp = request.form['timestamp']
+    arch = request.form['the_current_arch']
+    current_major_power = request.form['current_major_power']
+    hero = grab_from_temp(timestamp, 'hero')
+    min_power_dict = grab_from_temp(timestamp, 'min_power_dict')
+
+    # check for archery exception
+    if arch['archetype'] == 'Blaster' and current_major_power['power_name'] == 'Archery':
+        current_minor_power_dict = {}
+        for x in min_power_dict:
+            for y in arch['archer_minor_p_list']:
+                if x == y:
+                    current_minor_power_dict[x] = min_power_dict[x].copy()
+                elif min_power_dict[x]['power_type'] == 'boost':
+                    current_minor_power_dict[x] = min_power_dict[x].copy()
+
+    # create regular minor power dict
+    else:
+        current_minor_power_dict = {}
+        for x in min_power_dict:
+            for y in arch['minor_p_list']:
+                if x == y:
+                    current_minor_power_dict[x] = min_power_dict[x].copy()
+                elif min_power_dict[x]['power_type'] == 'boost':
+                    current_minor_power_dict[x] = min_power_dict[x].copy()
+    if hero['hero_type'] == 'Super' or hero['hero_type'] == 'Powerhouse':
+        if 'Immortal' in current_minor_power_dict:
+            del current_minor_power_dict['Immortal']
+
+
+
+    # remove current minor powers from list for powerhouse archetype second group of minor power Choices
+    if hero['hero_minor_power_list'] is not []:
+        for x in hero['hero_minor_power_list']:
+            for y in current_minor_power_dict.copy():
+                if x['power_name'] == y:
+                    del current_minor_power_dict[y]
+    return render_template('minor_power_picker.html')
+
+@app.route('/minor_power_loop', methods=['POST'])
+def minor_power_loop():
+    return 'begin minor power loop'
 
 app.run(debug=True)
