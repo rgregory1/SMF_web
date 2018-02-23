@@ -1,12 +1,13 @@
 {
-  "power_name": "Super-Strength",
+  "power_name": "Metamorph",
   "power_type": "major",
-  "description": "description here",
-  "stat_changes": {
-    "melee_attack": 2,
-    "ranged_attack": 0
-  },
+  "description": "You possess ultimate control over your body. You may be elastic and malleable, or a shapeshifter capable of assuming multiple forms! You maintain a somewhat normal human- oid form that allows you to wear clothing and communicate normally, but you can will this form to stretch or change at your whim. ",
+  "stat_changes": {},
   "notes": [
-    "Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping."
+    "Metamorph (Major) - Choose either the Elasticity or Shape-Shifter tracks when you select this power. At the beginning of each game, and then at the beginning of each turn, spend a free action and select one of the packages of powers and bene ts listed under your track. These each represent different forms or shapes your body can take:",
+    "\tElasticity - Form 1: Melee Specialist, +6in Move, +10in Reach - Form 2: Multiple Limbs, Save, Super-Agility - Form 3: Entangle, Resistance, Stun (Body)",
+    "\tShape-Shifter - Form 4: Leaping, Melee Specialist, +4in Reach - Form 5: Enhanced Senses, Entangle, Super-Agility -Form 6: Armor, Flight, Power Blasts (minor)",
+    "Metamorph - If you are a Shape-Shifter, you can replace any power or ability in the above forms with the Amphibious power.",
+    "Metamorph - If you take the Shape-Shifter track you can give up the minor power selection the Metamorph archetype grants you and instead choose one of the forms from the Elasticity track to give yourself even more versatility!"
   ]
 }

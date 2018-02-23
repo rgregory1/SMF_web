@@ -1,23 +1,23 @@
 {
-  "archetype": "Brick",
-  "power_name": "Brick",
+  "archetype": "Metamorph",
+  "power_name": "Metamorph",
   "power_type": "Standard",
-  "description": "You are the bruising, super-strong fighter on your team...",
-  "move": 5,
-  "body_points": 8,
+  "description": "Your versatile body makes you the Swiss-Army knife of supers! You might possess stretching powers, elastic skin, shape-shifting powers, adaptive nanites, or something else, but no matter what, you can get the job done.",
+  "move": 6,
+  "body_points": 6,
   "psych_points": 6,
   "maj-p": [
-    "Super-Strength"
+    "Metamorph"
   ],
-  "min_p_num": 2,
+  "min_p_num": 1,
   "minor_p_list": [
     "Armor",
-    "Burrowing",
-    "Density_Increase",
-    "Leaping",
-    "Magic_Artifact",
-    "Massive",
-    "Rage",
-    "Resistance"
+    "Enhanced_Senses",
+    "Iron_Will",
+    "Mimic",
+    "Resistance",
+    "Savant",
+    "Super-Agility",
+    "Super-Strength_(Minor)"
   ]
 }

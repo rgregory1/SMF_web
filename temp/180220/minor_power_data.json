@@ -2,7 +2,7 @@
   "Amphibious": {
     "power_name": "Amphibious",
     "power_type": "minor",
-    "description": "You\u2019re equally at home in water or on the land.",
+    "description": "You are equally at home in water or on the land.",
     "stat_changes": {
       "melee_defence_rr": 1,
       "ranged_defence_rr": 1,

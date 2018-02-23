@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<form method='POST' action='/major_power_checker'>
+
+  <p>Please select the Major Power you would like to add to your character:</p>
+
+  {% for power in current_major_power_choices %}
+  <div class="picker {{ loop.cycle('odd', 'even') }}">
+    <label class="container"><span class="big_deal">{{ current_major_power_choices[power]['power_name'] }}</span> - {{ current_major_power_choices[power]['description']}}
+      <input type="radio" name="current_major_power_name" value="{{ current_major_power_choices[power]['power_name'] }}">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  {% endfor %}
+  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+  <p><input value='Make Choice' type='SUBMIT'></p>
+</form>
+
+
+
+{% endblock %}

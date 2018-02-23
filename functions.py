@@ -51,3 +51,20 @@ def grab_from_temp(timestamp, datatype):
     with open(os.path.join('temp', timestamp, datatype + suffix)) as f:
         hero = json.load(f)
     return hero
+
+def make_dict_from_list(power_list, power_dict):
+    """give a list of power names, compare to a dict of powers, return dict of powers from the list"""
+    current_power_dict = {}
+    for complete_power in power_dict:
+        for power_name in power_list:
+            if complete_power == power_name:
+                current_power_dict[complete_power] = power_dict[complete_power].copy()
+    return current_power_dict
+
+def assign_power_from_dict(current_power_name, current_dict):
+    """give power name and dict of powers, return variable with only one dictionary"""
+    current_power_dict = {}
+    for power in current_dict:
+        if current_power_name == current_dict[power]['power_name']:
+            current_power_dict = current_dict[power].copy()
+    return current_power_dict

@@ -154,6 +154,7 @@ def begin_major_power():
         del mutable_archetype_list[0]
 
     arch = mutable_archetype_list[0]
+    temp_dump(arch, timestamp, 'current_arch')   # testing if this new location works
     # holy cow, highly exprimental deletion here, I think it can help me with the loop
     del mutable_archetype_list[0]
     temp_dump(mutable_archetype_list, timestamp, 'mutable_archetype_list')
@@ -168,7 +169,7 @@ def begin_major_power():
             if current_major_power_name == major_power_data[majorpower]['power_name']:
                 current_major_power = major_power_data[majorpower].copy()
                 break
-        temp_dump(current_major_power, timestamp, 'current_major_power')   # just for testing
+
         # assign major power choice to the hero dict
         hero['hero_major_power_list'].append(current_major_power)
 
@@ -176,13 +177,48 @@ def begin_major_power():
         hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
         # Add notes from Major Power
         hero['hero_notes'].extend(current_major_power['notes'])
-        temp_dump(current_major_power, timestamp, 'current_major_power')   # just for testing
-        temp_dump(arch, timestamp, 'current_arch')
+
+
+        temp_dump(current_major_power, timestamp, 'current_major_power')
+        # temp_dump(arch, timestamp, 'current_arch') testing if moving to before loop works
         temp_dump(hero, timestamp, 'hero')
         title = 'Now let us work on the minor powers'
         return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
     else:
-        return render_template('major_power_chooser.html')
+        current_major_power_choices = make_dict_from_list(arch['maj-p'], major_power_data)
+        temp_dump(current_major_power_choices, timestamp, 'current_major_power_choices')   # just for testing
+        return render_template('major_power_picker.html', current_major_power_choices=current_major_power_choices, timestamp=timestamp)
+
+@app.route('/major_power_checker', methods=['POST'])
+def major_power_checker():
+    """receives majaor power choice (of two) and applies changes to stats, then sends info to minor power begin"""
+
+    # grab data from forms and temp files
+    timestamp = request.form['timestamp']
+    current_major_power_name = request.form['current_major_power_name']
+    major_power_data = grab_from_temp(timestamp, 'major_power_data')
+    hero = grab_from_temp(timestamp, 'hero')
+    arch = grab_from_temp(timestamp, 'current_arch')
+    #assign dict of powerchoice to variable
+    current_major_power = assign_power_from_dict(current_major_power_name, major_power_data)
+
+
+
+    # assign major power choice to the hero dict
+    hero['hero_major_power_list'].append(current_major_power)
+
+    # adjust stats based on major power choosen
+    hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
+    # Add notes from Major Power
+    hero['hero_notes'].extend(current_major_power['notes'])
+
+
+    temp_dump(current_major_power, timestamp, 'current_major_power')
+    temp_dump(hero, timestamp, 'hero')
+    title = 'Now let us work on the minor powers'
+
+
+    return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
 
 @app.route('/minor_power_launch', methods=['POST'])
 def minor_power_launch():
@@ -191,6 +227,7 @@ def minor_power_launch():
     arch = grab_from_temp(timestamp, 'current_arch')
     hero = grab_from_temp(timestamp, 'hero')
     min_power_dict = grab_from_temp(timestamp, 'minor_power_data')
+    current_major_power = grab_from_temp(timestamp, 'current_major_power')
 
     #temp_dump(current_major_power, timestamp, 'current_major_power')   # just for testing
     #temp_dump(arch, timestamp, 'arch')   # just for testing
@@ -236,5 +273,5 @@ def minor_power_launch():
 def minor_power_loop():
     return 'begin minor power loop'
 
-# app.run(debug=True, host= '0.0.0.0')
-app.run(debug=True)
+app.run(debug=True, host='0.0.0.0')
+#app.run(debug=True)
