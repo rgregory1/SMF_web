@@ -5,7 +5,9 @@
 <h2>{{ the_title }}</h2>
 
 <form method='POST' action='/major_power_checker'>
-
+  {% if message is defined %}
+  <p>{{ message }}</p>
+  {% endif %}
   <p>Please select the Major Power you would like to add to your character:</p>
 
   {% for power in current_major_power_choices %}

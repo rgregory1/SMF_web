@@ -182,8 +182,25 @@ def begin_major_power():
         temp_dump(current_major_power, timestamp, 'current_major_power')
         # temp_dump(arch, timestamp, 'current_arch') testing if moving to before loop works
         temp_dump(hero, timestamp, 'hero')
-        title = 'Now let us work on the minor powers'
-        return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
+        if current_major_power['power_name'] == 'Sorcery':
+            with open('data/major_power_data.json') as f:
+                sorcery_maj_power_dict = json.load(f)
+            del sorcery_maj_power_dict['Sorcery']
+            for power in sorcery_maj_power_dict:
+                sorcery_maj_power_dict[power]['power_name'] = 'Grimoire - ' + sorcery_maj_power_dict[power]['power_name']
+
+
+
+            temp_dump(sorcery_maj_power_dict, timestamp, 'sorcery_maj_power_dict')
+
+            message = "Sorcerers are allowed one major power in thier Grimoire"
+
+
+
+            return render_template('major_power_picker.html', current_major_power_choices=sorcery_maj_power_dict, timestamp=timestamp, message=message)
+        else:
+            title = 'Now let us work on the minor powers'
+            return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
     else:
         current_major_power_choices = make_dict_from_list(arch['maj-p'], major_power_data)
         temp_dump(current_major_power_choices, timestamp, 'current_major_power_choices')   # just for testing
