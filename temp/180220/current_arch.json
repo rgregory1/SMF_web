@@ -1,22 +1,21 @@
 {
-  "archetype": "Metamorph",
-  "power_name": "Metamorph",
-  "power_type": "Standard",
-  "description": "Your versatile body makes you the Swiss-Army knife of supers! You might possess stretching powers, elastic skin, shape-shifting powers, adaptive nanites, or something else, but no matter what, you can get the job done.",
+  "archetype": "Henchmen",
+  "power_name": "Henchmen",
+  "power_type": "Henchmen",
+  "description": "Whether blasting away at range or fighting in melee, henchmen try to overwhelm their foes with sheer numbers. Your minor power selections will determine your group\u2019s capabilities and style.",
   "move": 6,
-  "body_points": 6,
-  "psych_points": 6,
-  "maj-p": [
-    "Metamorph"
-  ],
-  "min_p_num": 1,
+  "body_points": 0,
+  "psych_points": 0,
+  "numbers": 10,
+  "maj-p": [],
+  "min_p_num": 2,
   "minor_p_list": [
     "Armor",
-    "Enhanced_Senses",
-    "Iron_Will",
-    "Mimic",
+    "Flight",
+    "Legion",
+    "Melee_Specialist",
+    "Power_Blasts_(Minor)",
     "Resistance",
-    "Savant",
     "Super-Agility",
     "Super-Strength_(Minor)"
   ]

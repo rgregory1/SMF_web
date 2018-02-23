@@ -5,6 +5,12 @@ input {
 body {
   padding: 25px;
   font-family: 'Comfortaa', cursive;
+  background-image: url("grey.png");
+}
+
+.wrapper {
+  width: 510px;
+  margin: 0 auto;
 }
 
 /* The container -------------------------------------------*/
@@ -122,6 +128,7 @@ a.buttons:hover {
 
 footer {
   margin-top:250px;
+  text-align: center;
 }
 
 form{
@@ -130,4 +137,15 @@ form{
     background: #95a5a6;
     padding: 40px;
     border-radius: 5px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #34495E;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 18px;
 }

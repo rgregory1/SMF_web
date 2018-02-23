@@ -1,7 +1,7 @@
 {
-  "melee_attack": 4,
+  "melee_attack": 5,
   "melee_attack_rr": 0,
-  "melee_defence": 4,
+  "melee_defence": 5,
   "melee_defence_rr": 0,
   "ranged_attack_rr": 0,
   "ranged_defence": 4,
@@ -9,11 +9,56 @@
   "psyche_attack_rr": 0,
   "psyche_defence": 4,
   "psyche_defence_rr": 0,
-  "hero_notes": [],
-  "hero_type": "Standard",
-  "hero_archetype_list": [],
-  "hero_major_power_list": [],
+  "hero_notes": [
+    "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
+    "Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage."
+  ],
+  "hero_type": "Henchmen",
+  "hero_archetype_list": [
+    {
+      "archetype": "Henchmen",
+      "power_name": "Henchmen",
+      "power_type": "Henchmen",
+      "description": "Whether blasting away at range or fighting in melee, henchmen try to overwhelm their foes with sheer numbers. Your minor power selections will determine your group\u2019s capabilities and style.",
+      "move": 6,
+      "body_points": 0,
+      "psych_points": 0,
+      "numbers": 10,
+      "maj-p": [],
+      "min_p_num": 2,
+      "minor_p_list": [
+        "Armor",
+        "Flight",
+        "Legion",
+        "Melee_Specialist",
+        "Power_Blasts_(Minor)",
+        "Resistance",
+        "Super-Agility",
+        "Super-Strength_(Minor)"
+      ]
+    }
+  ],
+  "hero_major_power_list": [
+    {
+      "power_name": "Scrapper",
+      "power_type": "major",
+      "description": "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
+      "stat_changes": {
+        "melee_attack": 1,
+        "melee_defence": 1
+      },
+      "notes": [
+        "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
+        "Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage."
+      ]
+    }
+  ],
   "hero_minor_power_list": [],
   "hero_backgrounds": [],
-  "loops": 0
+  "loops": 0,
+  "hero_name": "Jim",
+  "body_points": 0,
+  "psych_points": 0,
+  "move": 6,
+  "numbers": 10
 }

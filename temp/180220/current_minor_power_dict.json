@@ -8,33 +8,48 @@
       "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
     ]
   },
-  "Enhanced_Senses": {
-    "power_name": "Enhanced Senses",
+  "Flight": {
+    "power_name": "Flight",
     "power_type": "minor",
-    "description": "You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.",
+    "description": "You can fly up to 20in per turn, ignoring any grounded models or obstacles in your path. You may choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
     "stat_changes": {},
     "notes": [
-      "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks."
+      "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
     ]
   },
-  "Iron_Will": {
-    "power_name": "Iron Will",
+  "Legion": {
+    "power_name": "Legion",
     "power_type": "minor",
-    "description": "You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks.",
+    "description": "You travel in large numbers. This power adds 5 additional henchmen to a group.",
     "stat_changes": {
-      "psyche_defence": 1
+      "numbers": 5
     },
     "notes": [
-      "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
+      "Legion - This henchmen group starts with 15 members."
     ]
   },
-  "Mimic": {
-    "power_name": "Mimic",
+  "Melee_Specialist": {
+    "power_name": "Melee Specialist",
     "power_type": "minor",
-    "description": "You can copy the powers of a character in melee or within 5in of you.",
-    "stat_changes": {},
+    "description": "+1 Re-roll on melee attack rolls, +1 Re-roll on melee defense rolls, and +2D on any checks to break objects or escape entangles.",
+    "stat_changes": {
+      "melee_attack_rr": 1,
+      "melee_defence_rr": 1
+    },
     "notes": [
-      "Mimic - Once per turn use a free action to make a 5D Psyche-based opposed check against your target. If you win each goal scored grants you a power or boost of your choice from the target. For friendly models make the check against a TN2. Major powers count as two powers for purposes of this check result. You retain copied powers for the remainder of the game, or until you spend a free action to clear them, at which point you can attempt to copy another targets powers, or even the same target as before if you choose."
+      "Melee Speicialist - +2D on any checks to break objects or escape entangles."
+    ]
+  },
+  "Power_Blasts_(Minor)": {
+    "power_name": "Power Blasts (Minor)",
+    "power_type": "minor",
+    "description": "You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.",
+    "stat_changes": {
+      "ranged_attack": 1,
+      "ranged_attack_rr": 1
+    },
+    "notes": [
+      "Power Blasts (Minor) - You can make 15in ranged attacks that inflict Body Damage"
     ]
   },
   "Resistance": {
@@ -47,15 +62,6 @@
     },
     "notes": [
       "Resistance - +1D on KO checks"
-    ]
-  },
-  "Savant": {
-    "power_name": "Savant",
-    "power_type": "minor",
-    "description": "You are brilliant and you enjoy +1 Re-roll on any checks during a battle that involve non-combat situations.",
-    "stat_changes": {},
-    "notes": [
-      "Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action."
     ]
   },
   "Super-Agility": {
