@@ -68,3 +68,11 @@ def assign_power_from_dict(current_power_name, current_dict):
         if current_power_name == current_dict[power]['power_name']:
             current_power_dict = current_dict[power].copy()
     return current_power_dict
+
+
+def pop_dict_from_dicts(current_power_name, current_dict):
+    for power in current_dict:
+        if current_power_name == current_dict[power]['power_name']:
+            final = current_dict.pop(power)
+            break
+    return(final, current_dict)

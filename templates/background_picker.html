@@ -1,0 +1,30 @@
+{% extends 'base-jquery.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<form method='POST' action='/begin_roundup'>
+
+  {% if message is defined %}
+  <p>{{ message }}</p>
+  {% endif %}
+  <p>Please select two backgrounds you would like to add to your character:</p>
+
+
+  {% for background in backgrounds %}
+  <div class="checklist">
+    <label class="container-ck">{{ background }}
+    <input type="checkbox" name="background_choice" value="{{ background }}">
+    <span class="checkmark-2"></span>
+    </label>
+  </div>
+  {% endfor %}
+  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+
+  <p><input value='Make Choice' type='SUBMIT'></p>
+</form>
+
+
+
+{% endblock %}

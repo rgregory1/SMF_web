@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<form method='POST' action='/super_choice_results'>
+
+
+  <p>As a character with the Archetype of Super, you have the option of exchanging two of your Archetyp Minor Powers for a Minor Power from any Archetype.</p> <p>Would you like to do this?</p>
+
+
+
+  <div class="picker odd">
+    <label class="container">Yes
+      <input type="radio" name="answer" value="Yes">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  <div class="picker even">
+    <label class="container">No
+      <input type="radio" name="answer" value="No">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+
+  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+
+  <p><input value='Make Choice' type='SUBMIT'></p>
+</form>
+
+
+
+{% endblock %}

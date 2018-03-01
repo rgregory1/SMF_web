@@ -1,45 +1,90 @@
 {
-  "melee_attack": 4,
+  "melee_attack": 5,
   "melee_attack_rr": 0,
-  "melee_defence": 4,
+  "melee_defence": 5,
   "melee_defence_rr": 0,
   "ranged_attack_rr": 0,
   "ranged_defence": 4,
   "ranged_defence_rr": 0,
   "psyche_attack_rr": 0,
-  "psyche_defence": 4,
+  "psyche_defence": 5,
   "psyche_defence_rr": 0,
   "hero_notes": [
-    "Sorcery - (Recharge 2+) You can access two powers from your grimoire each turn, but you must follow the normal rules for activating each power. Once you use one of these powers during a game, note it. You cannot use it again unless you make a 2+ Recharge roll for it. Any power you activate lasts until the beginning of your next turn.",
-    "Sorcery - If a power in your grimoire has two Recharge rolls, one for Sorcery and one for the power itself, always use the harder of the two rolls to see if the power returns for use. Any power that also possesses some ability to push or extend its capabil- ities is +1 harder to Recharge with Sorcery."
+    "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
+    "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage.",
+    "Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you have made your initial defense roll!",
+    "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
   ],
   "hero_type": "Standard",
-  "hero_archetype_list": [],
-  "hero_major_power_list": [
+  "hero_archetype_list": [
     {
-      "power_name": "Sorcery",
-      "power_type": "major",
-      "description": "Your knowledge of the arcane arts makes you a dangerous and versatile foe.",
-      "additional_minor_powers": [],
-      "additional_minor_power_restrictions": [
-        "Magic_Artifact",
-        "Shield"
+      "archetype": "Brawler",
+      "power_name": "Brawler",
+      "power_type": "Standard",
+      "description": "You are a close in fighter who relies on sheer bravado,...",
+      "move": 7,
+      "body_points": 7,
+      "psych_points": 6,
+      "maj-p": [
+        "Scrapper"
       ],
-      "additional_power_prefix": "Grimoire",
-      "add_major_powers_number": 1,
-      "add_minor_powers_number": 4,
-      "stat_changes": {},
-      "notes": [
-        "Sorcery - (Recharge 2+) You can access two powers from your grimoire each turn, but you must follow the normal rules for activating each power. Once you use one of these powers during a game, note it. You cannot use it again unless you make a 2+ Recharge roll for it. Any power you activate lasts until the beginning of your next turn.",
-        "Sorcery - If a power in your grimoire has two Recharge rolls, one for Sorcery and one for the power itself, always use the harder of the two rolls to see if the power returns for use. Any power that also possesses some ability to push or extend its capabil- ities is +1 harder to Recharge with Sorcery."
+      "min_p_num": 2,
+      "minor_p_list": [
+        "Enhanced_Senses",
+        "Fortune",
+        "Iron_Will",
+        "Melee_Specialist",
+        "Regen",
+        "Resistance",
+        "Shield",
+        "Super-Agility"
       ]
     }
   ],
-  "hero_minor_power_list": [],
+  "hero_major_power_list": [
+    {
+      "power_name": "Scrapper",
+      "power_type": "major",
+      "description": "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
+      "stat_changes": {
+        "melee_attack": 1,
+        "melee_defence": 1
+      },
+      "notes": [
+        "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
+        "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage."
+      ]
+    }
+  ],
+  "hero_minor_power_list": [
+    {
+      "power_name": "Fortune",
+      "power_type": "minor",
+      "description": "You are darn lucky or capable of manipulating probabilities in your favor when it counts the most.",
+      "stat_changes": {},
+      "notes": [
+        "Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you have made your initial defense roll!"
+      ]
+    },
+    {
+      "power_name": "Iron Will",
+      "power_type": "minor",
+      "description": "You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks.",
+      "stat_changes": {
+        "psyche_defence": 1
+      },
+      "notes": [
+        "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
+      ]
+    }
+  ],
   "hero_backgrounds": [],
   "loops": 0,
+  "power_house_loop": 0,
   "hero_name": "Jim",
-  "body_points": 6,
-  "psych_points": 8,
-  "move": 6
+  "body_points": 7,
+  "psych_points": 6,
+  "move": 7,
+  "minor_power_loops": 0,
+  "boost_loops": 1
 }

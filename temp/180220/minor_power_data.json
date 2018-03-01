@@ -10,7 +10,7 @@
     },
     "notes": [
       "Amphibious - Ignore the effects of Dif cult terrain that is defined as deep water",
-      "Amphivious - You also gain +1D[1] for melee attack and defense rolls against non-Amphibious foes when you are both in deep or hazardous water."
+      "Amphibious - You also gain +1D[1] for melee attack and defense rolls against non-Amphibious foes when you are both in deep or hazardous water."
     ]
   },
   "Armor": {
@@ -28,8 +28,8 @@
     "description": "You can create barriers on the battlefield.",
     "stat_changes": {},
     "notes": [
-      "Barrier - (Recharge 2+) Use a special action to create a TN3 (Body 4), 3in long \u00d7 2in tall \u00d7 1in thick barrier on the battle field. Make a standard 4D check when you create your barrier. Each goal you score can add 1in to the barrier width and height.",
-      "Barrier - Place it up to 10\u201d away from you. Place on solid ground, or anchored between two solid objects. You can stack barriers on top of each other, or one behind the other. Remove a barrier from play by simply spending a free action."
+      "Barrier - (Recharge 2+) Use a special action to create a TN3 (Body 4), 3in long x 2in tall x 1in thick barrier on the battle field. Make a standard 4D check when you create your barrier. Each goal you score can add 1in to the barrier width and height.",
+      "Barrier - Place it up to 10in away from you. Place on solid ground, or anchored between two solid objects. You can stack barriers on top of each other, or one behind the other. Remove a barrier from play by simply spending a free action."
     ]
   },
   "Burrowing": {
@@ -44,7 +44,7 @@
   "Construct": {
     "power_name": "Construct",
     "power_type": "minor",
-    "description": "You\u2019re an android, robot, golem, or some other artificial being! ",
+    "description": "You're an android, robot, golem, or some other artificial being! ",
     "stat_changes": {
       "psyche_defence_rr": 1
     },
@@ -85,10 +85,10 @@
   "Dispel": {
     "power_name": "Dispel",
     "power_type": "minor",
-    "description": "You can nullify your opponent\u2019s powers or power effects.",
+    "description": "You can nullify your opponent's powers or power effects.",
     "stat_changes": {},
     "notes": [
-      "Dispel - Spend a combat action against a single foe in melee or up to 5in away and make a 5D opposed Psyche attack. This does no damage. On a success, each goal you win by cancels one of the target\u2019s powers or boosts of your choice (major powers require 2 goals). Your opponent loses access to the power(s) you choose to cancel until the start of your next turn."
+      "Dispel - Spend a combat action against a single foe in melee or up to 5in away and make a 5D opposed Psyche attack. This does no damage. On a success, each goal you win by cancels one of the target's powers or boosts of your choice (major powers require 2 goals). Your opponent loses access to the power(s) you choose to cancel until the start of your next turn."
     ]
   },
   "Duplicate": {
@@ -98,7 +98,7 @@
     "stat_changes": {},
     "notes": [
       "Duplicate - (Recharge 2+) This copy possesses all your powers (except Duplicate) and Move, but a base Body and Psyche of one(1). Your copy appears within 5in, and can act the turn you bring him into play.",
-      "Duplicate - Copy auto-fails any KO checks. Your duplicates act on your initiative (either before or after you). When a duplicate suffers a KO, make a TN2 check. If you fail, suffer 1 Psyche damage. If you\u2019re KO\u2019ed, remove your duplicates from play."
+      "Duplicate - Copy auto-fails any KO checks. Your duplicates act on your initiative (either before or after you). When a duplicate suffers a KO, make a TN2 check. If you fail, suffer 1 Psyche damage. If you're KO'ed, remove your duplicates from play."
     ]
   },
   "Enhance_(Minor)": {
@@ -181,7 +181,7 @@
     "description": "You throw grenades.",
     "stat_changes": {},
     "notes": [
-      "Grenades - You possess a 3D, 5in ranged Body attack with a 3in Radius effect. Alternately, before rolling any dice, you can declare you\u2019re throwing a stun grenade. This attack works just like a 3D version of the Stun minor power, but also includes the 3in Radius effect."
+      "Grenades - You possess a 3D, 5in ranged Body attack with a 3in Radius effect. Alternately, before rolling any dice, you can declare you're throwing a stun grenade. This attack works just like a 3D version of the Stun minor power, but also includes the 3in Radius effect."
     ]
   },
   "Growth": {
@@ -192,17 +192,17 @@
     "notes": [
       "Growth - Use a free action to activate or deactivate your growth at the start of your turn. When active Growth grants you the following:",
       "Growth - 1) +4in Move and +2in Reach 2) +1D to melee attack rolls 3) attack flying models as if they were on the ground.",
-      "Growth - You\u2019re large enough to serve as a 'mount' for one normal sized or shrunken model. Riders use 1in of their Move value to climb aboard or dismount when in base contact with you.",
+      "Growth - You're large enough to serve as a 'mount' for one normal sized or shrunken model. Riders use 1in of their Move value to climb aboard or dismount when in base contact with you.",
       "Growth - Foes also gain +1D on Body-based ranged attacks against you."
     ]
   },
   "Immortal": {
     "power_name": "Immortal",
     "power_type": "minor",
-    "description": "You can\u2019t die! While this might sound great, it does have its drawbacks. Counts as TWO minor powers.",
+    "description": "You can't die! While this might sound great, it does have its drawbacks. Counts as TWO minor powers.",
     "stat_changes": {},
     "notes": [
-      "Immortal -  You auto-fail all KO checks. When you fail a KO check, miss your next turn. On the following turn, you spring up with all of your Body and Psyche damage restored. If you\u2019re KO\u2019ed again in the battle, you go down again, lose your next turn, and spring back up on the following turn with all damage restored. And so on."
+      "Immortal -  You auto-fail all KO checks. When you fail a KO check, miss your next turn. On the following turn, you spring up with all of your Body and Psyche damage restored. If you're KO'ed again in the battle, you go down again, lose your next turn, and spring back up on the following turn with all damage restored. And so on."
     ]
   },
   "Invisibility": {
@@ -403,7 +403,7 @@
     "description": "You can assist a nearby character as things go bad!",
     "stat_changes": {},
     "notes": [
-      "Save - Once per round, as a reaction during another character\u2019s turn, you can cancel or mitigate the effects of knockdown, knockback, and falls on a character within 10in of you.",
+      "Save - Once per round, as a reaction during another character's turn, you can cancel or mitigate the effects of knockdown, knockback, and falls on a character within 10in of you.",
       "Save - You can save yourself as many times as necessary! If you choose it, cancel the effects of a knockdown or knockback on yourself. If you choose it, cancel any falls you suffer, or suffer no damage when you land after falling."
     ]
   },
@@ -414,7 +414,7 @@
     "stat_changes": {},
     "notes": [
       "Servitor-Sidekick - Make a 1+ Chance Roll before each battle. If you succeed, you begin the battle with a sidekick or servitor character, otherwise it shows up at the beginning of round 2.",
-      "Servitor-Sidekick - He or she counts as an ally and team member for the battle. The model possesses a single minor power of your choice (excluding the Servitor/Sidekick and Magic Artifact powers), Body 4, Psyche 4, and a Move of 6\u201d."
+      "Servitor-Sidekick - He or she counts as an ally and team member for the battle. The model possesses a single minor power of your choice (excluding the Servitor/Sidekick and Magic Artifact powers), Body 4, Psyche 4, and a Move of 6in."
     ]
   },
   "Shield": {
@@ -523,7 +523,7 @@
   "Vampire": {
     "power_name": "Vampire",
     "power_type": "minor",
-    "description": "You\u2019re a life-draining vampire!",
+    "description": "You're a life-draining vampire!",
     "stat_changes": {},
     "notes": [
       "Vampire - You possess a 4D[1] Psyche attack you can only use in melee. Any foe you KO in melee using this power suffers an additional -1 to his Injury check, and if that foe later perishes during the post-battle sequence, make a 2+ Chance roll. On a success that foe rises again as your undead thrall!"
@@ -532,7 +532,7 @@
   "X-Factor": {
     "power_name": "X-Factor",
     "power_type": "minor",
-    "description": "You\u2019re as resourceful as they come! You will choose a new maneuver before each battle.",
+    "description": "You're as resourceful as they come! You will choose a new maneuver before each battle.",
     "stat_changes": {},
     "notes": [
       "X-Factor - At the beginning of each game, before any characters have been placed, select one of the archetype maneuvers from Chapter 3 as a minor power for the game. "

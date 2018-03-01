@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+
+
+<form method='POST' action='/minor_power_launch'>
+  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+
+  <p><button type='SUBMIT'>Continue</button></p>
+</form>
+
+
+
+
+
+{% endblock %}

@@ -3,7 +3,8 @@ import json
 import os
 import datetime
 from functions import *
-
+import shutil
+import copy
 
 app = Flask(__name__)
 
@@ -17,6 +18,8 @@ with open('data/archetype_data.json') as f:
 
 @app.route('/')
 def entry_page():
+    # os.rmdir('temp/180220')
+    shutil.rmtree('temp/180220', ignore_errors=False, onerror=None)
     # first page, get hero name
     # temp_timestamp = str(datetime.datetime.now())
     # timestamp = simplify_timestamp(temp_timestamp)
@@ -144,7 +147,16 @@ def begin_major_power():
     timestamp = request.form['timestamp']
     hero = grab_from_temp(timestamp, 'hero')
     major_power_data = grab_from_temp(timestamp, 'major_power_data')
-    mutable_archetype_list = hero['hero_archetype_list']
+
+    # stop renewing mutable archethype list!!!!!!! ------------------------------------------------------------
+    if hero['hero_type'] != 'Powerhouse':
+        mutable_archetype_list = copy.deepcopy(hero['hero_archetype_list'])
+    else:
+        if hero['power_house_loop'] == 1:
+            mutable_archetype_list = grab_from_temp(timestamp, 'mutable_archetype_list')
+        else:
+            mutable_archetype_list = copy.deepcopy(hero['hero_archetype_list'])
+
 
     # drop powerhouse and super from list
     if len(mutable_archetype_list) == 2:
@@ -160,7 +172,11 @@ def begin_major_power():
     temp_dump(mutable_archetype_list, timestamp, 'mutable_archetype_list')
 
     if len(arch['maj-p']) == 0:
-
+        current_major_power = 'none'
+        if hero['hero_type'] == 'Powerhouse':
+            hero['power_house_loop'] = 1
+            temp_dump(hero, timestamp, 'hero')
+        temp_dump(current_major_power, timestamp, 'current_major_power')
         title = 'You have no Major Power with this Archetype...'
         return render_template('minor_power_begin_no_major.html', timestamp=timestamp, the_current_arch=arch, the_title=title)
     elif len(arch['maj-p']) == 1:
@@ -177,6 +193,8 @@ def begin_major_power():
         hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
         # Add notes from Major Power
         hero['hero_notes'].extend(current_major_power['notes'])
+        if hero['hero_type'] == 'Powerhouse':
+            hero['power_house_loop'] = 1
 
 
         temp_dump(current_major_power, timestamp, 'current_major_power')
@@ -193,18 +211,22 @@ def begin_major_power():
 
             temp_dump(sorcery_maj_power_dict, timestamp, 'sorcery_maj_power_dict')
 
-            message = "Sorcerers are allowed one major power in thier Grimoire"
+            message = "Your Major Power is Sorcery, which allows you one major power in your Grimoire"
+            loop_type = "grimoire"
 
 
-
-            return render_template('major_power_picker.html', current_major_power_choices=sorcery_maj_power_dict, timestamp=timestamp, message=message)
+            return render_template('major_power_picker_sorcery.html', current_major_power_choices=sorcery_maj_power_dict, timestamp=timestamp, message=message, loop_type=loop_type)
         else:
             title = 'Now let us work on the minor powers'
             return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
     else:
         current_major_power_choices = make_dict_from_list(arch['maj-p'], major_power_data)
         temp_dump(current_major_power_choices, timestamp, 'current_major_power_choices')   # just for testing
-        return render_template('major_power_picker.html', current_major_power_choices=current_major_power_choices, timestamp=timestamp)
+        if hero['hero_type'] == 'Powerhouse':
+            hero['power_house_loop'] = 1
+            temp_dump(hero, timestamp, 'hero')
+        loop_type = 'regular'
+        return render_template('major_power_picker.html', current_major_power_choices=current_major_power_choices, timestamp=timestamp, loop_type=loop_type)
 
 @app.route('/major_power_checker', methods=['POST'])
 def major_power_checker():
@@ -212,42 +234,172 @@ def major_power_checker():
 
     # grab data from forms and temp files
     timestamp = request.form['timestamp']
+    loop_type = request.form['loop_type']
     current_major_power_name = request.form['current_major_power_name']
     major_power_data = grab_from_temp(timestamp, 'major_power_data')
+    # sorcery_maj_power_dict = grab_from_temp(timestamp, 'sorcery_maj_power_dict')
     hero = grab_from_temp(timestamp, 'hero')
     arch = grab_from_temp(timestamp, 'current_arch')
+
+
+
     #assign dict of powerchoice to variable
     current_major_power = assign_power_from_dict(current_major_power_name, major_power_data)
-
-
+    # adjust stats based on major power choosen
+    hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
 
     # assign major power choice to the hero dict
     hero['hero_major_power_list'].append(current_major_power)
 
-    # adjust stats based on major power choosen
-    hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
     # Add notes from Major Power
     hero['hero_notes'].extend(current_major_power['notes'])
 
-
     temp_dump(current_major_power, timestamp, 'current_major_power')
     temp_dump(hero, timestamp, 'hero')
-    title = 'Now let us work on the minor powers'
+
+    if current_major_power['power_name'] == 'Archery':
+
+        with open('data/minor_power_data.json') as f:
+            temp_power_dict = json.load(f)
+
+        # create list of trick arrows and add 'Trick Arrow' to the power names
+        archery_sorcery_power_dict = make_dict_from_list(current_major_power['additional_minor_powers'], temp_power_dict)
+        for power in archery_sorcery_power_dict:
+            archery_sorcery_power_dict[power]['power_name'] = 'Trick Arrow - ' + archery_sorcery_power_dict[power]['power_name']
+            for note in range(len(archery_sorcery_power_dict[power]['notes'])):
+                archery_sorcery_power_dict[power]['notes'][note] = 'Trick Arrow - ' + archery_sorcery_power_dict[power]['notes'][note]
+
+        # save list of tric arrows for loop later
+        temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict')
+
+        message = "Your Major Power is Archery, which allows you three 'Trick Arrow' powers in your quiver"
+
+        loop_type = current_major_power['additional_power_prefix']
+
+        hero['archery_sorcery_loops'] = current_major_power['add_minor_powers_number']
+        temp_dump(hero, timestamp, 'hero')
+        archery_sorcery_loops = hero['archery_sorcery_loops']
+        return render_template('archery_sorcery_power_picker.html', current_minor_power_dict=archery_sorcery_power_dict, timestamp=timestamp, message=message, loop_type=loop_type)
+    else:
+        title = 'Now let us work on the minor powers'
+        return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
+
+@app.route('/major_power_checker_sorcery', methods=['POST'])
+def major_power_checker_sorcery():
+    """receives majaor power choice (of two) and applies changes to stats, then sends info to minor power begin"""
+
+    # grab data from forms and temp files
+    timestamp = request.form['timestamp']
+    loop_type = request.form['loop_type']
+    current_major_power_name = request.form['current_major_power_name']
+    major_power_data = grab_from_temp(timestamp, 'major_power_data')
+    sorcery_maj_power_dict = grab_from_temp(timestamp, 'sorcery_maj_power_dict')
+    hero = grab_from_temp(timestamp, 'hero')
+    arch = grab_from_temp(timestamp, 'current_arch')
+    current_major_power = grab_from_temp(timestamp, 'current_major_power')
+
+    grimoire_current_major_power = assign_power_from_dict(current_major_power_name, sorcery_maj_power_dict)
 
 
-    return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
+    # assign major power choice to the hero dict
+    hero['hero_major_power_list'].append(grimoire_current_major_power)
+
+    # Add notes from Major Power
+    hero['hero_notes'].extend(grimoire_current_major_power['notes'])
+
+    # temp_dump(current_major_power, timestamp, 'current_major_power')
+    temp_dump(hero, timestamp, 'hero')
+
+
+
+    with open('data/minor_power_data.json') as f:
+        archery_sorcery_power_dict = json.load(f)
+    del archery_sorcery_power_dict['Magic_Artifact']
+    del archery_sorcery_power_dict['Shield']
+    del archery_sorcery_power_dict['Immortal']
+    del archery_sorcery_power_dict['Legion']
+    for power in archery_sorcery_power_dict:
+        archery_sorcery_power_dict[power]['power_name'] = 'Grimoire - ' + archery_sorcery_power_dict[power]['power_name']
+        for note in range(len(archery_sorcery_power_dict[power]['notes'])):
+            archery_sorcery_power_dict[power]['notes'][note] = 'Grimoire - ' + archery_sorcery_power_dict[power]['notes'][note]
+
+
+
+
+    loop_type = current_major_power['additional_power_prefix']
+
+    hero['archery_sorcery_loops'] = current_major_power['add_minor_powers_number']
+    temp_dump(hero, timestamp, 'hero')
+    temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict')
+    # trial to see if it works
+    message = "Your Major Power is Sorcery, which allows you four spell powers in your Grimoire"
+    archery_sorcery_loops = hero['archery_sorcery_loops']
+    return render_template('archery_sorcery_power_picker.html', current_minor_power_dict=archery_sorcery_power_dict, timestamp=timestamp, message=message, loop_type=loop_type, archery_sorcery_loops=archery_sorcery_loops)
+
+
+
+@app.route('/archery_sorcery_power_loop', methods=['POST'])
+def archery_sorcery_power_loop():
+    timestamp = request.form['timestamp']
+    loop_type = request.form['loop_type']
+    current_minor_power_name = request.form['current_minor_power']
+
+    archery_sorcery_power_dict = grab_from_temp(timestamp, 'archery_sorcery_power_dict')
+    hero = grab_from_temp(timestamp, 'hero')
+    current_arch = grab_from_temp(timestamp, 'current_arch')
+
+
+
+
+    # current_minor_power = assign_power_from_dict(current_minor_power_name, archery_sorcery_power_dict)
+    current_minor_power, archery_sorcery_power_dict = pop_dict_from_dicts(current_minor_power_name, archery_sorcery_power_dict)
+
+    # Add notes from Major Power
+    hero['hero_notes'].extend(current_minor_power['notes'])
+    # add to list of minor powers
+    hero['hero_minor_power_list'].append(current_minor_power)
+    hero['archery_sorcery_loops'] -= 1
+
+    archery_sorcery_loops = hero['archery_sorcery_loops']
+    # temp_dump(archery_sorcery_loops, timestamp, 'archery_sorcery_loops')  # just checking to make sure they are saving
+
+    temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict')
+    temp_dump(hero, timestamp, 'hero')
+    if hero['archery_sorcery_loops'] == 0:
+        current_arch = grab_from_temp(timestamp, 'current_arch')
+        current_major_power = grab_from_temp(timestamp, 'current_major_power')
+        return render_template('/minor_power_begin.html', timestamp=timestamp, the_current_arch=current_arch, current_major_power=current_major_power)
+    else:
+        return render_template('archery_sorcery_power_picker.html', current_minor_power_dict=archery_sorcery_power_dict, timestamp=timestamp, loop_type=loop_type, archery_sorcery_loops=archery_sorcery_loops)
 
 @app.route('/minor_power_launch', methods=['POST'])
 def minor_power_launch():
     timestamp = request.form['timestamp']
+    # if 'current_minor_power' in request.files:
+    #     current_minor_power_name = request.form['current_minor_power']
 
     arch = grab_from_temp(timestamp, 'current_arch')
     hero = grab_from_temp(timestamp, 'hero')
     min_power_dict = grab_from_temp(timestamp, 'minor_power_data')
     current_major_power = grab_from_temp(timestamp, 'current_major_power')
 
-    #temp_dump(current_major_power, timestamp, 'current_major_power')   # just for testing
-    #temp_dump(arch, timestamp, 'arch')   # just for testing
+    # super archetpe check
+    if hero['hero_type'] == 'Super':
+        # on first pass if it's a super, send them to the super chooser
+        if 'super_archetype_bonus' not in hero:
+                return render_template('super_choice.html', timestamp=timestamp)
+        #if they have been to the chooser already, make adjustments and move on
+        if hero['super_archetype_bonus'] == 'Yes':
+            current_minor_power_name = request.form['current_minor_power']
+            with open('data/minor_power_data.json') as f:
+                super_minor_power_dict = json.load(f)
+            current_minor_power = assign_power_from_dict(current_minor_power_name, super_minor_power_dict)
+
+            hero = hero_stat_adjust(hero,current_minor_power['stat_changes'])
+            # Add notes from Major Power
+            hero['hero_notes'].extend(current_minor_power['notes'])
+            # add to list of minor powers
+            hero['hero_minor_power_list'].insert(0, current_minor_power)
 
     # check for archery exception
     if arch['archetype'] == 'Blaster' and current_major_power['power_name'] == 'Archery':
@@ -281,14 +433,126 @@ def minor_power_launch():
             for y in current_minor_power_dict.copy():
                 if x['power_name'] == y:
                     del current_minor_power_dict[y]
+    hero['minor_power_loops'] = arch['min_p_num']
+    hero['boost_loops'] = 1
+    if hero['hero_type'] == 'Super':
+        hero['boost_loops'] = 2
+        if hero['super_archetype_bonus'] == 'No':
+            hero['minor_power_loops'] = hero['minor_power_loops'] + 2
+
+
     temp_dump(hero, timestamp, 'hero')
     temp_dump(current_minor_power_dict, timestamp, 'current_minor_power_dict')
     heroname = hero['hero_name']
-    return render_template('minor_power_picker.html', timestamp=timestamp,current_minor_power_dict=current_minor_power_dict, heroname=heroname)
+    loop_type = 'standard'
+    minor_power_loops=hero['minor_power_loops']
+    return render_template('minor_power_picker.html', timestamp=timestamp,current_minor_power_dict=current_minor_power_dict, heroname=heroname, minor_power_loops=minor_power_loops)
+
+@app.route('/super_choice_results', methods=['POST'])
+def super_choice_results():
+    timestamp = request.form['timestamp']
+    answer = request.form['answer']
+
+    hero = grab_from_temp(timestamp, 'hero')
+
+    if answer == 'No':
+        hero['super_archetype_bonus'] = 'No'
+        temp_dump(hero, timestamp, 'hero')
+        the_title = 'Time to pick your minor powers'
+
+        return render_template('/super_on_to_minor_powers.html', timestamp=timestamp, the_title=the_title)
+    if answer == 'Yes':
+        hero['super_archetype_bonus'] = 'Yes'
+        with open('data/minor_power_data.json') as f:
+            super_min_power_dict = json.load(f)
+        # Remove imortal and legion from dict
+        del super_min_power_dict['Immortal']
+        del super_min_power_dict['Legion']
+
+
+
+
+        temp_dump(hero, timestamp, 'hero')
+        return render_template('super_power_picker.html', timestamp=timestamp,current_minor_power_dict=super_min_power_dict)
+
 
 @app.route('/minor_power_loop', methods=['POST'])
 def minor_power_loop():
-    return 'begin minor power loop'
+    timestamp = request.form['timestamp']
+
+    current_minor_power_name = request.form['current_minor_power']
+
+    current_minor_power_dict = grab_from_temp(timestamp, 'current_minor_power_dict')
+    hero = grab_from_temp(timestamp, 'hero')
+    current_arch = grab_from_temp(timestamp, 'current_arch')
+
+
+
+
+
+    # current_minor_power = assign_power_from_dict(current_minor_power_name, archery_sorcery_power_dict)
+    current_minor_power, current_minor_power_dict = pop_dict_from_dicts(current_minor_power_name, current_minor_power_dict)
+
+    # Add notes from minor Power
+    hero['hero_notes'].extend(current_minor_power['notes'])
+    # add to list of minor powers
+    hero['hero_minor_power_list'].append(current_minor_power)
+    hero = hero_stat_adjust(hero,current_minor_power['stat_changes'])
+    hero['minor_power_loops'] -= 1
+
+    if current_minor_power['power_type'] == 'boost':
+        hero['boost_loops'] -= 1
+        if hero['boost_loops'] == 0:
+            for power in current_minor_power_dict.copy():
+                if current_minor_power_dict[power]['power_type'] == 'boost':
+                    del current_minor_power_dict[power]
+
+    if hero['minor_power_loops'] <= 1:
+        if 'Immortal' in current_minor_power_dict:
+            del current_minor_power_dict['Immortal']
+
+    if current_minor_power['power_name'] == 'Immortal':
+        hero['minor_power_loops'] -= 1
+
+
+
+
+
+
+    minor_power_loops = hero['minor_power_loops']
+    temp_dump(current_minor_power_dict, timestamp, 'current_minor_power_dict')
+    temp_dump(hero, timestamp, 'hero')
+    if hero['minor_power_loops'] == 0:
+        mutable_archetype_list = grab_from_temp(timestamp, 'mutable_archetype_list')
+        if len(mutable_archetype_list) == 1:
+            # current_arch = grab_from_temp(timestamp, 'current_arch')
+            # current_major_power = grab_from_temp(timestamp, 'current_major_power')
+            title = 'Second Go Round'
+            return render_template('powerhouse_second_arch.html', the_title=title, timestamp=timestamp)
+        else:
+            title = 'Pick two backgrounds for your character:'
+            backgrounds = ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public Safety', 'Science', 'Social Science']
+
+            return render_template('background_picker.html', the_title=title, timestamp=timestamp, backgrounds=backgrounds)
+    else:
+        return render_template('minor_power_picker.html', current_minor_power_dict=current_minor_power_dict, timestamp=timestamp, minor_power_loops=minor_power_loops)
+
+@app.route('/begin_roundup', methods=['POST'])
+def begin_roundup():
+    timestamp = request.form['timestamp']
+    background_choices = request.form.getlist('background_choice')
+
+    hero = grab_from_temp(timestamp, 'hero')
+
+
+    #temp_dump(form_info, timestamp, 'form_info') #test to see how to grab data
+    for background in background_choices:
+        hero['hero_backgrounds'].append(background)
+
+
+    temp_dump(hero, timestamp, 'hero')
+    return 'character complete'
+
 
 app.run(debug=True, host='0.0.0.0')
 #app.run(debug=True)

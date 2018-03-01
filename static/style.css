@@ -83,6 +83,8 @@ label.container span {
     /* font-family: 'Architects Daughter', cursive; */
     font-size: 18px;
     letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .picker {
@@ -148,4 +150,77 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 18px;
+}
+
+
+/* -------------------checkboxes -------------------------------------*/
+
+/* The container */
+.container-ck {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-ck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container-ck:hover input ~ .checkmark-2 {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-ck input:checked ~ .checkmark-2 {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-2:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container-ck input:checked ~ .checkmark-2:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-ck .checkmark-2:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checklist {
+  margin: 25px 0;
 }

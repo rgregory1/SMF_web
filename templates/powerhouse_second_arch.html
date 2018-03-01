@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<p>You choose a Powerhouse Archetype the following Archetypes are your base:</p>
+
+
+<p> Time to work on your second archetype </b></p>
+
+<form method='POST' action='/begin_major_power'>
+  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+  <p><button type='SUBMIT'>Continue</button></p>
+</form>
+
+
+
+
+
+{% endblock %}

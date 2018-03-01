@@ -15,5 +15,6 @@
   "hero_major_power_list": [],
   "hero_minor_power_list": [],
   "hero_backgrounds": [],
-  "loops": 0
+  "loops": 0,
+  "power_house_loop": 0
 }

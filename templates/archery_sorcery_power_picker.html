@@ -4,13 +4,13 @@
 
 <h2>{{ the_title }}</h2>
 
-<form method='POST' action='/minor_power_loop'>
+<form method='POST' action='/archery_sorcery_power_loop'>
 
   {% if message is defined %}
   <p>{{ message }}</p>
   {% endif %}
   <p>Please select the minor power you would like to add to your character:</p>
-  <p>You have {{ minor_power_loops }} choices remaining.</p>
+  <p>You have {{ archery_sorcery_loops }} choices remaining.</p>
 
   {% for power in current_minor_power_dict %}
   <div class="picker {{ loop.cycle('odd', 'even') }}">
@@ -21,7 +21,7 @@
   </div>
   {% endfor %}
   <input type="hidden" name="timestamp" value="{{ timestamp }}">
-
+  <input type="hidden" name="loop_type" value="{{ loop_type }}">
   <p><input value='Make Choice' type='SUBMIT'></p>
 </form>
 
