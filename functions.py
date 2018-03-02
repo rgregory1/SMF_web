@@ -76,3 +76,14 @@ def pop_dict_from_dicts(current_power_name, current_dict):
             final = current_dict.pop(power)
             break
     return(final, current_dict)
+
+def henchman_stat_redux(henchmen_group):
+    redux_stats = ['melee_attack', 'melee_defence', 'ranged_attack', 'ranged_defence', 'psyche_attack', 'psyche_defence']
+    for redux_stat in redux_stats:
+        for hero_key, hero_value in henchmen_group.items():
+            if hero_key == redux_stat:
+                if hero_value == 4:
+                    henchmen_group[hero_key] = 2
+                if hero_value == 5 or hero_value == 6:
+                    henchmen_group[hero_key] = 3
+    return(henchmen_group)

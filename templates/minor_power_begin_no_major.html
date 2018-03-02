@@ -4,16 +4,19 @@
 
 <h2>{{ the_title }}</h2>
 
-<p>You choose the following Archetype:</p>
-<p>{{ the_current_arch['power_name'] }}</p>
 
-
-<p> the timestamp is <b> {{ timestamp }}  </b></p>
 
 <form method='POST' action='/minor_power_launch'>
-  <input type="hidden" name="timestamp" value="{{ timestamp }}">
+  <section class="form-header">
+    <p>You choose the following Archetype:</p>
+    <h3>{{ the_current_arch['power_name'] }}</h3>
+    <p>This archetype has <strong>no Major Power</strong></p>
+  </section>
+  <section class="form-body">
+    <input type="hidden" name="timestamp" value="{{ timestamp }}">
 
-  <p><button type='SUBMIT'>Continue</button></p>
+    <p class="submitp"><input class="button" value='Continue' type='SUBMIT'></p>
+  </section>
 </form>
 
 

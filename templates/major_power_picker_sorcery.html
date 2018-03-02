@@ -5,22 +5,25 @@
 <h2>{{ the_title }}</h2>
 
 <form method='POST' action='/major_power_checker_sorcery'>
-  {% if message is defined %}
-  <p>{{ message }}</p>
-  {% endif %}
-  <p>Please select the Major Power you would like to add to your character:</p>
-
-  {% for power in current_major_power_choices %}
-  <div class="picker {{ loop.cycle('odd', 'even') }}">
-    <label class="container"><span class="big_deal">{{ current_major_power_choices[power]['power_name'] }}</span> - {{ current_major_power_choices[power]['description']}}
-      <input type="radio" name="current_major_power_name" value="{{ current_major_power_choices[power]['power_name'] }}">
-      <span class="checkmark"></span>
-    </label>
-  </div>
-  {% endfor %}
-  <input type="hidden" name="timestamp" value="{{ timestamp }}">
-  <input type="hidden" name="loop_type" value="{{ loop_type }}">
-  <p><input value='Make Choice' type='SUBMIT'></p>
+  <section class="form-header">
+    {% if message is defined %}
+    <p>{{ message }}</p>
+    {% endif %}
+    <p>Please select the Major Power you would like to add to your character:</p>
+  </section>
+  <section class="form-body">
+    {% for power in current_major_power_choices %}
+    <div class="picker {{ loop.cycle('odd', 'even') }}">
+      <label class="container"><span class="big_deal">{{ current_major_power_choices[power]['power_name'] }}</span> - {{ current_major_power_choices[power]['description']}}
+        <input type="radio" name="current_major_power_name" value="{{ current_major_power_choices[power]['power_name'] }}">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    {% endfor %}
+    <input type="hidden" name="timestamp" value="{{ timestamp }}">
+    <input type="hidden" name="loop_type" value="{{ loop_type }}">
+    <p class="submitp"><input class="button" value='Make Choice' type='SUBMIT'></p>
+  </section>
 </form>
 
 

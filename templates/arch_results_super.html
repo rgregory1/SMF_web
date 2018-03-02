@@ -4,14 +4,20 @@
 
 <h2>{{ the_title }}</h2>
 
-<p>You choose a Super Archetype the following Archetype as your base:</p>
-<p>{{ the_archetype_choice }}</p>
 
-<p> the timestamp is <b> {{ timestamp }}  </b></p>
+
+
 
 <form method='POST' action='/begin_major_power'>
-  <input type="hidden" name="timestamp" value="{{ timestamp }}">
-  <p><button type='SUBMIT'>Continue</button></p>
+  <section class="form-header">
+    <p>You choose a Super Archetype the following Archetype as your base:</p>
+    <h3>{{ the_archetype_choice }}</h3>
+  </section>
+  <section class="form-body">
+
+    <input type="hidden" name="timestamp" value="{{ timestamp }}">
+    <p class="submitp"><input class="button" value='Continue' type='SUBMIT'></p>
+  </section>
 </form>
 
 

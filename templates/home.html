@@ -6,14 +6,17 @@
 
 <p> Time to choose a name for your hero, choose well.  A good name is integral to a long career as a hero or villain.</p>
 <form method='POST' action='/archetype_picker'>
-
+  <section class="form-header">
+  <h3>Name</h3>
+  </section>
+  <section class="form-body">
   <p>Choose your name:</p>
   <input type="text" name="heroname">
   <input type="hidden" name="timestamp" value="{{ timestamp }}">
 
 
-  <p><input class="button" value='Make Choice' type='SUBMIT'></p>
-  
+  <p class="submitp"><input class="button" value='Make Choice' type='SUBMIT'></p>
+  </section>
 </form>
 
 

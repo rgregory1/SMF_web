@@ -5,20 +5,21 @@
 <h2>{{ the_title }}</h2>
 
 <form method='POST' action='/setup_arch'>
-
-  <p>Now that {{ heroname }} has a name, let's continue...</p>
-  <p>Please select the Archetype you would like to build:</p>
-
-  {% for archetype in arch_dict %}
-  <div class="picker {{ loop.cycle('odd', 'even') }}">
-    <label class="container"><span class="big_deal">{{ arch_dict[archetype]['power_name'] }}</span> - {{ arch_dict[archetype]['description']}}
-      <input type="radio" name="current_arch" value="{{ arch_dict[archetype]['power_name'] }}">
-      <span class="checkmark"></span>
-    </label>
-  </div>
-  {% endfor %}
-  <input type="hidden" name="timestamp" value="{{ timestamp }}">
-  <p><input value='Make Choice' type='SUBMIT'></p>
+  <section class="form-header">
+    <p>Please select the Archetype you would like to build:</p>
+  </section>
+  <section class="form-body">
+    {% for archetype in arch_dict %}
+      <div class="picker {{ loop.cycle('odd', 'even') }}">
+        <label class="container"><span class="big_deal">{{ arch_dict[archetype]['power_name'] }}</span> - {{ arch_dict[archetype]['description']}}
+          <input type="radio" name="current_arch" value="{{ arch_dict[archetype]['power_name'] }}">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    {% endfor %}
+    <input type="hidden" name="timestamp" value="{{ timestamp }}">
+    <p class="submitp"><input class="button" value='Make Choice' type='SUBMIT'></p>
+  </section>
 </form>
 
 

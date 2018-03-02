@@ -88,11 +88,12 @@ label.container span {
 }
 
 .picker {
-  padding: 15px 10px 10px 10px;
+  padding: 25px 10px 15px 10px;
 }
 
 .odd {
-  background-color: #e6e6e6;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 a.buttons {
@@ -137,8 +138,32 @@ form{
     width: 500px;
     margin: 0 auto;
     background: #95a5a6;
+
+    border-radius: 10px;
+}
+
+.form-body{
     padding: 40px;
-    border-radius: 5px;
+}
+
+.form-body p.submitp {
+  text-align: center;
+
+}
+
+.form-header {
+  background: #34495E;
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 10px 10px 0 0;
+}
+
+.form-header p {
+  line-height: 160%;
+}
+
+form h3 {
+
 }
 
 input[type=text], select {

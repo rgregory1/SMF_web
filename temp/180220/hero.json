@@ -1,5 +1,5 @@
 {
-  "melee_attack": 5,
+  "melee_attack": 7,
   "melee_attack_rr": 0,
   "melee_defence": 5,
   "melee_defence_rr": 0,
@@ -12,11 +12,25 @@
   "hero_notes": [
     "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
     "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage.",
-    "Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you have made your initial defense roll!",
-    "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
+    "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks.",
+    "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks.",
+    "Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping."
   ],
-  "hero_type": "Standard",
+  "hero_type": "Powerhouse",
   "hero_archetype_list": [
+    {
+      "archetype": "Powerhouse",
+      "power_name": "Powerhouse",
+      "power_type": "Powerhouse",
+      "archetype_number": 2,
+      "description": "You are one of the mightiest beings on the planet, or maybe you just have lots of cool powers! This archetype combines the best aspects of two of the standard archetypes listed in the preceding pages. That is right, take two of our archetypes and jam them together! You get the better Move, Body, and Psyche ratings between the two.",
+      "move": 0,
+      "body_points": 0,
+      "psych_points": 0,
+      "major_power_number": 2,
+      "maj-p": [],
+      "minor_p_list": []
+    },
     {
       "archetype": "Brawler",
       "power_name": "Brawler",
@@ -39,6 +53,29 @@
         "Shield",
         "Super-Agility"
       ]
+    },
+    {
+      "archetype": "Brick",
+      "power_name": "Brick",
+      "power_type": "Standard",
+      "description": "You are the bruising, super-strong fighter on your team...",
+      "move": 5,
+      "body_points": 8,
+      "psych_points": 6,
+      "maj-p": [
+        "Super-Strength"
+      ],
+      "min_p_num": 2,
+      "minor_p_list": [
+        "Armor",
+        "Burrowing",
+        "Density_Increase",
+        "Leaping",
+        "Magic_Artifact",
+        "Massive",
+        "Rage",
+        "Resistance"
+      ]
     }
   ],
   "hero_major_power_list": [
@@ -54,16 +91,28 @@
         "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
         "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage."
       ]
+    },
+    {
+      "power_name": "Super-Strength",
+      "power_type": "major",
+      "description": "description here",
+      "stat_changes": {
+        "melee_attack": 2,
+        "ranged_attack": 0
+      },
+      "notes": [
+        "Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping."
+      ]
     }
   ],
   "hero_minor_power_list": [
     {
-      "power_name": "Fortune",
+      "power_name": "Enhanced Senses",
       "power_type": "minor",
-      "description": "You are darn lucky or capable of manipulating probabilities in your favor when it counts the most.",
+      "description": "You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.",
       "stat_changes": {},
       "notes": [
-        "Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you have made your initial defense roll!"
+        "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks."
       ]
     },
     {
@@ -80,11 +129,12 @@
   ],
   "hero_backgrounds": [],
   "loops": 0,
-  "power_house_loop": 0,
+  "power_house_loop": 1,
   "hero_name": "Jim",
-  "body_points": 7,
+  "body_points": 8,
   "psych_points": 6,
   "move": 7,
-  "minor_power_loops": 0,
-  "boost_loops": 1
+  "minor_power_loops": 2,
+  "boost_loops": 1,
+  "ranged_attack": 4
 }

@@ -5,24 +5,26 @@
 <h2>{{ the_title }}</h2>
 
 <form method='POST' action='/minor_power_loop'>
+  <section class="form-header">
+    {% if message is defined %}
+    <p>{{ message }}</p>
+    {% endif %}
+    <p>Please select the minor power you would like to add to your character:</p>
+    <p>You have {{ minor_power_loops }} choices remaining.</p>
+  </section>
+  <section class="form-body">
+    {% for power in current_minor_power_dict %}
+    <div class="picker {{ loop.cycle('odd', 'even') }}">
+      <label class="container"><span class="big_deal">{{ current_minor_power_dict[power]['power_name'] }}</span> - {{ current_minor_power_dict[power]['description']}}
+        <input type="radio" name="current_minor_power" value="{{ current_minor_power_dict[power]['power_name'] }}">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    {% endfor %}
+    <input type="hidden" name="timestamp" value="{{ timestamp }}">
 
-  {% if message is defined %}
-  <p>{{ message }}</p>
-  {% endif %}
-  <p>Please select the minor power you would like to add to your character:</p>
-  <p>You have {{ minor_power_loops }} choices remaining.</p>
-
-  {% for power in current_minor_power_dict %}
-  <div class="picker {{ loop.cycle('odd', 'even') }}">
-    <label class="container"><span class="big_deal">{{ current_minor_power_dict[power]['power_name'] }}</span> - {{ current_minor_power_dict[power]['description']}}
-      <input type="radio" name="current_minor_power" value="{{ current_minor_power_dict[power]['power_name'] }}">
-      <span class="checkmark"></span>
-    </label>
-  </div>
-  {% endfor %}
-  <input type="hidden" name="timestamp" value="{{ timestamp }}">
-
-  <p><input value='Make Choice' type='SUBMIT'></p>
+    <p class="submitp"><input class="button" value='Choose' type='SUBMIT'></p>
+  </section>
 </form>
 
 

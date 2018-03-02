@@ -5,24 +5,26 @@
 <h2>{{ the_title }}</h2>
 
 <form method='POST' action='/begin_roundup'>
-
+  <section class="form-header">
   {% if message is defined %}
   <p>{{ message }}</p>
   {% endif %}
-  <p>Please select two backgrounds you would like to add to your character:</p>
+  <p>Please select <strong>two (2)</strong> backgrounds you would like to add to your character:</p>
 
+  </section>
+  <section class="form-body">
+    {% for background in backgrounds %}
+    <div class="checklist">
+      <label class="container-ck">{{ background }}
+      <input type="checkbox" name="background_choice" value="{{ background }}">
+      <span class="checkmark-2"></span>
+      </label>
+    </div>
+    {% endfor %}
+    <input type="hidden" name="timestamp" value="{{ timestamp }}">
 
-  {% for background in backgrounds %}
-  <div class="checklist">
-    <label class="container-ck">{{ background }}
-    <input type="checkbox" name="background_choice" value="{{ background }}">
-    <span class="checkmark-2"></span>
-    </label>
-  </div>
-  {% endfor %}
-  <input type="hidden" name="timestamp" value="{{ timestamp }}">
-
-  <p><input value='Make Choice' type='SUBMIT'></p>
+    <p class="submitp"><input class="button" value='Continue' type='SUBMIT'></p>
+  </section>
 </form>
 
 

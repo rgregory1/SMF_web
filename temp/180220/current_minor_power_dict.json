@@ -1,32 +1,71 @@
 {
-  "Enhanced_Senses": {
-    "power_name": "Enhanced Senses",
+  "Armor": {
+    "power_name": "Armor",
     "power_type": "minor",
-    "description": "You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.",
+    "description": "You possess damage resistance from super-thick skin or some kind of worn armor.",
     "stat_changes": {},
     "notes": [
-      "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks."
+      "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
     ]
   },
-  "Melee_Specialist": {
-    "power_name": "Melee Specialist",
+  "Burrowing": {
+    "power_name": "Burrowing",
     "power_type": "minor",
-    "description": "+1 Re-roll on melee attack rolls, +1 Re-roll on melee defense rolls, and +2D on any checks to break objects or escape entangles.",
+    "description": "You can travel underground at your normal Move rate.",
+    "stat_changes": {},
+    "notes": [
+      "Burrowing - It costs a free action to submerge and start burrowing, or stop burrowing and re-surface, but once you have surfaced, you cannot burrow again until next turn. You can burrow through or under any intervening terrain as if it were normal ground. You cannot resurface within a solid object. Instead of attacking when you surface, you can create fissures and tremors. Use your special action to create these tremors; any enemies within 5in of you must make a TN3 check or be knocked down."
+    ]
+  },
+  "Density_Increase": {
+    "power_name": "Density Increase",
+    "power_type": "minor",
+    "description": "With a thought you become super-dense.",
+    "stat_changes": {},
+    "notes": [
+      "Density Increase - At the start of your turn, before any movement, spend a free action to activate. While active, you can charge at your base Move value only. While super dense you gain +1 Re-roll on melee attack checks and +1D to melee and ranged defense checks against Body damaging attacks. You are also immune to all knockback."
+    ]
+  },
+  "Leaping": {
+    "power_name": "Leaping",
+    "power_type": "minor",
+    "description": "Your super-strong legs propel you high into the air with pro- digious leaps!",
+    "stat_changes": {},
+    "notes": [
+      "Leaping - 4D action check. Declare where you want to land. You can leap up to 10in + goals scored high and 20in + goals scored long."
+    ]
+  },
+  "Magic_Artifact": {
+    "power_name": "Magic Artifact",
+    "power_type": "minor",
+    "description": "You wield a powerful artifact that acts as both a melee weapon and a ranged weapon, as well as granting you other powers. All of this great stuff comes with a price, however.",
     "stat_changes": {
       "melee_attack_rr": 1,
-      "melee_defence_rr": 1
+      "ranged_attack_rr": 1
     },
     "notes": [
-      "Melee Speicialist - +2D on any checks to break objects or escape entangles."
+      "Magic Artifact - (Recharge 2+) 15in ranged attack. You can also employ its energies for the Flight and Force-Field minor powers. See rules for additional. (Recharge 3+ if you pushed your Force-Field)', 'Magic Artifact Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.', 'Magic Artifact Force-Field - Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack."
     ]
   },
-  "Regen": {
-    "power_name": "Regen",
+  "Massive": {
+    "power_name": "Massive",
     "power_type": "minor",
-    "description": "You possess the potential to heal yourself! This could be from a natural mutant power, injected nanites, cosmic energy, or whatever.",
+    "description": "You are up to twice the size of a normal model!",
+    "stat_changes": {
+      "move": 2,
+      "body_points": 2
+    },
+    "notes": [
+      "Massive - +1 Re-roll on charge attacks, Foes gain +1 Re-roll on Body-based melee and ranged attacks against you."
+    ]
+  },
+  "Rage": {
+    "power_name": "Rage",
+    "power_type": "minor",
+    "description": "The madder you get, the tougher you get!",
     "stat_changes": {},
     "notes": [
-      "Regen - At the beginning of any turn you begin at less than full Body or Psyche, make a Chance roll. You regain 1 + goals scored lost damage. You can spread this healing between both of your damage tracks. If you lose the last box in either damage track, but make your KO check, your healing could slow down. Make a Chance roll for Regen, but only the goals on the throw count as your healing. This power stops working for the rest of the battle if you fail a KO check."
+      "Rage - Make a 1+ Chance roll each time you suffer Body or Psyche damage. On a success you gain a cumulative +1D to melee attack and Psyche defense rolls. This bonus maxes out at +2D. Your Rage bonuses last until the end of the battle."
     ]
   },
   "Resistance": {
@@ -39,32 +78,6 @@
     },
     "notes": [
       "Resistance - +1D on KO checks"
-    ]
-  },
-  "Shield": {
-    "power_name": "Shield",
-    "power_type": "minor",
-    "description": "You possess a super-hard shield.",
-    "stat_changes": {
-      "melee_attack_rr": 1,
-      "melee_defence_rr": 1,
-      "ranged_defence_rr": 1
-    },
-    "notes": [
-      "Shield - You can hurl it as a 3D, 5in ranged attack, and it always returns to your hand. Can also ricochet ranged attack to a second target within 5in of you. In this case you make a single attack goal roll, and your targets make separate, +1D defense goal rolls."
-    ]
-  },
-  "Super-Agility": {
-    "power_name": "Super-Agility",
-    "power_type": "minor",
-    "description": "You gain +2in to your move and +1 Re-roll on all defense checks against Body damaging attacks, and any check to avoid being knocked down. You can move up, hang from, and walk along vertical surfaces as if they were normal ground. You can also spend a Move action to move between structures or other vertical terrain pieces within 15in of each other.",
-    "stat_changes": {
-      "move": 2,
-      "melee_defence_rr": 1,
-      "ranged_defence_rr": 1
-    },
-    "notes": [
-      "Super-Agility - +1D on Knock down checks, move along verticle surfaces, and spend a Move action to move 15in"
     ]
   },
   "Clever": {
