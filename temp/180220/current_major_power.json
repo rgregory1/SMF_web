@@ -1,1 +1,12 @@
-"none"
+{
+  "power_name": "Power Blasts",
+  "power_type": "major",
+  "description": "You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.  You can make 30in ranged attacks at +2D[1].  Your blasts are physical in nature and inflict Body Damage",
+  "stat_changes": {
+    "ranged_attack": 2,
+    "ranged_attack_rr": 1
+  },
+  "notes": [
+    "Power Blasts (Major)- 30in range, body damage"
+  ]
+}

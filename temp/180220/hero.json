@@ -1,120 +1,68 @@
 {
   "melee_attack": 4,
   "melee_attack_rr": 0,
-  "melee_defence": 4,
+  "melee_defence": 5,
   "melee_defence_rr": 0,
-  "ranged_attack_rr": 0,
-  "ranged_defence": 4,
+  "ranged_attack_rr": 1,
+  "ranged_defence": 5,
   "ranged_defence_rr": 0,
   "psyche_attack_rr": 0,
   "psyche_defence": 4,
-  "psyche_defence_rr": 1,
+  "psyche_defence_rr": 0,
   "hero_notes": [
-    "Explosion - Radius Attack. 4D[1] first 5in, 4D[2] next 5in. You reform at the end of your next turn. Until then you can not be targeted by Physical attacks.",
-    "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength.",
+    "Power Blasts (Major)- 30in range, body damage",
     "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
-    "Construct - Select either +1 Body or +2in Move to better reflect your inhuman physiology."
+    "Resistance - +1D on KO checks"
   ],
-  "hero_type": "Super",
+  "hero_type": "Standard",
   "hero_archetype_list": [
     {
-      "archetype": "Super",
-      "power_name": "Super",
-      "power_type": "Super",
-      "archetype_number": 1,
-      "additional_minor_powers": 2,
-      "description": "You're somewhere between one of the nine standard archetypes and a Powerhouse. For game balance purposes you count as 1 1/2 times a normal archetype. Choose one of the nine standard archetypes as your base. Then choose two additional minor powers from your list. You may also trade two minor power selections from your own list for one minor power from any other archetype list. You may also trade up to two minor powers for up to two Boosts.",
-      "move": 0,
-      "body_points": 0,
-      "psych_points": 0,
-      "major_power_number": 1,
-      "boost_bonus": 2,
-      "maj-p": [],
-      "minor_p_list": []
-    },
-    {
-      "archetype": "Wildcard",
-      "power_name": "Wildcard",
+      "archetype": "Blaster",
+      "power_name": "Blaster",
       "power_type": "Standard",
-      "description": "Some supers do not fit into easy categories. That is where this archetype comes in! You possess a dynamic mix of minor powers that give you a wide array of options in any super slugfest.",
+      "description": "You project destructive energies...",
       "move": 6,
       "body_points": 6,
       "psych_points": 6,
-      "maj-p": [],
-      "min_p_num": 4,
+      "maj-p": [
+        "Archery",
+        "Power_Blasts"
+      ],
+      "min_p_num": 2,
       "minor_p_list": [
-        "Armor",
-        "Amphibious",
-        "Barrier",
-        "Burrowing",
-        "Construct",
         "Damage_Field",
-        "Density_Increase",
-        "Dispel",
-        "Duplicate",
-        "Enhance_(Minor)",
-        "Enhanced_Senses",
-        "Entangle",
         "Explosion",
         "Flight",
         "Force-Field",
-        "Fortune",
-        "Gadgets",
-        "Grenades",
-        "Growth",
-        "Immortal",
-        "Invisibility",
         "Iron_Will",
-        "Leaping",
-        "Magic_Artifact",
-        "Massive",
-        "Melee_Specialist",
-        "Mimic",
-        "Multiple_Limbes",
-        "Obscurement",
-        "Parasite",
-        "Power_Blasts_(Minor)",
-        "Rage",
-        "Rapport",
-        "Regen",
         "Resistance",
         "Reflection",
+        "Super-Strength_(Minor)"
+      ],
+      "archer_minor_p_list": [
+        "Enhance_(Minor)",
+        "Fortune",
+        "Iron_Will",
         "Savant",
-        "Save",
-        "Servitor-Sidekick",
-        "Shield",
-        "Shrinking",
-        "Sonic_Blasts",
-        "Stun",
-        "Super-Agility",
-        "Super-Strength_(Minor)",
-        "Telekinesis",
-        "Teleport",
-        "Vampire",
-        "X-Factor"
+        "Super-Strength_(Minor)"
       ]
     }
   ],
-  "hero_major_power_list": [],
+  "hero_major_power_list": [
+    {
+      "power_name": "Power Blasts",
+      "power_type": "major",
+      "description": "You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.  You can make 30in ranged attacks at +2D[1].  Your blasts are physical in nature and inflict Body Damage",
+      "stat_changes": {
+        "ranged_attack": 2,
+        "ranged_attack_rr": 1
+      },
+      "notes": [
+        "Power Blasts (Major)- 30in range, body damage"
+      ]
+    }
+  ],
   "hero_minor_power_list": [
-    {
-      "power_name": "Explosion",
-      "power_type": "minor",
-      "description": "This counts as a Radius Attack. Make a 4D[1] attack check. Anyone within 5in of you must roll to resist the attack. Anyone within the next 5in is also affected but resists with +1 Re-roll. You reform at the end of your next turn. Until then you can not be targeted by Physical attacks.",
-      "stat_changes": {},
-      "notes": [
-        "Explosion - Radius Attack. 4D[1] first 5in, 4D[2] next 5in. You reform at the end of your next turn. Until then you can not be targeted by Physical attacks."
-      ]
-    },
-    {
-      "power_name": "Armor",
-      "power_type": "minor",
-      "description": "You possess damage resistance from super-thick skin or some kind of worn armor.",
-      "stat_changes": {},
-      "notes": [
-        "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
-      ]
-    },
     {
       "power_name": "Flight",
       "power_type": "minor",
@@ -125,25 +73,29 @@
       ]
     },
     {
-      "power_name": "Construct",
+      "power_name": "Resistance",
       "power_type": "minor",
-      "description": "You're an android, robot, golem, or some other artificial being! ",
+      "description": "You are super-tough! Gain +1D on all defense checks from Body damaging attacks and +1D on KO checks.",
       "stat_changes": {
-        "psyche_defence_rr": 1
+        "melee_defence": 1,
+        "ranged_defence": 1
       },
       "notes": [
-        "Construct - Select either +1 Body or +2in Move to better reflect your inhuman physiology."
+        "Resistance - +1D on KO checks"
       ]
     }
   ],
-  "hero_backgrounds": [],
+  "hero_backgrounds": [
+    "Espionage",
+    "Science"
+  ],
   "loops": 0,
   "power_house_loop": 0,
-  "hero_name": "Rowan",
+  "hero_name": "Iron Man",
   "body_points": 6,
   "psych_points": 6,
   "move": 6,
-  "super_archetype_bonus": "Yes",
-  "minor_power_loops": 1,
-  "boost_loops": 2
+  "ranged_attack": 6,
+  "minor_power_loops": 0,
+  "boost_loops": 1
 }
