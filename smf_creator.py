@@ -5,6 +5,7 @@ import datetime
 from functions import *
 import shutil
 import copy
+from sheet import *
 
 app = Flask(__name__)
 
@@ -560,10 +561,20 @@ def begin_roundup():
 
     if hero['hero_archetype_list'][0]['archetype'] == 'Henchmen':
         hero = henchman_stat_redux(hero)
-
+    heroname = hero['hero_name']
     temp_dump(hero, timestamp, 'hero')
-    return 'character complete'
+    return render_template('print_character.html', timestamp=timestamp, heroname=heroname)
 
+@app.route('/show_sheet', methods=['POST'])
+def show_sheet():
+    timestamp = request.form['timestamp']
+
+    hero = grab_from_temp(timestamp, 'hero')
+    sheet_timestamp = print_hero(hero)
+    suffix = '.png'
+    sheet_location = os.path.join('static', 'hero_files', hero['hero_name'] + '_' + sheet_timestamp + suffix)
+    return render_template('show_sheet.html', sheet_location=sheet_location)
+    # return '<a href="/static/text.png">Your character</a>'
 
 app.run(debug=True, host='0.0.0.0')
 #app.run(debug=True)
