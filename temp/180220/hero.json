@@ -1,48 +1,40 @@
 {
   "melee_attack": 4,
   "melee_attack_rr": 0,
-  "melee_defence": 5,
+  "melee_defence": 4,
   "melee_defence_rr": 0,
-  "ranged_attack_rr": 1,
-  "ranged_defence": 5,
+  "ranged_attack_rr": 0,
+  "ranged_defence": 4,
   "ranged_defence_rr": 0,
   "psyche_attack_rr": 0,
   "psyche_defence": 4,
   "psyche_defence_rr": 0,
   "hero_notes": [
-    "Power Blasts (Major)- 30in range, body damage",
-    "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
-    "Resistance - +1D on KO checks"
+    "Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10in of you.",
+    "Gadgets - Make a Chance Roll at the start of your turn. The number of goals rolled is the number of Re-rolls added to your Re-roll pool.', 'Gadgets - 3D, 10in Body-damage ranged attack.",
+    "Clever(Boost) - Add +1D to your leader's initiative so long as you're not KO'ed."
   ],
   "hero_type": "Standard",
   "hero_archetype_list": [
     {
-      "archetype": "Blaster",
-      "power_name": "Blaster",
+      "archetype": "Mastermind",
+      "power_name": "Mastermind",
       "power_type": "Standard",
-      "description": "You project destructive energies...",
+      "description": "You are the master planner, natural leader, or brilliant tactician of your team. Your guidance can make or break the destiny of your group!",
       "move": 6,
       "body_points": 6,
       "psych_points": 6,
       "maj-p": [
-        "Archery",
-        "Power_Blasts"
+        "Enhance"
       ],
       "min_p_num": 2,
       "minor_p_list": [
-        "Damage_Field",
-        "Explosion",
+        "Armor",
         "Flight",
-        "Force-Field",
+        "Force_Field",
+        "Gadgets",
         "Iron_Will",
-        "Resistance",
-        "Reflection",
-        "Super-Strength_(Minor)"
-      ],
-      "archer_minor_p_list": [
-        "Enhance_(Minor)",
-        "Fortune",
-        "Iron_Will",
+        "Power_Blasts_(Minor)",
         "Savant",
         "Super-Strength_(Minor)"
       ]
@@ -50,52 +42,47 @@
   ],
   "hero_major_power_list": [
     {
-      "power_name": "Power Blasts",
+      "power_name": "Enhance",
       "power_type": "major",
-      "description": "You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.  You can make 30in ranged attacks at +2D[1].  Your blasts are physical in nature and inflict Body Damage",
-      "stat_changes": {
-        "ranged_attack": 2,
-        "ranged_attack_rr": 1
-      },
+      "description": "You can increase the capabilities of characters within 10in of you.",
+      "stat_changes": {},
       "notes": [
-        "Power Blasts (Major)- 30in range, body damage"
+        "Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10in of you."
       ]
     }
   ],
   "hero_minor_power_list": [
     {
-      "power_name": "Flight",
+      "power_name": "Gadgets",
       "power_type": "minor",
-      "description": "You can fly up to 20in per turn, ignoring any grounded models or obstacles in your path. You may choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
+      "description": "You have an array of gadgets and devices in your utility belt or bag of tricks that you can use to give you an advantage against your foes.",
       "stat_changes": {},
       "notes": [
-        "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
+        "Gadgets - Make a Chance Roll at the start of your turn. The number of goals rolled is the number of Re-rolls added to your Re-roll pool.', 'Gadgets - 3D, 10in Body-damage ranged attack."
       ]
     },
     {
-      "power_name": "Resistance",
-      "power_type": "minor",
-      "description": "You are super-tough! Gain +1D on all defense checks from Body damaging attacks and +1D on KO checks.",
+      "power_name": "Clever",
+      "power_type": "boost",
+      "description": "Your quick wits and keen mind make you a team asset!",
       "stat_changes": {
-        "melee_defence": 1,
-        "ranged_defence": 1
+        "psych_points": 1
       },
       "notes": [
-        "Resistance - +1D on KO checks"
+        "Clever(Boost) - Add +1D to your leader's initiative so long as you're not KO'ed."
       ]
     }
   ],
   "hero_backgrounds": [
-    "Espionage",
+    "Blue Collar",
     "Science"
   ],
   "loops": 0,
   "power_house_loop": 0,
-  "hero_name": "Iron Man",
+  "hero_name": "Rachael",
   "body_points": 6,
-  "psych_points": 6,
+  "psych_points": 7,
   "move": 6,
-  "ranged_attack": 6,
   "minor_power_loops": 0,
-  "boost_loops": 1
+  "boost_loops": 0
 }

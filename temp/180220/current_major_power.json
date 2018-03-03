@@ -1,12 +1,9 @@
 {
-  "power_name": "Power Blasts",
+  "power_name": "Enhance",
   "power_type": "major",
-  "description": "You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.  You can make 30in ranged attacks at +2D[1].  Your blasts are physical in nature and inflict Body Damage",
-  "stat_changes": {
-    "ranged_attack": 2,
-    "ranged_attack_rr": 1
-  },
+  "description": "You can increase the capabilities of characters within 10in of you.",
+  "stat_changes": {},
   "notes": [
-    "Power Blasts (Major)- 30in range, body damage"
+    "Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10in of you."
   ]
 }

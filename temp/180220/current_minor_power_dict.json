@@ -1,32 +1,20 @@
 {
-  "Damage_Field": {
-    "power_name": "Damage Field",
+  "Armor": {
+    "power_name": "Armor",
     "power_type": "minor",
-    "description": "Spend a free action to activate or deactivate this power. You surround yourself with a deadly field. Anyone touching you (successful attacks or knockbacks) suffers a 4D[1] Body damage attack. No knockback. Resolve this after resolving any successful attack action.",
+    "description": "You possess damage resistance from super-thick skin or some kind of worn armor.",
     "stat_changes": {},
     "notes": [
-      "Damage Field - Spend a free action to activate or deactivate this power. You surround yourself with a deadly field. Anyone touching you (successful attacks or knockbacks) suffers a 4D[1] Body damage attack. No knockback. Resolve this after resolving any successful attack action.",
-      "Damage Field - Push it: (Recharge 2+) Push It: Anytime you activate your damage field you can declare that you are pushing its power--the field increases to 6D[1] until the beginning of your next turn, then shuts down."
+      "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
     ]
   },
-  "Explosion": {
-    "power_name": "Explosion",
+  "Flight": {
+    "power_name": "Flight",
     "power_type": "minor",
-    "description": "This counts as a Radius Attack. Make a 4D[1] attack check. Anyone within 5in of you must roll to resist the attack. Anyone within the next 5in is also affected but resists with +1 Re-roll. You reform at the end of your next turn. Until then you can not be targeted by Physical attacks.",
+    "description": "You can fly up to 20in per turn, ignoring any grounded models or obstacles in your path. You may choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
     "stat_changes": {},
     "notes": [
-      "Explosion - Radius Attack. 4D[1] first 5in, 4D[2] next 5in. You reform at the end of your next turn. Until then you can not be targeted by Physical attacks."
-    ]
-  },
-  "Force-Field": {
-    "power_name": "Force-Field",
-    "power_type": "minor",
-    "description": "You wield protective energies. Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks.",
-    "stat_changes": {},
-    "notes": [
-      "Force-Field - (Recharge 2+) Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack.",
-      "Force-Field - You may also protect additional characters within 10in of you. Use a special action and make a 4D check and note your goals - 2 goals = 1 character 3 goals = 2 characters 4 goals = 3 characters. Decide which characters to protect before making your check. Protected characters must remain within 10in of you to enjoy your Force-Fields benefits.",
-      "Force-Field - Maximum Protection - You can push your Force-Field to its limits, rolling 6D instead of 4D for its protection, but succeed or fail, the power shuts down after this one enhanced use. You must decide to push your field prior to your foes attack goal roll."
+      "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
     ]
   },
   "Iron_Will": {
@@ -40,13 +28,25 @@
       "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
     ]
   },
-  "Reflection": {
-    "power_name": "Reflection",
+  "Power_Blasts_(Minor)": {
+    "power_name": "Power Blasts (Minor)",
     "power_type": "minor",
-    "description": "Reflection - You can sometimes turn Body-damaging attacks back on your attacker! Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage.",
+    "description": "You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.",
+    "stat_changes": {
+      "ranged_attack": 1,
+      "ranged_attack_rr": 1
+    },
+    "notes": [
+      "Power Blasts (Minor) - You can make 15in ranged attacks that inflict Body Damage"
+    ]
+  },
+  "Savant": {
+    "power_name": "Savant",
+    "power_type": "minor",
+    "description": "You are brilliant and you enjoy +1 Re-roll on any checks during a battle that involve non-combat situations.",
     "stat_changes": {},
     "notes": [
-      "Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage."
+      "Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action."
     ]
   },
   "Super-Strength_(Minor)": {
@@ -58,41 +58,6 @@
     },
     "notes": [
       "Super-Strength - +1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage"
-    ]
-  },
-  "Clever": {
-    "power_name": "Clever",
-    "power_type": "boost",
-    "description": "Your quick wits and keen mind make you a team asset!",
-    "stat_changes": {
-      "psych_points": 1
-    },
-    "notes": [
-      "Clever(Boost) - Add +1D to your leader's initiative so long as you're not KO'ed."
-    ]
-  },
-  "Fast": {
-    "power_name": "Fast",
-    "power_type": "boost",
-    "description": "You are no speedster, but you are quicker than normal!",
-    "stat_changes": {
-      "move": 4,
-      "ranged_defence_rr": 1
-    },
-    "notes": [
-      "Fast(Boost)"
-    ]
-  },
-  "Tough": {
-    "power_name": "Tough",
-    "power_type": "boost",
-    "description": "You are one tough cuss!",
-    "stat_changes": {
-      "body_points": 1,
-      "melee_defence_rr": 1
-    },
-    "notes": [
-      "Tough(Boost)"
     ]
   }
 }
