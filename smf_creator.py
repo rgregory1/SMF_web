@@ -13,11 +13,11 @@ app = Flask(__name__)
 @app.route('/')
 def entry_page():
     # os.rmdir('temp/180220')
-    shutil.rmtree('temp/180220', ignore_errors=False, onerror=None)
+    # shutil.rmtree('temp/180220', ignore_errors=False, onerror=None)
     # first page, get hero name
-    # temp_timestamp = str(datetime.datetime.now())
-    # timestamp = simplify_timestamp(temp_timestamp)
-    timestamp = '180220'
+    temp_timestamp = str(datetime.datetime.now())
+    timestamp = simplify_timestamp(temp_timestamp)
+    # timestamp = '180220'
     try:
         os.makedirs(os.path.join('temp', timestamp))
     except:
