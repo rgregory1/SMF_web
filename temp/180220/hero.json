@@ -1,77 +1,132 @@
 {
-  "melee_attack": 2,
-  "melee_attack_rr": 0,
-  "melee_defence": 2,
+  "melee_attack": 6,
+  "melee_attack_rr": 1,
+  "melee_defence": 5,
   "melee_defence_rr": 0,
-  "ranged_attack_rr": 0,
-  "ranged_defence": 2,
+  "ranged_attack_rr": 1,
+  "ranged_defence": 5,
   "ranged_defence_rr": 0,
   "psyche_attack_rr": 0,
-  "psyche_defence": 2,
+  "psyche_defence": 4,
   "psyche_defence_rr": 0,
   "hero_notes": [
-    "Legion - This henchmen group starts with 15 members.",
-    "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
+    "Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping.",
+    "Magic Artifact - (Recharge 2+) 15in ranged attack. You can also employ its energies for the Flight and Force-Field minor powers. See rules for additional. (Recharge 3+ if you pushed your Force-Field)', 'Magic Artifact Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.', 'Magic Artifact Force-Field - Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack.",
+    "Resistance - +1D on KO checks",
+    "Leaping - 4D action check. Declare where you want to land. You can leap up to 10in + goals scored high and 20in + goals scored long.",
+    "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
   ],
-  "hero_type": "Henchmen",
+  "hero_type": "Super",
   "hero_archetype_list": [
     {
-      "archetype": "Henchmen",
-      "power_name": "Henchmen",
-      "power_type": "Henchmen",
-      "description": "Whether blasting away at range or fighting in melee, henchmen try to overwhelm their foes with sheer numbers. Your minor power selections will determine your group\u2019s capabilities and style.",
-      "move": 6,
+      "archetype": "Super",
+      "power_name": "Super",
+      "power_type": "Super",
+      "archetype_number": 1,
+      "additional_minor_powers": 2,
+      "description": "You're somewhere between one of the nine standard archetypes and a Powerhouse. For game balance purposes you count as 1 1/2 times a normal archetype. Choose one of the nine standard archetypes as your base. Then choose two additional minor powers from your list. You may also trade two minor power selections from your own list for one minor power from any other archetype list. You may also trade up to two minor powers for up to two Boosts.",
+      "move": 0,
       "body_points": 0,
       "psych_points": 0,
-      "numbers": 10,
+      "major_power_number": 1,
+      "boost_bonus": 2,
       "maj-p": [],
+      "minor_p_list": []
+    },
+    {
+      "archetype": "Brick",
+      "power_name": "Brick",
+      "power_type": "Standard",
+      "description": "You are the bruising, super-strong fighter on your team...",
+      "move": 5,
+      "body_points": 8,
+      "psych_points": 6,
+      "maj-p": [
+        "Super-Strength"
+      ],
       "min_p_num": 2,
       "minor_p_list": [
         "Armor",
-        "Flight",
-        "Legion",
-        "Melee_Specialist",
-        "Power_Blasts_(Minor)",
-        "Resistance",
-        "Super-Agility",
-        "Super-Strength_(Minor)"
+        "Burrowing",
+        "Density_Increase",
+        "Leaping",
+        "Magic_Artifact",
+        "Massive",
+        "Rage",
+        "Resistance"
       ]
     }
   ],
-  "hero_major_power_list": [],
-  "hero_minor_power_list": [
+  "hero_major_power_list": [
     {
-      "power_name": "Legion",
-      "power_type": "minor",
-      "description": "You travel in large numbers. This power adds 5 additional henchmen to a group.",
+      "power_name": "Super-Strength",
+      "power_type": "major",
+      "description": "description here",
       "stat_changes": {
-        "numbers": 5
+        "melee_attack": 2,
+        "ranged_attack": 0
       },
       "notes": [
-        "Legion - This henchmen group starts with 15 members."
+        "Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping."
+      ]
+    }
+  ],
+  "hero_minor_power_list": [
+    {
+      "power_name": "Magic Artifact",
+      "power_type": "minor",
+      "description": "You wield a powerful artifact that acts as both a melee weapon and a ranged weapon, as well as granting you other powers. All of this great stuff comes with a price, however.",
+      "stat_changes": {
+        "melee_attack_rr": 1,
+        "ranged_attack_rr": 1
+      },
+      "notes": [
+        "Magic Artifact - (Recharge 2+) 15in ranged attack. You can also employ its energies for the Flight and Force-Field minor powers. See rules for additional. (Recharge 3+ if you pushed your Force-Field)', 'Magic Artifact Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.', 'Magic Artifact Force-Field - Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack."
       ]
     },
     {
-      "power_name": "Flight",
+      "power_name": "Resistance",
       "power_type": "minor",
-      "description": "You can fly up to 20in per turn, ignoring any grounded models or obstacles in your path. You may choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
+      "description": "You are super-tough! Gain +1D on all defense checks from Body damaging attacks and +1D on KO checks.",
+      "stat_changes": {
+        "melee_defence": 1,
+        "ranged_defence": 1
+      },
+      "notes": [
+        "Resistance - +1D on KO checks"
+      ]
+    },
+    {
+      "power_name": "Leaping",
+      "power_type": "minor",
+      "description": "Your super-strong legs propel you high into the air with pro- digious leaps!",
       "stat_changes": {},
       "notes": [
-        "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
+        "Leaping - 4D action check. Declare where you want to land. You can leap up to 10in + goals scored high and 20in + goals scored long."
+      ]
+    },
+    {
+      "power_name": "Armor",
+      "power_type": "minor",
+      "description": "You possess damage resistance from super-thick skin or some kind of worn armor.",
+      "stat_changes": {},
+      "notes": [
+        "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
       ]
     }
   ],
   "hero_backgrounds": [
-    "Art",
-    "Athletics"
+    "Alien/Dimensional",
+    "Monarch"
   ],
   "loops": 0,
   "power_house_loop": 0,
-  "hero_name": "Hydra Troopers",
-  "body_points": 0,
-  "psych_points": 0,
-  "move": 6,
-  "numbers": 15,
+  "hero_name": "Thor",
+  "body_points": 8,
+  "psych_points": 6,
+  "move": 5,
+  "ranged_attack": 4,
+  "super_archetype_bonus": "No",
   "minor_power_loops": 0,
-  "boost_loops": 1
+  "boost_loops": 2
 }

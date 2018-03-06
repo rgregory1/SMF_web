@@ -118,7 +118,7 @@ def archetype_loop():
         hero = assign_max_points(hero, hero['hero_archetype_list'][2])
     hero['loops'] -= 1
 
-    temp_dump(arch_dict, timestamp, 'arch_dict')
+    # temp_dump(arch_dict, timestamp, 'arch_dict')
     temp_dump(new_arch_dict, timestamp, 'new_arch_dict')
     temp_dump(hero, timestamp, 'hero')
 
@@ -569,5 +569,6 @@ def show_sheet():
     return render_template('show_sheet.html', sheet_location=sheet_location)
     # return '<a href="/static/text.png">Your character</a>'
 
-app.run(debug=True, host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
 #app.run(debug=True)
