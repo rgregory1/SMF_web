@@ -1,9 +1,1 @@
-{
-  "power_name": "Enhance",
-  "power_type": "major",
-  "description": "You can increase the capabilities of characters within 10in of you.",
-  "stat_changes": {},
-  "notes": [
-    "Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10in of you."
-  ]
-}
+"none"

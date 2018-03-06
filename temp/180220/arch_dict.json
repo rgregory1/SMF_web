@@ -76,6 +76,29 @@
       "Resistance"
     ]
   },
+  "Mastermind": {
+    "archetype": "Mastermind",
+    "power_name": "Mastermind",
+    "power_type": "Standard",
+    "description": "You are the master planner, natural leader, or brilliant tactician of your team. Your guidance can make or break the destiny of your group!",
+    "move": 6,
+    "body_points": 6,
+    "psych_points": 6,
+    "maj-p": [
+      "Enhance"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Armor",
+      "Flight",
+      "Force_Field",
+      "Gadgets",
+      "Iron_Will",
+      "Power_Blasts_(Minor)",
+      "Savant",
+      "Super-Strength_(Minor)"
+    ]
+  },
   "Mentalist": {
     "archetype": "Mentalist",
     "power_name": "Mentalist",
@@ -228,28 +251,6 @@
       "Teleport",
       "Vampire",
       "X-Factor"
-    ]
-  },
-  "Henchmen": {
-    "archetype": "Henchmen",
-    "power_name": "Henchmen",
-    "power_type": "Henchmen",
-    "description": "Whether blasting away at range or fighting in melee, henchmen try to overwhelm their foes with sheer numbers. Your minor power selections will determine your group\u2019s capabilities and style.",
-    "move": 6,
-    "body_points": 0,
-    "psych_points": 0,
-    "numbers": 10,
-    "maj-p": [],
-    "min_p_num": 2,
-    "minor_p_list": [
-      "Armor",
-      "Flight",
-      "Legion",
-      "Melee_Specialist",
-      "Power_Blasts_(Minor)",
-      "Resistance",
-      "Super-Agility",
-      "Super-Strength_(Minor)"
     ]
   },
   "Powerhouse": {

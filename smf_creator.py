@@ -10,13 +10,6 @@ from sheet import *
 app = Flask(__name__)
 
 
-
-# load information into dictionaries ---------------------------------------------------------------
-with open('data/archetype_data.json') as f:
-    arch_dict = json.load(f)
-
-
-
 @app.route('/')
 def entry_page():
     # os.rmdir('temp/180220')

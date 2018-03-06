@@ -1,88 +1,77 @@
 {
-  "melee_attack": 4,
+  "melee_attack": 2,
   "melee_attack_rr": 0,
-  "melee_defence": 4,
+  "melee_defence": 2,
   "melee_defence_rr": 0,
   "ranged_attack_rr": 0,
-  "ranged_defence": 4,
+  "ranged_defence": 2,
   "ranged_defence_rr": 0,
   "psyche_attack_rr": 0,
-  "psyche_defence": 4,
+  "psyche_defence": 2,
   "psyche_defence_rr": 0,
   "hero_notes": [
-    "Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10in of you.",
-    "Gadgets - Make a Chance Roll at the start of your turn. The number of goals rolled is the number of Re-rolls added to your Re-roll pool.', 'Gadgets - 3D, 10in Body-damage ranged attack.",
-    "Clever(Boost) - Add +1D to your leader's initiative so long as you're not KO'ed."
+    "Legion - This henchmen group starts with 15 members.",
+    "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
   ],
-  "hero_type": "Standard",
+  "hero_type": "Henchmen",
   "hero_archetype_list": [
     {
-      "archetype": "Mastermind",
-      "power_name": "Mastermind",
-      "power_type": "Standard",
-      "description": "You are the master planner, natural leader, or brilliant tactician of your team. Your guidance can make or break the destiny of your group!",
+      "archetype": "Henchmen",
+      "power_name": "Henchmen",
+      "power_type": "Henchmen",
+      "description": "Whether blasting away at range or fighting in melee, henchmen try to overwhelm their foes with sheer numbers. Your minor power selections will determine your group\u2019s capabilities and style.",
       "move": 6,
-      "body_points": 6,
-      "psych_points": 6,
-      "maj-p": [
-        "Enhance"
-      ],
+      "body_points": 0,
+      "psych_points": 0,
+      "numbers": 10,
+      "maj-p": [],
       "min_p_num": 2,
       "minor_p_list": [
         "Armor",
         "Flight",
-        "Force_Field",
-        "Gadgets",
-        "Iron_Will",
+        "Legion",
+        "Melee_Specialist",
         "Power_Blasts_(Minor)",
-        "Savant",
+        "Resistance",
+        "Super-Agility",
         "Super-Strength_(Minor)"
       ]
     }
   ],
-  "hero_major_power_list": [
-    {
-      "power_name": "Enhance",
-      "power_type": "major",
-      "description": "You can increase the capabilities of characters within 10in of you.",
-      "stat_changes": {},
-      "notes": [
-        "Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10in of you."
-      ]
-    }
-  ],
+  "hero_major_power_list": [],
   "hero_minor_power_list": [
     {
-      "power_name": "Gadgets",
+      "power_name": "Legion",
       "power_type": "minor",
-      "description": "You have an array of gadgets and devices in your utility belt or bag of tricks that you can use to give you an advantage against your foes.",
-      "stat_changes": {},
+      "description": "You travel in large numbers. This power adds 5 additional henchmen to a group.",
+      "stat_changes": {
+        "numbers": 5
+      },
       "notes": [
-        "Gadgets - Make a Chance Roll at the start of your turn. The number of goals rolled is the number of Re-rolls added to your Re-roll pool.', 'Gadgets - 3D, 10in Body-damage ranged attack."
+        "Legion - This henchmen group starts with 15 members."
       ]
     },
     {
-      "power_name": "Clever",
-      "power_type": "boost",
-      "description": "Your quick wits and keen mind make you a team asset!",
-      "stat_changes": {
-        "psych_points": 1
-      },
+      "power_name": "Flight",
+      "power_type": "minor",
+      "description": "You can fly up to 20in per turn, ignoring any grounded models or obstacles in your path. You may choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
+      "stat_changes": {},
       "notes": [
-        "Clever(Boost) - Add +1D to your leader's initiative so long as you're not KO'ed."
+        "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
       ]
     }
   ],
   "hero_backgrounds": [
-    "Blue Collar",
-    "Science"
+    "Art",
+    "Athletics"
   ],
   "loops": 0,
   "power_house_loop": 0,
-  "hero_name": "Rachael",
-  "body_points": 6,
-  "psych_points": 7,
+  "hero_name": "Hydra Troopers",
+  "body_points": 0,
+  "psych_points": 0,
   "move": 6,
+  "numbers": 15,
   "minor_power_loops": 0,
-  "boost_loops": 0
+  "boost_loops": 1
 }

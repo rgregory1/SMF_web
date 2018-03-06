@@ -8,24 +8,16 @@
       "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
     ]
   },
-  "Flight": {
-    "power_name": "Flight",
+  "Melee_Specialist": {
+    "power_name": "Melee Specialist",
     "power_type": "minor",
-    "description": "You can fly up to 20in per turn, ignoring any grounded models or obstacles in your path. You may choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
-    "stat_changes": {},
-    "notes": [
-      "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
-    ]
-  },
-  "Iron_Will": {
-    "power_name": "Iron Will",
-    "power_type": "minor",
-    "description": "You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks.",
+    "description": "+1 Re-roll on melee attack rolls, +1 Re-roll on melee defense rolls, and +2D on any checks to break objects or escape entangles.",
     "stat_changes": {
-      "psyche_defence": 1
+      "melee_attack_rr": 1,
+      "melee_defence_rr": 1
     },
     "notes": [
-      "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
+      "Melee Speicialist - +2D on any checks to break objects or escape entangles."
     ]
   },
   "Power_Blasts_(Minor)": {
@@ -40,13 +32,29 @@
       "Power Blasts (Minor) - You can make 15in ranged attacks that inflict Body Damage"
     ]
   },
-  "Savant": {
-    "power_name": "Savant",
+  "Resistance": {
+    "power_name": "Resistance",
     "power_type": "minor",
-    "description": "You are brilliant and you enjoy +1 Re-roll on any checks during a battle that involve non-combat situations.",
-    "stat_changes": {},
+    "description": "You are super-tough! Gain +1D on all defense checks from Body damaging attacks and +1D on KO checks.",
+    "stat_changes": {
+      "melee_defence": 1,
+      "ranged_defence": 1
+    },
     "notes": [
-      "Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action."
+      "Resistance - +1D on KO checks"
+    ]
+  },
+  "Super-Agility": {
+    "power_name": "Super-Agility",
+    "power_type": "minor",
+    "description": "You gain +2in to your move and +1 Re-roll on all defense checks against Body damaging attacks, and any check to avoid being knocked down. You can move up, hang from, and walk along vertical surfaces as if they were normal ground. You can also spend a Move action to move between structures or other vertical terrain pieces within 15in of each other.",
+    "stat_changes": {
+      "move": 2,
+      "melee_defence_rr": 1,
+      "ranged_defence_rr": 1
+    },
+    "notes": [
+      "Super-Agility - +1D on Knock down checks, move along verticle surfaces, and spend a Move action to move 15in"
     ]
   },
   "Super-Strength_(Minor)": {
@@ -58,6 +66,41 @@
     },
     "notes": [
       "Super-Strength - +1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage"
+    ]
+  },
+  "Clever": {
+    "power_name": "Clever",
+    "power_type": "boost",
+    "description": "Your quick wits and keen mind make you a team asset!",
+    "stat_changes": {
+      "psych_points": 1
+    },
+    "notes": [
+      "Clever(Boost) - Add +1D to your leader's initiative so long as you're not KO'ed."
+    ]
+  },
+  "Fast": {
+    "power_name": "Fast",
+    "power_type": "boost",
+    "description": "You are no speedster, but you are quicker than normal!",
+    "stat_changes": {
+      "move": 4,
+      "ranged_defence_rr": 1
+    },
+    "notes": [
+      "Fast(Boost)"
+    ]
+  },
+  "Tough": {
+    "power_name": "Tough",
+    "power_type": "boost",
+    "description": "You are one tough cuss!",
+    "stat_changes": {
+      "body_points": 1,
+      "melee_defence_rr": 1
+    },
+    "notes": [
+      "Tough(Boost)"
     ]
   }
 }
