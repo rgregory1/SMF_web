@@ -45,10 +45,10 @@ def temp_dump(hero, timestamp, datatype, basedir):
     with open(os.path.join(basedir,'static','temp', timestamp, datatype + suffix), 'w') as f:
         json.dump(hero, f, indent=2)
 
-def grab_from_temp(timestamp, datatype):
+def grab_from_temp(timestamp, datatype, basedir):
     """grabs hero dict from json file in temp folder"""
     suffix = '.json'
-    with open(os.path.join('static','temp', timestamp, datatype + suffix)) as f:
+    with open(os.path.join(basedir, 'static','temp', timestamp, datatype + suffix)) as f:
         hero = json.load(f)
     return hero
 
