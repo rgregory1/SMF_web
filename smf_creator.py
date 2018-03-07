@@ -28,20 +28,20 @@ def entry_page():
     # grab hero dict
     with open(os.path.join(basedir, 'static', 'data', 'hero_start.json')) as f:
         hero = json.load(f)
-    temp_dump(hero, timestamp, 'hero', basedir)
 
-    with open('static/data/archetype_data.json') as f:
+
+    with open(os.path.join(basedir, 'static', 'data', 'archetype_data.json')) as f:
         arch_dict = json.load(f)
-    with open('static/data/major_power_data.json') as f:
+    with open(os.path.join(basedir, 'static', 'data', 'major_power_data.json')) as f:
         major_power_data = json.load(f)
-    with open('static/data/minor_power_data.json') as f:
+    with open(os.path.join(basedir, 'static', 'data', 'minor_power_data.json')) as f:
         minor_power_data = json.load(f)
 
 
-
-    temp_dump(arch_dict, timestamp, 'arch_dict')
-    temp_dump(major_power_data, timestamp, 'major_power_data')
-    temp_dump(minor_power_data, timestamp, 'minor_power_data')
+    temp_dump(hero, timestamp, 'hero', basedir)
+    temp_dump(arch_dict, timestamp, 'arch_dict', basedir)
+    temp_dump(major_power_data, timestamp, 'major_power_data', basedir)
+    temp_dump(minor_power_data, timestamp, 'minor_power_data', basedir)
 
     # first page, get hero name
     return render_template('home.html', the_title='SMF Character Creator', timestamp=timestamp)
