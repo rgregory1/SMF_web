@@ -10,22 +10,26 @@ from sheet import *
 app = Flask(__name__)
 
 
+
 @app.route('/')
 def entry_page():
     # os.rmdir('temp/180220')
     # shutil.rmtree('temp/180220', ignore_errors=False, onerror=None)
-    # first page, get hero name
+
+    basedir = os.path.abspath(os.path.dirname(__file__))
     temp_timestamp = str(datetime.datetime.now())
     timestamp = simplify_timestamp(temp_timestamp)
     # timestamp = '180220'
     try:
-        os.makedirs(os.path.join('static','temp', timestamp))
+        os.makedirs(os.path.join(basedir,'static','temp', timestamp))
     except:
         pass
 
     # grab hero dict
-    with open('static/data/hero_start.json') as f:
+    with open(os.path.join(baserdir, 'static', 'data', 'hero_start.json')) as f:
         hero = json.load(f)
+    temp_dump(hero, timestamp, 'hero', basedir)
+
     with open('static/data/archetype_data.json') as f:
         arch_dict = json.load(f)
     with open('static/data/major_power_data.json') as f:
@@ -34,11 +38,12 @@ def entry_page():
         minor_power_data = json.load(f)
 
 
-    temp_dump(hero, timestamp, 'hero')
+
     temp_dump(arch_dict, timestamp, 'arch_dict')
     temp_dump(major_power_data, timestamp, 'major_power_data')
     temp_dump(minor_power_data, timestamp, 'minor_power_data')
 
+    # first page, get hero name
     return render_template('home.html', the_title='SMF Character Creator', timestamp=timestamp)
 
 @app.route('/archetype_picker', methods=['POST'])
