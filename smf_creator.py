@@ -19,18 +19,18 @@ def entry_page():
     timestamp = simplify_timestamp(temp_timestamp)
     # timestamp = '180220'
     try:
-        os.makedirs(os.path.join('temp', timestamp))
+        os.makedirs(os.path.join('static','temp', timestamp))
     except:
         pass
 
     # grab hero dict
-    with open('data/hero_start.json') as f:
+    with open('/static/data/hero_start.json') as f:
         hero = json.load(f)
-    with open('data/archetype_data.json') as f:
+    with open('/static/data/archetype_data.json') as f:
         arch_dict = json.load(f)
-    with open('data/major_power_data.json') as f:
+    with open('/static/data/major_power_data.json') as f:
         major_power_data = json.load(f)
-    with open('data/minor_power_data.json') as f:
+    with open('/static/data/minor_power_data.json') as f:
         minor_power_data = json.load(f)
 
 
@@ -572,4 +572,3 @@ def show_sheet():
 if __name__ == '__main__':
     app.run()
     # app.run(debug=True, host='0.0.0.0')
-
