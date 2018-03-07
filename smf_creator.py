@@ -26,7 +26,7 @@ def entry_page():
         pass
 
     # grab hero dict
-    with open(os.path.join(baserdir, 'static', 'data', 'hero_start.json')) as f:
+    with open(os.path.join(basedir, 'static', 'data', 'hero_start.json')) as f:
         hero = json.load(f)
     temp_dump(hero, timestamp, 'hero', basedir)
 
