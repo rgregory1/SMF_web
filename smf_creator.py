@@ -24,13 +24,13 @@ def entry_page():
         pass
 
     # grab hero dict
-    with open('/static/data/hero_start.json') as f:
+    with open('static/data/hero_start.json') as f:
         hero = json.load(f)
-    with open('/static/data/archetype_data.json') as f:
+    with open('static/data/archetype_data.json') as f:
         arch_dict = json.load(f)
-    with open('/static/data/major_power_data.json') as f:
+    with open('static/data/major_power_data.json') as f:
         major_power_data = json.load(f)
-    with open('/static/data/minor_power_data.json') as f:
+    with open('static/data/minor_power_data.json') as f:
         minor_power_data = json.load(f)
 
 
