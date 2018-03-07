@@ -15,7 +15,7 @@ app = Flask(__name__)
 def entry_page():
     # os.rmdir('temp/180220')
     # shutil.rmtree('temp/180220', ignore_errors=False, onerror=None)
-
+    global basedir
     basedir = os.path.abspath(os.path.dirname(__file__))
     temp_timestamp = str(datetime.datetime.now())
     timestamp = simplify_timestamp(temp_timestamp)
@@ -50,8 +50,8 @@ def entry_page():
 def archetype_page():
     timestamp = request.form['timestamp']
     # grab dictionaries for use
-    hero = grab_from_temp(timestamp, 'hero')
-    arch_dict = grab_from_temp(timestamp, 'arch_dict')
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    arch_dict = grab_from_temp(timestamp, 'arch_dict', basedir)
 
     # get hero name from last page/form
     heroname = request.form['heroname']
@@ -59,7 +59,7 @@ def archetype_page():
     #create and assign hero name in dict
     hero['hero_name'] = heroname
 
-    temp_dump(hero, timestamp, 'hero')
+    temp_dump(hero, timestamp, 'hero', basedir)
     return render_template('archetype_picker.html', the_title='Choose an Archetype', arch_dict=arch_dict, heroname=heroname, timestamp=timestamp)
 
 
@@ -72,8 +72,8 @@ def setup_arch():
     archetype_choice = request.form['current_arch']
 
     # get hero stats from temp folder
-    hero = grab_from_temp(timestamp, 'hero')
-    arch_dict = grab_from_temp(timestamp, 'arch_dict')
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    arch_dict = grab_from_temp(timestamp, 'arch_dict', basedir)
 
     current_archetype, arch_dict = arch_dict_adjustment(archetype_choice, arch_dict)
     hero['hero_archetype_list'].append(current_archetype)
@@ -92,8 +92,8 @@ def setup_arch():
         temp_dump(new_arch_dict, timestamp, 'new_arch_dict')
 
 
-    temp_dump(arch_dict, timestamp, 'arch_dict')
-    temp_dump(hero, timestamp, 'hero')
+    temp_dump(arch_dict, timestamp, 'arch_dict', basedir)
+    temp_dump(hero, timestamp, 'hero', basedir)
 
     title2 = 'Additinal Archetype Choices'
     loops = hero['loops']
@@ -113,8 +113,8 @@ def archetype_loop():
     archetype_choice = request.form['current_arch']
 
     # get hero stats from temp folder
-    hero = grab_from_temp(timestamp, 'hero')
-    new_arch_dict = grab_from_temp(timestamp, 'new_arch_dict')
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    new_arch_dict = grab_from_temp(timestamp, 'new_arch_dict', basedir)
     current_archetype, new_arch_dict = arch_dict_adjustment(archetype_choice, new_arch_dict)
     hero['hero_archetype_list'].append(current_archetype)
     if len(hero['hero_archetype_list']) == 2:
@@ -123,9 +123,9 @@ def archetype_loop():
         hero = assign_max_points(hero, hero['hero_archetype_list'][2])
     hero['loops'] -= 1
 
-    # temp_dump(arch_dict, timestamp, 'arch_dict')
-    temp_dump(new_arch_dict, timestamp, 'new_arch_dict')
-    temp_dump(hero, timestamp, 'hero')
+    # temp_dump(arch_dict, timestamp, 'arch_dict', basedir)
+    temp_dump(new_arch_dict, timestamp, 'new_arch_dict', basedir)
+    temp_dump(hero, timestamp, 'hero', basedir)
 
     title = "Additinal Archetype Choices"
 
@@ -145,8 +145,8 @@ def archetype_loop():
 @app.route('/begin_major_power', methods=['POST'])
 def begin_major_power():
     timestamp = request.form['timestamp']
-    hero = grab_from_temp(timestamp, 'hero')
-    major_power_data = grab_from_temp(timestamp, 'major_power_data')
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    major_power_data = grab_from_temp(timestamp, 'major_power_data', basedir)
 
     # stop renewing mutable archethype list!!!!!!! ------------------------------------------------------------
     if hero['hero_type'] != 'Powerhouse':
@@ -166,17 +166,17 @@ def begin_major_power():
         del mutable_archetype_list[0]
 
     arch = mutable_archetype_list[0]
-    temp_dump(arch, timestamp, 'current_arch')   # testing if this new location works
+    temp_dump(arch, timestamp, 'current_arch', basedir)   # testing if this new location works
     # holy cow, highly exprimental deletion here, I think it can help me with the loop
     del mutable_archetype_list[0]
-    temp_dump(mutable_archetype_list, timestamp, 'mutable_archetype_list')
+    temp_dump(mutable_archetype_list, timestamp, 'mutable_archetype_list', basedir)
 
     if len(arch['maj-p']) == 0:
         current_major_power = 'none'
         if hero['hero_type'] == 'Powerhouse':
             hero['power_house_loop'] = 1
-            temp_dump(hero, timestamp, 'hero')
-        temp_dump(current_major_power, timestamp, 'current_major_power')
+            temp_dump(hero, timestamp, 'hero', basedir)
+        temp_dump(current_major_power, timestamp, 'current_major_power', basedir)
         title = 'No Major Power'
         return render_template('minor_power_begin_no_major.html', timestamp=timestamp, the_current_arch=arch, the_title=title)
     elif len(arch['maj-p']) == 1:
@@ -197,11 +197,12 @@ def begin_major_power():
             hero['power_house_loop'] = 1
 
 
-        temp_dump(current_major_power, timestamp, 'current_major_power')
-        # temp_dump(arch, timestamp, 'current_arch') testing if moving to before loop works
-        temp_dump(hero, timestamp, 'hero')
+        temp_dump(current_major_power, timestamp, 'current_major_power', basedir)
+        # temp_dump(arch, timestamp, 'current_arch', basedir) testing if moving to before loop works
+        temp_dump(hero, timestamp, 'hero', basedir)
         if current_major_power['power_name'] == 'Sorcery':
-            with open('data/major_power_data.json') as f:
+
+            with open(os.path.join(basedir, 'static', 'data', 'major_power_data.json')) as f:
                 sorcery_maj_power_dict = json.load(f)
             del sorcery_maj_power_dict['Sorcery']
             for power in sorcery_maj_power_dict:
@@ -209,7 +210,7 @@ def begin_major_power():
 
 
 
-            temp_dump(sorcery_maj_power_dict, timestamp, 'sorcery_maj_power_dict')
+            temp_dump(sorcery_maj_power_dict, timestamp, 'sorcery_maj_power_dict', basedir)
 
             message = "Your Major Power is Sorcery, which allows you one major power in your Grimoire"
             loop_type = "Grimoire"
@@ -221,10 +222,10 @@ def begin_major_power():
             return render_template('minor_power_begin.html', timestamp=timestamp, the_current_arch=arch, the_title=title, current_major_power=current_major_power)
     else:
         current_major_power_choices = make_dict_from_list(arch['maj-p'], major_power_data)
-        temp_dump(current_major_power_choices, timestamp, 'current_major_power_choices')   # just for testing
+        temp_dump(current_major_power_choices, timestamp, 'current_major_power_choices', basedir)   # just for testing
         if hero['hero_type'] == 'Powerhouse':
             hero['power_house_loop'] = 1
-            temp_dump(hero, timestamp, 'hero')
+            temp_dump(hero, timestamp, 'hero', basedir)
         loop_type = 'regular'
         title = "Major Power"
         return render_template('major_power_picker.html', current_major_power_choices=current_major_power_choices, timestamp=timestamp, loop_type=loop_type, the_title=title)
@@ -237,10 +238,10 @@ def major_power_checker():
     timestamp = request.form['timestamp']
     loop_type = request.form['loop_type']
     current_major_power_name = request.form['current_major_power_name']
-    major_power_data = grab_from_temp(timestamp, 'major_power_data')
-    # sorcery_maj_power_dict = grab_from_temp(timestamp, 'sorcery_maj_power_dict')
-    hero = grab_from_temp(timestamp, 'hero')
-    arch = grab_from_temp(timestamp, 'current_arch')
+    major_power_data = grab_from_temp(timestamp, 'major_power_data', basedir)
+    # sorcery_maj_power_dict = grab_from_temp(timestamp, 'sorcery_maj_power_dict', basedir)
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    arch = grab_from_temp(timestamp, 'current_arch', basedir)
 
 
 
@@ -255,12 +256,12 @@ def major_power_checker():
     # Add notes from Major Power
     hero['hero_notes'].extend(current_major_power['notes'])
 
-    temp_dump(current_major_power, timestamp, 'current_major_power')
-    temp_dump(hero, timestamp, 'hero')
+    temp_dump(current_major_power, timestamp, 'current_major_power', basedir)
+    temp_dump(hero, timestamp, 'hero', basedir)
 
     if current_major_power['power_name'] == 'Archery':
 
-        with open('data/minor_power_data.json') as f:
+        with open(os.path.join(basedir, 'static', 'data', 'minor_power_data.json')) as f:
             temp_power_dict = json.load(f)
 
         # create list of trick arrows and add 'Trick Arrow' to the power names
@@ -271,14 +272,14 @@ def major_power_checker():
                 archery_sorcery_power_dict[power]['notes'][note] = 'Trick Arrow - ' + archery_sorcery_power_dict[power]['notes'][note]
 
         # save list of tric arrows for loop later
-        temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict')
+        temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict', basedir)
 
         message = "Your Major Power is Archery, which allows you three 'Trick Arrow' powers in your quiver"
         title = "Trick Arrows"
         loop_type = current_major_power['additional_power_prefix']
 
         hero['archery_sorcery_loops'] = current_major_power['add_minor_powers_number']
-        temp_dump(hero, timestamp, 'hero')
+        temp_dump(hero, timestamp, 'hero', basedir)
         archery_sorcery_loops = hero['archery_sorcery_loops']
         return render_template('archery_sorcery_power_picker.html', current_minor_power_dict=archery_sorcery_power_dict, timestamp=timestamp, message=message, loop_type=loop_type, the_title=loop_type, archery_sorcery_loops=archery_sorcery_loops)
     else:
@@ -293,11 +294,11 @@ def major_power_checker_sorcery():
     timestamp = request.form['timestamp']
     loop_type = request.form['loop_type']
     current_major_power_name = request.form['current_major_power_name']
-    major_power_data = grab_from_temp(timestamp, 'major_power_data')
-    sorcery_maj_power_dict = grab_from_temp(timestamp, 'sorcery_maj_power_dict')
-    hero = grab_from_temp(timestamp, 'hero')
-    arch = grab_from_temp(timestamp, 'current_arch')
-    current_major_power = grab_from_temp(timestamp, 'current_major_power')
+    major_power_data = grab_from_temp(timestamp, 'major_power_data', basedir)
+    sorcery_maj_power_dict = grab_from_temp(timestamp, 'sorcery_maj_power_dict', basedir)
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    arch = grab_from_temp(timestamp, 'current_arch', basedir)
+    current_major_power = grab_from_temp(timestamp, 'current_major_power', basedir)
 
     grimoire_current_major_power = assign_power_from_dict(current_major_power_name, sorcery_maj_power_dict)
 
@@ -308,12 +309,11 @@ def major_power_checker_sorcery():
     # Add notes from Major Power
     hero['hero_notes'].extend(grimoire_current_major_power['notes'])
 
-    # temp_dump(current_major_power, timestamp, 'current_major_power')
-    temp_dump(hero, timestamp, 'hero')
+    # temp_dump(current_major_power, timestamp, 'current_major_power', basedir)
+    temp_dump(hero, timestamp, 'hero', basedir)
 
 
-
-    with open('data/minor_power_data.json') as f:
+    with open(os.path.join(basedir, 'static', 'data', 'minor_power_data.json')) as f:
         archery_sorcery_power_dict = json.load(f)
     del archery_sorcery_power_dict['Magic_Artifact']
     del archery_sorcery_power_dict['Shield']
@@ -335,8 +335,8 @@ def major_power_checker_sorcery():
     loop_type = current_major_power['additional_power_prefix']
 
     hero['archery_sorcery_loops'] = current_major_power['add_minor_powers_number']
-    temp_dump(hero, timestamp, 'hero')
-    temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict')
+    temp_dump(hero, timestamp, 'hero', basedir)
+    temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict', basedir)
     # trial to see if it works
     message = "Your Major Power is Sorcery, which allows you four spell powers in your Grimoire"
     archery_sorcery_loops = hero['archery_sorcery_loops']
@@ -350,9 +350,9 @@ def archery_sorcery_power_loop():
     loop_type = request.form['loop_type']
     current_minor_power_name = request.form['current_minor_power']
 
-    archery_sorcery_power_dict = grab_from_temp(timestamp, 'archery_sorcery_power_dict')
-    hero = grab_from_temp(timestamp, 'hero')
-    current_arch = grab_from_temp(timestamp, 'current_arch')
+    archery_sorcery_power_dict = grab_from_temp(timestamp, 'archery_sorcery_power_dict', basedir)
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    current_arch = grab_from_temp(timestamp, 'current_arch', basedir)
 
 
 
@@ -369,11 +369,11 @@ def archery_sorcery_power_loop():
     archery_sorcery_loops = hero['archery_sorcery_loops']
     # temp_dump(archery_sorcery_loops, timestamp, 'archery_sorcery_loops')  # just checking to make sure they are saving
 
-    temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict')
-    temp_dump(hero, timestamp, 'hero')
+    temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict', basedir)
+    temp_dump(hero, timestamp, 'hero', basedir)
     if hero['archery_sorcery_loops'] == 0:
-        current_arch = grab_from_temp(timestamp, 'current_arch')
-        current_major_power = grab_from_temp(timestamp, 'current_major_power')
+        current_arch = grab_from_temp(timestamp, 'current_arch', basedir)
+        current_major_power = grab_from_temp(timestamp, 'current_major_power', basedir)
         return render_template('/minor_power_begin.html', timestamp=timestamp, the_current_arch=current_arch, current_major_power=current_major_power)
     else:
         return render_template('archery_sorcery_power_picker.html', current_minor_power_dict=archery_sorcery_power_dict, timestamp=timestamp, loop_type=loop_type, archery_sorcery_loops=archery_sorcery_loops, the_title=loop_type)
@@ -384,10 +384,10 @@ def minor_power_launch():
     # if 'current_minor_power' in request.files:
     #     current_minor_power_name = request.form['current_minor_power']
 
-    arch = grab_from_temp(timestamp, 'current_arch')
-    hero = grab_from_temp(timestamp, 'hero')
-    min_power_dict = grab_from_temp(timestamp, 'minor_power_data')
-    current_major_power = grab_from_temp(timestamp, 'current_major_power')
+    arch = grab_from_temp(timestamp, 'current_arch', basedir)
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    min_power_dict = grab_from_temp(timestamp, 'minor_power_data', basedir)
+    current_major_power = grab_from_temp(timestamp, 'current_major_power', basedir)
 
     # super archetpe check
     if hero['hero_type'] == 'Super':
@@ -398,7 +398,7 @@ def minor_power_launch():
         #if they have been to the chooser already, make adjustments and move on
         if hero['super_archetype_bonus'] == 'Yes':
             current_minor_power_name = request.form['current_minor_power']
-            with open('data/minor_power_data.json') as f:
+            with open(os.path.join(basedir, 'static', 'data', 'minor_power_data.json')) as f:
                 super_minor_power_dict = json.load(f)
             current_minor_power = assign_power_from_dict(current_minor_power_name, super_minor_power_dict)
 
@@ -410,7 +410,7 @@ def minor_power_launch():
 
     # check for archery exception
     if arch['archetype'] == 'Blaster' and current_major_power['power_name'] == 'Archery':
-        current_major_power = grab_from_temp(timestamp, 'current_major_power')
+        current_major_power = grab_from_temp(timestamp, 'current_major_power', basedir)
         current_minor_power_dict = {}
         for x in min_power_dict:
             for y in arch['archer_minor_p_list']:
@@ -448,8 +448,8 @@ def minor_power_launch():
             hero['minor_power_loops'] = hero['minor_power_loops'] + 2
 
 
-    temp_dump(hero, timestamp, 'hero')
-    temp_dump(current_minor_power_dict, timestamp, 'current_minor_power_dict')
+    temp_dump(hero, timestamp, 'hero', basedir)
+    temp_dump(current_minor_power_dict, timestamp, 'current_minor_power_dict', basedir)
     loop_type = 'standard'
     minor_power_loops=hero['minor_power_loops']
     title = 'Minor Powers'
@@ -460,17 +460,17 @@ def super_choice_results():
     timestamp = request.form['timestamp']
     answer = request.form['answer']
 
-    hero = grab_from_temp(timestamp, 'hero')
+    hero = grab_from_temp(timestamp, 'hero', basedir)
 
     if answer == 'No':
         hero['super_archetype_bonus'] = 'No'
-        temp_dump(hero, timestamp, 'hero')
+        temp_dump(hero, timestamp, 'hero', basedir)
         the_title = 'Begin Minor Powers'
 
         return render_template('/super_on_to_minor_powers.html', timestamp=timestamp, the_title=the_title)
     if answer == 'Yes':
         hero['super_archetype_bonus'] = 'Yes'
-        with open('data/minor_power_data.json') as f:
+        with open(os.path.join(basedir, 'static', 'data', 'minor_power_data.json')) as f:
             super_min_power_dict = json.load(f)
         # Remove imortal and legion from dict
         del super_min_power_dict['Immortal']
@@ -479,7 +479,7 @@ def super_choice_results():
 
 
 
-        temp_dump(hero, timestamp, 'hero')
+        temp_dump(hero, timestamp, 'hero', basedir)
         title = "Additional Super Power"
         return render_template('super_power_picker.html', timestamp=timestamp,current_minor_power_dict=super_min_power_dict, the_title=title)
 
@@ -490,9 +490,9 @@ def minor_power_loop():
 
     current_minor_power_name = request.form['current_minor_power']
 
-    current_minor_power_dict = grab_from_temp(timestamp, 'current_minor_power_dict')
-    hero = grab_from_temp(timestamp, 'hero')
-    current_arch = grab_from_temp(timestamp, 'current_arch')
+    current_minor_power_dict = grab_from_temp(timestamp, 'current_minor_power_dict', basedir)
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    current_arch = grab_from_temp(timestamp, 'current_arch', basedir)
 
 
 
@@ -528,13 +528,11 @@ def minor_power_loop():
 
 
     minor_power_loops = hero['minor_power_loops']
-    temp_dump(current_minor_power_dict, timestamp, 'current_minor_power_dict')
-    temp_dump(hero, timestamp, 'hero')
+    temp_dump(current_minor_power_dict, timestamp, 'current_minor_power_dict', basedir)
+    temp_dump(hero, timestamp, 'hero', basedir)
     if hero['minor_power_loops'] == 0:
-        mutable_archetype_list = grab_from_temp(timestamp, 'mutable_archetype_list')
+        mutable_archetype_list = grab_from_temp(timestamp, 'mutable_archetype_list', basedir)
         if len(mutable_archetype_list) == 1:
-            # current_arch = grab_from_temp(timestamp, 'current_arch')
-            # current_major_power = grab_from_temp(timestamp, 'current_major_power')
             title = 'Second Archetype Choices'
             return render_template('powerhouse_second_arch.html', the_title=title, timestamp=timestamp)
         else:
@@ -550,7 +548,7 @@ def begin_roundup():
     timestamp = request.form['timestamp']
     background_choices = request.form.getlist('background_choice')
 
-    hero = grab_from_temp(timestamp, 'hero')
+    hero = grab_from_temp(timestamp, 'hero', basedir)
 
 
     #temp_dump(form_info, timestamp, 'form_info') #test to see how to grab data
@@ -560,20 +558,21 @@ def begin_roundup():
     if hero['hero_archetype_list'][0]['archetype'] == 'Henchmen':
         hero = henchman_stat_redux(hero)
     heroname = hero['hero_name']
-    temp_dump(hero, timestamp, 'hero')
+    temp_dump(hero, timestamp, 'hero', basedir)
     return render_template('print_character.html', timestamp=timestamp, heroname=heroname)
 
 @app.route('/show_sheet', methods=['POST'])
 def show_sheet():
     timestamp = request.form['timestamp']
 
-    hero = grab_from_temp(timestamp, 'hero')
-    sheet_timestamp = print_hero(hero)
+    hero = grab_from_temp(timestamp, 'hero', basedir)
+    sheet_timestamp = print_hero(hero, basedir)
     suffix = '.png'
-    sheet_location = os.path.join('static', 'hero_files', hero['hero_name'] + '_' + sheet_timestamp + suffix)
-    return render_template('show_sheet.html', sheet_location=sheet_location)
+    sheet_location = os.path.join(basedir, 'static', 'hero_files', hero['hero_name'] + '_' + sheet_timestamp + suffix)
+    short_location = os.path.join('hero_files', hero['hero_name'] + '_' + sheet_timestamp + suffix)
+    return render_template('show_sheet.html', sheet_location=sheet_location, short_location=short_location)
     # return '<a href="/static/text.png">Your character</a>'
 
 if __name__ == '__main__':
-    app.run()
-    # app.run(debug=True, host='0.0.0.0')
+    # app.run()
+    app.run(debug=True, host='0.0.0.0')

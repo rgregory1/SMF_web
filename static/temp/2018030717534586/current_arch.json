@@ -1,0 +1,23 @@
+{
+  "archetype": "Brawler",
+  "power_name": "Brawler",
+  "power_type": "Standard",
+  "description": "You are a close in fighter who relies on sheer bravado,...",
+  "move": 7,
+  "body_points": 7,
+  "psych_points": 6,
+  "maj-p": [
+    "Scrapper"
+  ],
+  "min_p_num": 2,
+  "minor_p_list": [
+    "Enhanced_Senses",
+    "Fortune",
+    "Iron_Will",
+    "Melee_Specialist",
+    "Regen",
+    "Resistance",
+    "Shield",
+    "Super-Agility"
+  ]
+}

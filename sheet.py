@@ -6,15 +6,15 @@ import datetime
 import textwrap
 
 
-def print_hero(hero):
+def print_hero(hero, basedir):
     if hero['hero_archetype_list'][0]['archetype'] == 'Henchmen':
-        im = Image.open("character_sheet_hench.png")
+        im = Image.open(os.path.join(basedir,'character_sheet_hench.png'))
     else:
-        im = Image.open("character_sheet.png")
+        im = Image.open(os.path.join(basedir,'character_sheet.png'))
     draw = ImageDraw.Draw(im)
-    heroid_large = ImageFont.truetype("Heroid.ttf", 42)
-    heroid = ImageFont.truetype("Heroid.ttf", 35)
-    heroid_small = ImageFont.truetype("Heroid.ttf", 25)
+    heroid_large = ImageFont.truetype(os.path.join(basedir,'Heroid.ttf'), 42)
+    heroid = ImageFont.truetype(os.path.join(basedir,'Heroid.ttf'), 35)
+    heroid_small = ImageFont.truetype(os.path.join(basedir,'Heroid.ttf'), 25)
     # heroid_large is 41px tall
 
 
@@ -110,7 +110,7 @@ def print_hero(hero):
     sheet_timestamp = simplify_timestamp(temp_timestamp)
 
     suffix = '.png'
-    im.save(os.path.join('static', 'hero_files', hero['hero_name'] + '_' + sheet_timestamp + suffix))
+    im.save(os.path.join(basedir,'static', 'hero_files', hero['hero_name'] + '_' + sheet_timestamp + suffix))
     # im.save('static/hero_files/text.png')
 
     # find height of fonts

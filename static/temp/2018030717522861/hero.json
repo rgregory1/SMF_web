@@ -1,0 +1,93 @@
+{
+  "melee_attack": 5,
+  "melee_attack_rr": 0,
+  "melee_defence": 5,
+  "melee_defence_rr": 0,
+  "ranged_attack_rr": 0,
+  "ranged_defence": 4,
+  "ranged_defence_rr": 0,
+  "psyche_attack_rr": 0,
+  "psyche_defence": 5,
+  "psyche_defence_rr": 0,
+  "hero_notes": [
+    "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
+    "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage.",
+    "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks.",
+    "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
+  ],
+  "hero_type": "Standard",
+  "hero_archetype_list": [
+    {
+      "archetype": "Brawler",
+      "power_name": "Brawler",
+      "power_type": "Standard",
+      "description": "You are a close in fighter who relies on sheer bravado,...",
+      "move": 7,
+      "body_points": 7,
+      "psych_points": 6,
+      "maj-p": [
+        "Scrapper"
+      ],
+      "min_p_num": 2,
+      "minor_p_list": [
+        "Enhanced_Senses",
+        "Fortune",
+        "Iron_Will",
+        "Melee_Specialist",
+        "Regen",
+        "Resistance",
+        "Shield",
+        "Super-Agility"
+      ]
+    }
+  ],
+  "hero_major_power_list": [
+    {
+      "power_name": "Scrapper",
+      "power_type": "major",
+      "description": "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
+      "stat_changes": {
+        "melee_attack": 1,
+        "melee_defence": 1
+      },
+      "notes": [
+        "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
+        "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage."
+      ]
+    }
+  ],
+  "hero_minor_power_list": [
+    {
+      "power_name": "Enhanced Senses",
+      "power_type": "minor",
+      "description": "You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.",
+      "stat_changes": {},
+      "notes": [
+        "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks."
+      ]
+    },
+    {
+      "power_name": "Iron Will",
+      "power_type": "minor",
+      "description": "You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks.",
+      "stat_changes": {
+        "psyche_defence": 1
+      },
+      "notes": [
+        "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
+      ]
+    }
+  ],
+  "hero_backgrounds": [
+    "Athletics",
+    "Blue Collar"
+  ],
+  "loops": 0,
+  "power_house_loop": 0,
+  "hero_name": "JIm",
+  "body_points": 7,
+  "psych_points": 6,
+  "move": 7,
+  "minor_power_loops": 0,
+  "boost_loops": 1
+}
