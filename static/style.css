@@ -89,11 +89,12 @@ label.container span {
 
 .picker {
   padding: 25px 10px 15px 10px;
+  border-radius: 5px;
 }
 
 .odd {
   background-color: #fff;
-  border-radius: 5px;
+
 }
 
 a.buttons {
@@ -248,4 +249,8 @@ input[type=text], select {
 
 .checklist {
   margin: 25px 0;
+}
+
+.active {
+  background-color: #f39c12;
 }

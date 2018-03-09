@@ -89,7 +89,7 @@ def setup_arch():
             if arch_dict[d]['power_type'] == 'Standard':
                 new_arch_dict[d] = arch_dict[d].copy()
         hero['loops'] = hero['hero_archetype_list'][0]['archetype_number']
-        temp_dump(new_arch_dict, timestamp, 'new_arch_dict')
+        temp_dump(new_arch_dict, timestamp, 'new_arch_dict', basedir)
 
 
     temp_dump(arch_dict, timestamp, 'arch_dict', basedir)
@@ -153,7 +153,7 @@ def begin_major_power():
         mutable_archetype_list = copy.deepcopy(hero['hero_archetype_list'])
     else:
         if hero['power_house_loop'] == 1:
-            mutable_archetype_list = grab_from_temp(timestamp, 'mutable_archetype_list')
+            mutable_archetype_list = grab_from_temp(timestamp, 'mutable_archetype_list', basedir)
         else:
             mutable_archetype_list = copy.deepcopy(hero['hero_archetype_list'])
 

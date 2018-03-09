@@ -25,3 +25,13 @@
 
 
 {% endblock %}
+
+{% block script %}
+	<script>
+    $(":radio").click(function() {
+      $(this).closest("div").addClass("active").
+      siblings("div.active").removeClass("active");
+    });
+
+	</script>
+{% endblock %}
