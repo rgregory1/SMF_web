@@ -1,0 +1,18 @@
+{
+  "power_name": "Sorcery",
+  "power_type": "major",
+  "description": "Your knowledge of the arcane arts makes you a dangerous and versatile foe.",
+  "additional_minor_powers": [],
+  "additional_minor_power_restrictions": [
+    "Magic_Artifact",
+    "Shield"
+  ],
+  "additional_power_prefix": "Grimoire",
+  "add_major_powers_number": 1,
+  "add_minor_powers_number": 4,
+  "stat_changes": {},
+  "notes": [
+    "Sorcery - (Recharge 2+) You can access two powers from your grimoire each turn, but you must follow the normal rules for activating each power. Once you use one of these powers during a game, note it. You cannot use it again unless you make a 2+ Recharge roll for it. Any power you activate lasts until the beginning of your next turn.",
+    "Sorcery - If a power in your grimoire has two Recharge rolls, one for Sorcery and one for the power itself, always use the harder of the two rolls to see if the power returns for use. Any power that also possesses some ability to push or extend its capabil- ities is +1 harder to Recharge with Sorcery."
+  ]
+}
