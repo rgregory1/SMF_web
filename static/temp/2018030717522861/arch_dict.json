@@ -30,29 +30,6 @@
       "Super-Strength_(Minor)"
     ]
   },
-  "Brawler": {
-    "archetype": "Brawler",
-    "power_name": "Brawler",
-    "power_type": "Standard",
-    "description": "You are a close in fighter who relies on sheer bravado,...",
-    "move": 7,
-    "body_points": 7,
-    "psych_points": 6,
-    "maj-p": [
-      "Scrapper"
-    ],
-    "min_p_num": 2,
-    "minor_p_list": [
-      "Enhanced_Senses",
-      "Fortune",
-      "Iron_Will",
-      "Melee_Specialist",
-      "Regen",
-      "Resistance",
-      "Shield",
-      "Super-Agility"
-    ]
-  },
   "Brick": {
     "archetype": "Brick",
     "power_name": "Brick",
@@ -285,6 +262,21 @@
     "body_points": 0,
     "psych_points": 0,
     "major_power_number": 2,
+    "maj-p": [],
+    "minor_p_list": []
+  },
+  "Super": {
+    "archetype": "Super",
+    "power_name": "Super",
+    "power_type": "Super",
+    "archetype_number": 1,
+    "additional_minor_powers": 2,
+    "description": "You're somewhere between one of the nine standard archetypes and a Powerhouse. For game balance purposes you count as 1 1/2 times a normal archetype. Choose one of the nine standard archetypes as your base. Then choose two additional minor powers from your list. You may also trade two minor power selections from your own list for one minor power from any other archetype list. You may also trade up to two minor powers for up to two Boosts.",
+    "move": 0,
+    "body_points": 0,
+    "psych_points": 0,
+    "major_power_number": 1,
+    "boost_bonus": 2,
     "maj-p": [],
     "minor_p_list": []
   },

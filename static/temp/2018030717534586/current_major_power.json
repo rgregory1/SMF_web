@@ -1,0 +1,13 @@
+{
+  "power_name": "Scrapper",
+  "power_type": "major",
+  "description": "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
+  "stat_changes": {
+    "melee_attack": 1,
+    "melee_defence": 1
+  },
+  "notes": [
+    "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
+    "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage."
+  ]
+}

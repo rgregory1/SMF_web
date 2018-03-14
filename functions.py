@@ -39,16 +39,16 @@ def hero_stat_adjust(base,adjusts):
         base[key] = base.get(key, 4) + adjusts[key]
     return base
 
-def temp_dump(hero, timestamp, datatype):
+def temp_dump(hero, timestamp, datatype, basedir):
     """takes hero dict and turns it into a json file in the temp directory"""
     suffix = '.json'
-    with open(os.path.join('temp', timestamp, datatype + suffix), 'w') as f:
+    with open(os.path.join(basedir,'static','temp', timestamp, datatype + suffix), 'w') as f:
         json.dump(hero, f, indent=2)
 
-def grab_from_temp(timestamp, datatype):
+def grab_from_temp(timestamp, datatype, basedir):
     """grabs hero dict from json file in temp folder"""
     suffix = '.json'
-    with open(os.path.join('temp', timestamp, datatype + suffix)) as f:
+    with open(os.path.join(basedir, 'static','temp', timestamp, datatype + suffix)) as f:
         hero = json.load(f)
     return hero
 
