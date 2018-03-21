@@ -1,0 +1,83 @@
+{
+  "melee_attack": 4,
+  "melee_attack_rr": 0,
+  "melee_defence": 4,
+  "melee_defence_rr": 0,
+  "ranged_attack_rr": 0,
+  "ranged_defence": 4,
+  "ranged_defence_rr": 0,
+  "psyche_attack_rr": 0,
+  "psyche_defence": 4,
+  "psyche_defence_rr": 0,
+  "hero_notes": [
+    "Metamorph (Major) Elasticity - At the beginning of each turn, spend a free action and select one of the forms below:",
+    "\tForm 1: Melee Specialist, +6in Move, +10in Reach",
+    "\tForm 2: Multiple Limbs, Save, Super-Agility",
+    "\tForm 3: Entangle, Resistance, Stun (Body)",
+    "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks."
+  ],
+  "hero_type": "Standard",
+  "hero_archetype_list": [
+    {
+      "archetype": "Metamorph",
+      "power_name": "Metamorph",
+      "power_type": "Standard",
+      "description": "Your versatile body makes you the Swiss-Army knife of supers! You might possess stretching powers, elastic skin, shape-shifting powers, adaptive nanites, or something else, but no matter what, you can get the job done.",
+      "move": 6,
+      "body_points": 6,
+      "psych_points": 6,
+      "maj-p": [
+        "Metamorph_Elasticity",
+        "Metamorph_Shape-Shifter"
+      ],
+      "min_p_num": 1,
+      "minor_p_list": [
+        "Armor",
+        "Enhanced_Senses",
+        "Iron_Will",
+        "Mimic",
+        "Resistance",
+        "Savant",
+        "Super-Agility",
+        "Super-Strength_(Minor)"
+      ]
+    }
+  ],
+  "hero_major_power_list": [
+    {
+      "power_name": "Metamorph - Elasticity",
+      "power_type": "major",
+      "description": "You possess ultimate control over your body. You are elastic and malleable! You can will this form to stretch at your whim. ",
+      "stat_changes": {},
+      "notes": [
+        "Metamorph (Major) Elasticity - At the beginning of each turn, spend a free action and select one of the forms below:",
+        "\tForm 1: Melee Specialist, +6in Move, +10in Reach",
+        "\tForm 2: Multiple Limbs, Save, Super-Agility",
+        "\tForm 3: Entangle, Resistance, Stun (Body)"
+      ]
+    }
+  ],
+  "hero_minor_power_list": [
+    {
+      "power_name": "Enhanced Senses",
+      "power_type": "minor",
+      "description": "You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.",
+      "stat_changes": {},
+      "notes": [
+        "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks."
+      ]
+    }
+  ],
+  "hero_backgrounds": [
+    "Arcane",
+    "Art"
+  ],
+  "loops": 0,
+  "power_house_loop": 0,
+  "hero_name": "Snowbird",
+  "body_points": 6,
+  "psych_points": 6,
+  "move": 6,
+  "minor_power_loops": 0,
+  "boost_loops": 1
+}

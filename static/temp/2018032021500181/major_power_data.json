@@ -19,7 +19,8 @@
       "ranged_attack_rr": 1
     },
     "notes": [
-      "Archery (Major)- 15in range, body damage"]
+      "Archery (Major)- 15in range, body damage"
+    ]
   },
   "Enhance": {
     "power_name": "Enhance",
@@ -27,7 +28,8 @@
     "description": "You can increase the capabilities of characters within 10in of you.",
     "stat_changes": {},
     "notes": [
-      "Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10in of you."]
+      "Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10in of you."
+    ]
   },
   "Healing": {
     "power_name": "Healing",
@@ -35,7 +37,8 @@
     "description": "You can heal yourself, or a char- acter in melee contact with you.",
     "stat_changes": {},
     "notes": [
-      "Healing - Roll 6D. Every two goals you score restores one lost box of either Body or Psyche damage, or you can mix the boxes restored. You cannot restore more damage boxes than your target began with."]
+      "Healing - Roll 6D. Every two goals you score restores one lost box of either Body or Psyche damage, or you can mix the boxes restored. You cannot restore more damage boxes than your target began with."
+    ]
   },
   "Mentalism": {
     "power_name": "Mentalism",
@@ -44,30 +47,34 @@
     "stat_changes": {},
     "notes": [
       "Mentalism - Mental Blast - This 15in range, 6D attack does Psyche damage. This attack cannot be used in melee.",
-      "Mentailism - Mind Control (Recharge 2+) -  Roll 6D, 15in range. No damage, but the target immediately activates under your control and may take a free action and either a move, attack, charge, or special action."]
+      "Mentailism - Mind Control (Recharge 2+) -  Roll 6D, 15in range. No damage, but the target immediately activates under your control and may take a free action and either a move, attack, charge, or special action."
+    ]
   },
-  "Elasticity": {
-    "power_name": "Elasticity",
+  "Metamorph_Elasticity": {
+    "power_name": "Metamorph - Elasticity",
     "power_type": "major",
     "description": "You possess ultimate control over your body. You are elastic and malleable! You can will this form to stretch at your whim. ",
     "stat_changes": {},
     "notes": [
-      "Elasticity (Major) - At the beginning of each turn, spend a free action and select one of the forms below:",
+      "Metamorph (Major) Elasticity - At the beginning of each turn, spend a free action and select one of the forms below:",
       "\tForm 1: Melee Specialist, +6in Move, +10in Reach",
       "\tForm 2: Multiple Limbs, Save, Super-Agility",
-      "\tForm 3: Entangle, Resistance, Stun (Body)"]
+      "\tForm 3: Entangle, Resistance, Stun (Body)"
+    ]
   },
-  "Shape-Shifter": {
-    "power_name": "Shape-Shifter",
+  "Metamorph_Shape-Shifter": {
+    "power_name": "Metamorph - Shape-Shifter",
     "power_type": "major",
     "description": "You possess ultimate control over your body. You are a shapeshifter capable of assuming multiple forms! You can will this form to change at your whim. ",
     "stat_changes": {},
     "notes": [
-      "Shape-Shifter (Major)- At the beginning of each turn, spend a free action and select one of the forms below:",
+      "Metamorph (Major) Shape-Shifter - At the beginning of each turn, spend a free action and select one of the forms below:",
       "\tForm 4: Leaping, Melee Specialist, +4in Reach",
       "\tForm 5: Enhanced Senses, Entangle, Super-Agility",
       "\tForm 6: Armor, Flight, Power Blasts (minor)",
-      "Shape-Shifter - You can replace any power or ability in the above forms with the Amphibious power."]
+      "Metamorph - If you are a Shape-Shifter, you can replace any power or ability in the above forms with the Amphibious power.",
+      "Metamorph - If you take the Shape-Shifter track you can give up the minor power selection the Metamorph archetype grants you and instead choose one of the forms from the Elasticity track to give yourself even more versatility!"
+    ]
   },
   "Power_Blasts": {
     "power_name": "Power Blasts",
@@ -78,7 +85,8 @@
       "ranged_attack_rr": 1
     },
     "notes": [
-      "Power Blasts (Major)- 30in range, body damage"]
+      "Power Blasts (Major)- 30in range, body damage"
+    ]
   },
   "Scrapper": {
     "power_name": "Scrapper",
@@ -90,7 +98,8 @@
     },
     "notes": [
       "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
-      "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage."]
+      "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage."
+    ]
   },
   "Sorcery": {
     "power_name": "Sorcery",
@@ -107,7 +116,8 @@
     "stat_changes": {},
     "notes": [
       "Sorcery - (Recharge 2+) You can access two powers from your grimoire each turn, but you must follow the normal rules for activating each power. Once you use one of these powers during a game, note it. You cannot use it again unless you make a 2+ Recharge roll for it. Any power you activate lasts until the beginning of your next turn.",
-      "Sorcery - If a power in your grimoire has two Recharge rolls, one for Sorcery and one for the power itself, always use the harder of the two rolls to see if the power returns for use. Any power that also possesses some ability to push or extend its capabil- ities is +1 harder to Recharge with Sorcery."]
+      "Sorcery - If a power in your grimoire has two Recharge rolls, one for Sorcery and one for the power itself, always use the harder of the two rolls to see if the power returns for use. Any power that also possesses some ability to push or extend its capabil- ities is +1 harder to Recharge with Sorcery."
+    ]
   },
   "Speed": {
     "power_name": "Speed",
@@ -118,7 +128,8 @@
       "Speed - You can move over deep or dangerous water terrain as if it was clear ground so long as you do not stop. So long as you end your movement on level terrain, you can move up vertical objects as if they were normal ground.",
       "You can also spend a combat action to do either (but not both) of the following:",
       "\tMachinegun Punch: (Recharge 2+) You strike your foe hundreds of times in the span of several seconds. This is a +1D melee attack that cannot be used on the charge.",
-      "\tMove-by Attack: (Recharge 2+) Attack foes along your path as you move by them. If your attack succeeds, you can disengage without suffering the normal free attack and move to the next foe along your path. Take any path between foes so long as you adhere to normal movement rules. Once an attack fails, you remain in base contact with the foe who successfully resisted you. This does not count as a charge attack."]
+      "\tMove-by Attack: (Recharge 2+) Attack foes along your path as you move by them. If your attack succeeds, you can disengage without suffering the normal free attack and move to the next foe along your path. Take any path between foes so long as you adhere to normal movement rules. Once an attack fails, you remain in base contact with the foe who successfully resisted you. This does not count as a charge attack."
+    ]
   },
   "Super-Strength": {
     "power_name": "Super-Strength",
@@ -129,6 +140,7 @@
       "ranged_attack": 0
     },
     "notes": [
-      "Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping."]
+      "Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping."
+    ]
   }
 }

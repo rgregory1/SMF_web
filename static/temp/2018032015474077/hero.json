@@ -1,0 +1,70 @@
+{
+  "melee_attack": 4,
+  "melee_attack_rr": 0,
+  "melee_defence": 4,
+  "melee_defence_rr": 0,
+  "ranged_attack_rr": 0,
+  "ranged_defence": 4,
+  "ranged_defence_rr": 0,
+  "psyche_attack_rr": 0,
+  "psyche_defence": 4,
+  "psyche_defence_rr": 0,
+  "hero_notes": [
+    "Metamorph (Major) - Choose either the Elasticity or Shape-Shifter tracks when you select this power. At the beginning of each game, and then at the beginning of each turn, spend a free action and select one of the packages of powers and bene ts listed under your track. These each represent different forms or shapes your body can take:",
+    "\tElasticity - Form 1: Melee Specialist, +6in Move, +10in Reach - Form 2: Multiple Limbs, Save, Super-Agility - Form 3: Entangle, Resistance, Stun (Body)",
+    "\tShape-Shifter - Form 4: Leaping, Melee Specialist, +4in Reach - Form 5: Enhanced Senses, Entangle, Super-Agility -Form 6: Armor, Flight, Power Blasts (minor)",
+    "Metamorph - If you are a Shape-Shifter, you can replace any power or ability in the above forms with the Amphibious power.",
+    "Metamorph - If you take the Shape-Shifter track you can give up the minor power selection the Metamorph archetype grants you and instead choose one of the forms from the Elasticity track to give yourself even more versatility!"
+  ],
+  "hero_type": "Standard",
+  "hero_archetype_list": [
+    {
+      "archetype": "Metamorph",
+      "power_name": "Metamorph",
+      "power_type": "Standard",
+      "description": "Your versatile body makes you the Swiss-Army knife of supers! You might possess stretching powers, elastic skin, shape-shifting powers, adaptive nanites, or something else, but no matter what, you can get the job done.",
+      "move": 6,
+      "body_points": 6,
+      "psych_points": 6,
+      "maj-p": [
+        "Metamorph"
+      ],
+      "min_p_num": 1,
+      "minor_p_list": [
+        "Armor",
+        "Enhanced_Senses",
+        "Iron_Will",
+        "Mimic",
+        "Resistance",
+        "Savant",
+        "Super-Agility",
+        "Super-Strength_(Minor)"
+      ]
+    }
+  ],
+  "hero_major_power_list": [
+    {
+      "power_name": "Metamorph",
+      "power_type": "major",
+      "description": "You possess ultimate control over your body. You may be elastic and malleable, or a shapeshifter capable of assuming multiple forms! You maintain a somewhat normal human- oid form that allows you to wear clothing and communicate normally, but you can will this form to stretch or change at your whim. ",
+      "stat_changes": {},
+      "notes": [
+        "Metamorph (Major) - Choose either the Elasticity or Shape-Shifter tracks when you select this power. At the beginning of each game, and then at the beginning of each turn, spend a free action and select one of the packages of powers and bene ts listed under your track. These each represent different forms or shapes your body can take:",
+        "\tElasticity - Form 1: Melee Specialist, +6in Move, +10in Reach - Form 2: Multiple Limbs, Save, Super-Agility - Form 3: Entangle, Resistance, Stun (Body)",
+        "\tShape-Shifter - Form 4: Leaping, Melee Specialist, +4in Reach - Form 5: Enhanced Senses, Entangle, Super-Agility -Form 6: Armor, Flight, Power Blasts (minor)",
+        "Metamorph - If you are a Shape-Shifter, you can replace any power or ability in the above forms with the Amphibious power.",
+        "Metamorph - If you take the Shape-Shifter track you can give up the minor power selection the Metamorph archetype grants you and instead choose one of the forms from the Elasticity track to give yourself even more versatility!"
+      ]
+    }
+  ],
+  "hero_minor_power_list": [],
+  "hero_backgrounds": [],
+  "loops": 0,
+  "power_house_loop": 0,
+  "hero_name": "Joe",
+  "body_points": 6,
+  "psych_points": 6,
+  "move": 6,
+  "minor_power_loops": 1,
+  "boost_loops": 1
+}

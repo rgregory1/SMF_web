@@ -1,0 +1,10 @@
+{
+  "power_name": "Mentalism",
+  "power_type": "major",
+  "description": "You possess brain burning, mind-controlling mental powers!",
+  "stat_changes": {},
+  "notes": [
+    "Mentalism - Mental Blast - This 15in range, 6D attack does Psyche damage. This attack cannot be used in melee.",
+    "Mentailism - Mind Control (Recharge 2+) -  Roll 6D, 15in range. No damage, but the target immediately activates under your control and may take a free action and either a move, attack, charge, or special action."
+  ]
+}

@@ -185,7 +185,6 @@ def begin_major_power():
             if current_major_power_name == major_power_data[majorpower]['power_name']:
                 current_major_power = major_power_data[majorpower].copy()
                 break
-
         # assign major power choice to the hero dict
         hero['hero_major_power_list'].append(current_major_power)
 
@@ -242,8 +241,6 @@ def major_power_checker():
     # sorcery_maj_power_dict = grab_from_temp(timestamp, 'sorcery_maj_power_dict', basedir)
     hero = grab_from_temp(timestamp, 'hero', basedir)
     arch = grab_from_temp(timestamp, 'current_arch', basedir)
-
-
 
     #assign dict of powerchoice to variable
     current_major_power = assign_power_from_dict(current_major_power_name, major_power_data)

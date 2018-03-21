@@ -1,0 +1,120 @@
+{
+  "Armor": {
+    "power_name": "Armor",
+    "power_type": "minor",
+    "description": "You possess damage resistance from super-thick skin or some kind of worn armor.",
+    "stat_changes": {},
+    "notes": [
+      "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
+    ]
+  },
+  "Enhanced_Senses": {
+    "power_name": "Enhanced Senses",
+    "power_type": "minor",
+    "description": "You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.",
+    "stat_changes": {},
+    "notes": [
+      "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks."
+    ]
+  },
+  "Iron_Will": {
+    "power_name": "Iron Will",
+    "power_type": "minor",
+    "description": "You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks.",
+    "stat_changes": {
+      "psyche_defence": 1
+    },
+    "notes": [
+      "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
+    ]
+  },
+  "Mimic": {
+    "power_name": "Mimic",
+    "power_type": "minor",
+    "description": "You can copy the powers of a character in melee or within 5in of you.",
+    "stat_changes": {},
+    "notes": [
+      "Mimic - Once per turn use a free action to make a 5D Psyche-based opposed check against your target. If you win each goal scored grants you a power or boost of your choice from the target. For friendly models make the check against a TN2. Major powers count as two powers for purposes of this check result. You retain copied powers for the remainder of the game, or until you spend a free action to clear them, at which point you can attempt to copy another targets powers, or even the same target as before if you choose."
+    ]
+  },
+  "Resistance": {
+    "power_name": "Resistance",
+    "power_type": "minor",
+    "description": "You are super-tough! Gain +1D on all defense checks from Body damaging attacks and +1D on KO checks.",
+    "stat_changes": {
+      "melee_defence": 1,
+      "ranged_defence": 1
+    },
+    "notes": [
+      "Resistance - +1D on KO checks"
+    ]
+  },
+  "Savant": {
+    "power_name": "Savant",
+    "power_type": "minor",
+    "description": "You are brilliant and you enjoy +1 Re-roll on any checks during a battle that involve non-combat situations.",
+    "stat_changes": {},
+    "notes": [
+      "Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action."
+    ]
+  },
+  "Super-Agility": {
+    "power_name": "Super-Agility",
+    "power_type": "minor",
+    "description": "You gain +2in to your move and +1 Re-roll on all defense checks against Body damaging attacks, and any check to avoid being knocked down. You can move up, hang from, and walk along vertical surfaces as if they were normal ground. You can also spend a Move action to move between structures or other vertical terrain pieces within 15in of each other.",
+    "stat_changes": {
+      "move": 2,
+      "melee_defence_rr": 1,
+      "ranged_defence_rr": 1
+    },
+    "notes": [
+      "Super-Agility - +1D on Knock down checks, move along verticle surfaces, and spend a Move action to move 15in"
+    ]
+  },
+  "Super-Strength_(Minor)": {
+    "power_name": "Super-Strength (Minor)",
+    "power_type": "minor",
+    "description": "You possess enhanced strength greater than any normal human.",
+    "stat_changes": {
+      "melee_attack": 1
+    },
+    "notes": [
+      "Super-Strength - +1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage"
+    ]
+  },
+  "Clever": {
+    "power_name": "Clever",
+    "power_type": "boost",
+    "description": "Your quick wits and keen mind make you a team asset!",
+    "stat_changes": {
+      "psych_points": 1
+    },
+    "notes": [
+      "Clever(Boost) - Add +1D to your leader's initiative so long as you're not KO'ed."
+    ]
+  },
+  "Fast": {
+    "power_name": "Fast",
+    "power_type": "boost",
+    "description": "You are no speedster, but you are quicker than normal!",
+    "stat_changes": {
+      "move": 4,
+      "ranged_defence_rr": 1
+    },
+    "notes": [
+      "Fast(Boost)"
+    ]
+  },
+  "Tough": {
+    "power_name": "Tough",
+    "power_type": "boost",
+    "description": "You are one tough cuss!",
+    "stat_changes": {
+      "body_points": 1,
+      "melee_defence_rr": 1
+    },
+    "notes": [
+      "Tough(Boost)"
+    ]
+  }
+}
