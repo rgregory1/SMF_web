@@ -1,0 +1,12 @@
+{
+  "power_name": "Metamorph - Elasticity",
+  "power_type": "major",
+  "description": "You possess ultimate control over your body. You are elastic and malleable! You can will this form to stretch at your whim. ",
+  "stat_changes": {},
+  "notes": [
+    "Metamorph (Major) Elasticity - At the beginning of each turn, spend a free action and select one of the forms below:",
+    "\tForm 1: Melee Specialist, +6in Move, +10in Reach",
+    "\tForm 2: Multiple Limbs, Save, Super-Agility",
+    "\tForm 3: Entangle, Resistance, Stun (Body)"
+  ]
+}

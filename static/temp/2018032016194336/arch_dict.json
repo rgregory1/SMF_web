@@ -3,7 +3,7 @@
     "archetype": "Blaster",
     "power_name": "Blaster",
     "power_type": "Standard",
-    "description": "You project destructive energies, or use a bow and quiver loaded with gadget arrows! Cover your allies as they approach their foes, then move forward and finish them off!",
+    "description": "You project destructive energies...",
     "move": 6,
     "body_points": 6,
     "psych_points": 6,
@@ -34,7 +34,7 @@
     "archetype": "Brawler",
     "power_name": "Brawler",
     "power_type": "Standard",
-    "description": "You are a close-in fighter who relies more on sheer bravado, tenacity, or training than raw power.",
+    "description": "You are a close in fighter who relies on sheer bravado,...",
     "move": 7,
     "body_points": 7,
     "psych_points": 6,
@@ -57,7 +57,7 @@
     "archetype": "Brick",
     "power_name": "Brick",
     "power_type": "Standard",
-    "description": "You are the bruising, super-strong fighter on your team. What you lack in subtlety you make up for with raw power!",
+    "description": "You are the bruising, super-strong fighter on your team...",
     "move": 5,
     "body_points": 8,
     "psych_points": 6,
@@ -121,30 +121,6 @@
       "Savant",
       "Telekinesis",
       "Teleport"
-    ]
-  },
-  "Metamorph": {
-    "archetype": "Metamorph",
-    "power_name": "Metamorph",
-    "power_type": "Standard",
-    "description": "Your versatile body makes you the Swiss-Army knife of supers! You might possess stretching powers, elastic skin, shape-shifting powers, adaptive nanites, or something else, but no matter what, you can get the job done.",
-    "move": 6,
-    "body_points": 6,
-    "psych_points": 6,
-    "maj-p": [
-      "Elasticity",
-      "Shape-Shifter"
-    ],
-    "min_p_num": 1,
-    "minor_p_list": [
-      "Armor",
-      "Enhanced_Senses",
-      "Iron_Will",
-      "Mimic",
-      "Resistance",
-      "Savant",
-      "Super-Agility",
-      "Super-Strength_(Minor)"
     ]
   },
   "Sorcerer": {
@@ -258,7 +234,7 @@
     "archetype": "Henchmen",
     "power_name": "Henchmen",
     "power_type": "Henchmen",
-    "description": "Whether blasting away at range or fighting in melee, henchmen try to overwhelm their foes with sheer numbers. Your minor power selections will determine your group’s capabilities and style.",
+    "description": "Whether blasting away at range or fighting in melee, henchmen try to overwhelm their foes with sheer numbers. Your minor power selections will determine your group\u2019s capabilities and style.",
     "move": 6,
     "body_points": 0,
     "psych_points": 0,

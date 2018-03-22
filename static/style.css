@@ -90,6 +90,7 @@ label.container span {
 .picker {
   padding: 25px 10px 15px 10px;
   border-radius: 5px;
+  margin: 2px 0;
 }
 
 .odd {
@@ -253,4 +254,5 @@ input[type=text], select {
 
 .active {
   background-color: #f39c12;
+
 }

@@ -1,0 +1,576 @@
+{
+  "Amphibious": {
+    "power_name": "Amphibious",
+    "power_type": "minor",
+    "description": "You are equally at home in water or on the land.",
+    "stat_changes": {
+      "melee_defence_rr": 1,
+      "ranged_defence_rr": 1,
+      "move": 2
+    },
+    "notes": [
+      "Amphibious - Ignore the effects of Dif cult terrain that is defined as deep water",
+      "Amphibious - You also gain +1D[1] for melee attack and defense rolls against non-Amphibious foes when you are both in deep or hazardous water."
+    ]
+  },
+  "Armor": {
+    "power_name": "Armor",
+    "power_type": "minor",
+    "description": "You possess damage resistance from super-thick skin or some kind of worn armor.",
+    "stat_changes": {},
+    "notes": [
+      "Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."
+    ]
+  },
+  "Barrier": {
+    "power_name": "Barrier",
+    "power_type": "minor",
+    "description": "You can create barriers on the battlefield.",
+    "stat_changes": {},
+    "notes": [
+      "Barrier - (Recharge 2+) Use a special action to create a TN3 (Body 4), 3in long x 2in tall x 1in thick barrier on the battle field. Make a standard 4D check when you create your barrier. Each goal you score can add 1in to the barrier width and height.",
+      "Barrier - Place it up to 10in away from you. Place on solid ground, or anchored between two solid objects. You can stack barriers on top of each other, or one behind the other. Remove a barrier from play by simply spending a free action."
+    ]
+  },
+  "Burrowing": {
+    "power_name": "Burrowing",
+    "power_type": "minor",
+    "description": "You can travel underground at your normal Move rate.",
+    "stat_changes": {},
+    "notes": [
+      "Burrowing - It costs a free action to submerge and start burrowing, or stop burrowing and re-surface, but once you have surfaced, you cannot burrow again until next turn. You can burrow through or under any intervening terrain as if it were normal ground. You cannot resurface within a solid object. Instead of attacking when you surface, you can create fissures and tremors. Use your special action to create these tremors; any enemies within 5in of you must make a TN3 check or be knocked down."
+    ]
+  },
+  "Construct": {
+    "power_name": "Construct",
+    "power_type": "minor",
+    "description": "You're an android, robot, golem, or some other artificial being! ",
+    "stat_changes": {
+      "psyche_defence_rr": 1
+    },
+    "notes": [
+      "Construct - Select either +1 Body or +2in Move to better reflect your inhuman physiology."
+    ]
+  },
+  "Damage_Field": {
+    "power_name": "Damage Field",
+    "power_type": "minor",
+    "description": "Spend a free action to activate or deactivate this power. You surround yourself with a deadly field. Anyone touching you (successful attacks or knockbacks) suffers a 4D[1] Body damage attack. No knockback. Resolve this after resolving any successful attack action.",
+    "stat_changes": {},
+    "notes": [
+      "Damage Field - Spend a free action to activate or deactivate this power. You surround yourself with a deadly field. Anyone touching you (successful attacks or knockbacks) suffers a 4D[1] Body damage attack. No knockback. Resolve this after resolving any successful attack action.",
+      "Damage Field - Push it: (Recharge 2+) Push It: Anytime you activate your damage field you can declare that you are pushing its power--the field increases to 6D[1] until the beginning of your next turn, then shuts down."
+    ]
+  },
+  "Density_Decrease": {
+    "power_name": "Density Decrease",
+    "power_type": "minor",
+    "description": "With a thought you become ghostly",
+    "stat_changes": {},
+    "notes": [
+      "Density Decrease - Free action to activate this power with a 1+ Chance roll. At the start of each turn, spend a free action and make a 1+ chance roll to maintain your ghostly form.",
+      "Density Decrease - While insubstantial you are immune to any Body damage attacks or grapples. You can also pass through any terrain obstacles as if they were open ground, but you must end your turn on clear terrain.",
+      "Density Decrease - Ghostly Attack: While this power is active and you are in melee contact with a foe, spend your combat action and make a 1+ Chance roll; on a success your foe suffers the loss of one Body damage. Armor has no effect on this power."
+    ]
+  },
+  "Density_Increase": {
+    "power_name": "Density Increase",
+    "power_type": "minor",
+    "description": "With a thought you become super-dense.",
+    "stat_changes": {},
+    "notes": [
+      "Density Increase - At the start of your turn, before any movement, spend a free action to activate. While active, you can charge at your base Move value only. While super dense you gain +1 Re-roll on melee attack checks and +1D to melee and ranged defense checks against Body damaging attacks. You are also immune to all knockback."
+    ]
+  },
+  "Dispel": {
+    "power_name": "Dispel",
+    "power_type": "minor",
+    "description": "You can nullify your opponent's powers or power effects.",
+    "stat_changes": {},
+    "notes": [
+      "Dispel - Spend a combat action against a single foe in melee or up to 5in away and make a 5D opposed Psyche attack. This does no damage. On a success, each goal you win by cancels one of the target's powers or boosts of your choice (major powers require 2 goals). Your opponent loses access to the power(s) you choose to cancel until the start of your next turn."
+    ]
+  },
+  "Duplicate": {
+    "power_name": "Duplicate",
+    "power_type": "minor",
+    "description": "You can use a special action to create a copy of yourself!",
+    "stat_changes": {},
+    "notes": [
+      "Duplicate - (Recharge 2+) This copy possesses all your powers (except Duplicate) and Move, but a base Body and Psyche of one(1). Your copy appears within 5in, and can act the turn you bring him into play.",
+      "Duplicate - Copy auto-fails any KO checks. Your duplicates act on your initiative (either before or after you). When a duplicate suffers a KO, make a TN2 check. If you fail, suffer 1 Psyche damage. If you're KO'ed, remove your duplicates from play."
+    ]
+  },
+  "Enhance_(Minor)": {
+    "power_name": "Enhance (Minor)",
+    "power_type": "minor",
+    "description": "You can increase the capabilities of characters within 5in of you.",
+    "stat_changes": {},
+    "notes": [
+      "Enhance (Minor) - Special action 5D check. Every two goals you score grant your target, within 5in, +1 Re-roll to his re-roll pool. You can split Re-rolls between multiple targets within 5in of you."
+    ]
+  },
+  "Enhanced_Senses": {
+    "power_name": "Enhanced Senses",
+    "power_type": "minor",
+    "description": "You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.",
+    "stat_changes": {},
+    "notes": [
+      "Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks."
+    ]
+  },
+  "Entangle": {
+    "power_name": "Entangle",
+    "power_type": "minor",
+    "description": "description here",
+    "stat_changes": {},
+    "notes": [
+      "Entangle - 10in Range, 5D Body-based entangle attack that does no damage"
+    ]
+  },
+  "Explosion": {
+    "power_name": "Explosion",
+    "power_type": "minor",
+    "description": "This counts as a Radius Attack. Make a 4D[1] attack check. Anyone within 5in of you must roll to resist the attack. Anyone within the next 5in is also affected but resists with +1 Re-roll. You reform at the end of your next turn. Until then you can not be targeted by Physical attacks.",
+    "stat_changes": {},
+    "notes": [
+      "Explosion - Radius Attack. 4D[1] first 5in, 4D[2] next 5in. You reform at the end of your next turn. Until then you can not be targeted by Physical attacks."
+    ]
+  },
+  "Flight": {
+    "power_name": "Flight",
+    "power_type": "minor",
+    "description": "You can fly up to 20in per turn, ignoring any grounded models or obstacles in your path. You may choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.",
+    "stat_changes": {},
+    "notes": [
+      "Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop."
+    ]
+  },
+  "Force-Field": {
+    "power_name": "Force-Field",
+    "power_type": "minor",
+    "description": "You wield protective energies. Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks.",
+    "stat_changes": {},
+    "notes": [
+      "Force-Field - (Recharge 2+) Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack.",
+      "Force-Field - You may also protect additional characters within 10in of you. Use a special action and make a 4D check and note your goals - 2 goals = 1 character 3 goals = 2 characters 4 goals = 3 characters. Decide which characters to protect before making your check. Protected characters must remain within 10in of you to enjoy your Force-Fields benefits.",
+      "Force-Field - Maximum Protection - You can push your Force-Field to its limits, rolling 6D instead of 4D for its protection, but succeed or fail, the power shuts down after this one enhanced use. You must decide to push your field prior to your foes attack goal roll."
+    ]
+  },
+  "Fortune": {
+    "power_name": "Fortune",
+    "power_type": "minor",
+    "description": "You are darn lucky or capable of manipulating probabilities in your favor when it counts the most.",
+    "stat_changes": {},
+    "notes": [
+      "Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you have made your initial defense roll!"
+    ]
+  },
+  "Gadgets": {
+    "power_name": "Gadgets",
+    "power_type": "minor",
+    "description": "You have an array of gadgets and devices in your utility belt or bag of tricks that you can use to give you an advantage against your foes.",
+    "stat_changes": {},
+    "notes": [
+      "Gadgets - Make a Chance Roll at the start of your turn. The number of goals rolled is the number of Re-rolls added to your Re-roll pool.', 'Gadgets - 3D, 10in Body-damage ranged attack."
+    ]
+  },
+  "Grenades": {
+    "power_name": "Grenades",
+    "power_type": "minor",
+    "description": "You throw grenades.",
+    "stat_changes": {},
+    "notes": [
+      "Grenades - You possess a 3D, 5in ranged Body attack with a 3in Radius effect. Alternately, before rolling any dice, you can declare you're throwing a stun grenade. This attack works just like a 3D version of the Stun minor power, but also includes the 3in Radius effect."
+    ]
+  },
+  "Growth": {
+    "power_name": "Growth",
+    "power_type": "minor",
+    "description": "You can grow to giant size!",
+    "stat_changes": {},
+    "notes": [
+      "Growth - Use a free action to activate or deactivate your growth at the start of your turn. When active Growth grants you the following:",
+      "Growth - 1) +4in Move and +2in Reach 2) +1D to melee attack rolls 3) attack flying models as if they were on the ground.",
+      "Growth - You're large enough to serve as a 'mount' for one normal sized or shrunken model. Riders use 1in of their Move value to climb aboard or dismount when in base contact with you.",
+      "Growth - Foes also gain +1D on Body-based ranged attacks against you."
+    ]
+  },
+  "Immortal": {
+    "power_name": "Immortal",
+    "power_type": "minor",
+    "description": "You can't die! While this might sound great, it does have its drawbacks. Counts as TWO minor powers.",
+    "stat_changes": {},
+    "notes": [
+      "Immortal -  You auto-fail all KO checks. When you fail a KO check, miss your next turn. On the following turn, you spring up with all of your Body and Psyche damage restored. If you're KO'ed again in the battle, you go down again, lose your next turn, and spring back up on the following turn with all damage restored. And so on."
+    ]
+  },
+  "Invisibility": {
+    "power_name": "Invisibility",
+    "power_type": "minor",
+    "description": "You can render yourself unseen as a free action.",
+    "stat_changes": {},
+    "notes": [
+      "Invisibility - (Recharge 2+) Anytime a foe tries to detect you, he must make a TN4 perception check. If failed you get +2 re-roll to Body Damage attacks, +2 re-roll to Body Damage defence, +2 to hide checks.",
+      "Invisibility - You can also use a special action and extend your power to another character within 10in. So long as this character remains within 10in of you, he enjoys the benefits of your power. This lasts until the beginning of your next turn and adds +1 difficulty to your Recharge checks."
+    ]
+  },
+  "Iron_Will": {
+    "power_name": "Iron Will",
+    "power_type": "minor",
+    "description": "You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks.",
+    "stat_changes": {
+      "psyche_defence": 1
+    },
+    "notes": [
+      "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."
+    ]
+  },
+  "Jinx": {
+    "power_name": "Jinx",
+    "power_type": "minor",
+    "description": "You can curse others with bad luck!",
+    "stat_changes": {},
+    "notes": [
+      "Jinx - Make a 5D, 15in ranged Psyche attack. If you win, then he will have the TNs for all rolls on his next turn increased by one. Also, any movement actions taken will require a TN3 check, with one Body lost per goal missed"
+    ]
+  },
+  "Leaping": {
+    "power_name": "Leaping",
+    "power_type": "minor",
+    "description": "Your super-strong legs propel you high into the air with pro- digious leaps!",
+    "stat_changes": {},
+    "notes": [
+      "Leaping - 4D action check. Declare where you want to land. You can leap up to 10in + goals scored high and 20in + goals scored long."
+    ]
+  },
+  "Legion": {
+    "power_name": "Legion",
+    "power_type": "minor",
+    "description": "You travel in large numbers. This power adds 5 additional henchmen to a group.",
+    "stat_changes": {
+      "numbers": 5
+    },
+    "notes": [
+      "Legion - This henchmen group starts with 15 members."
+    ]
+  },
+  "Magic_Artifact": {
+    "power_name": "Magic Artifact",
+    "power_type": "minor",
+    "description": "You wield a powerful artifact that acts as both a melee weapon and a ranged weapon, as well as granting you other powers. All of this great stuff comes with a price, however.",
+    "stat_changes": {
+      "melee_attack_rr": 1,
+      "ranged_attack_rr": 1
+    },
+    "notes": [
+      "Magic Artifact - (Recharge 2+) 15in ranged attack. You can also employ its energies for the Flight and Force-Field minor powers. See rules for additional. (Recharge 3+ if you pushed your Force-Field)', 'Magic Artifact Flight - 20in per turn, ignoring any grounded models or obstacles. May choose to land on an object or piece of terrain, or hover in place. When you do hover you float 15in above the tabletop.', 'Magic Artifact Force-Field - Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack."
+    ]
+  },
+  "Massive": {
+    "power_name": "Massive",
+    "power_type": "minor",
+    "description": "You are up to twice the size of a normal model!",
+    "stat_changes": {
+      "move": 2,
+      "body_points": 2
+    },
+    "notes": [
+      "Massive - +1 Re-roll on charge attacks, Foes gain +1 Re-roll on Body-based melee and ranged attacks against you."
+    ]
+  },
+  "Melee_Specialist": {
+    "power_name": "Melee Specialist",
+    "power_type": "minor",
+    "description": "+1 Re-roll on melee attack rolls, +1 Re-roll on melee defense rolls, and +2D on any checks to break objects or escape entangles.",
+    "stat_changes": {
+      "melee_attack_rr": 1,
+      "melee_defence_rr": 1
+    },
+    "notes": [
+      "Melee Speicialist - +2D on any checks to break objects or escape entangles."
+    ]
+  },
+  "Multiple_Limbes": {
+    "power_name": "Multiple Limbs",
+    "power_type": "minor",
+    "description": "You have more limbs than a standard human. This could be a mutation, species trait, or the result of advanced cybernetics or robotics.",
+    "stat_changes": {},
+    "notes": [
+      "Multiple Limbs - (Recharge 2+) You can make an extra melee attack on your turn. If you charge, this second attack does not gain the +1D charge bonus. You can also gain a maximum of 10in of reach with your extra melee attack. These reach attacks are weaker than normal melee attacks. Up to 5in is -1D, while greater than 5in out to 10in is -2D."
+    ]
+  },
+  "Mimic": {
+    "power_name": "Mimic",
+    "power_type": "minor",
+    "description": "You can copy the powers of a character in melee or within 5in of you.",
+    "stat_changes": {},
+    "notes": [
+      "Mimic - Once per turn use a free action to make a 5D Psyche-based opposed check against your target. If you win each goal scored grants you a power or boost of your choice from the target. For friendly models make the check against a TN2. Major powers count as two powers for purposes of this check result. You retain copied powers for the remainder of the game, or until you spend a free action to clear them, at which point you can attempt to copy another targets powers, or even the same target as before if you choose."
+    ]
+  },
+  "Obscurement": {
+    "power_name": "Obscurement",
+    "power_type": "minor",
+    "description": "You can render yourself difficult to see as a free action.",
+    "stat_changes": {},
+    "notes": [
+      "Obscurement - (Recharge 1+) Anytime a foe tries to detect you, he must make a TN3 perception check. If failed you get +1 re-roll to Body Damage attacks, +1 re-roll to Body Damage defence, +1 to hide checks.",
+      "Obscurement - You can also use a special action and extend your power to another character within 10in. So long as this character remains within 10in of you, he enjoys the benefits of your power. This lasts until the beginning of your next turn and adds +1 difficulty to your Recharge checks."
+    ]
+  },
+  "Parasite": {
+    "power_name": "Parasite",
+    "power_type": "minor",
+    "description": "You drain the vital energies of your foes and use them to power and heal yourself!",
+    "stat_changes": {},
+    "notes": [
+      "Parasite - Make a 5D Psyche based attack against a foe in melee contact with you. If you remove at least 1 Psyche damage box, you may heal one of your own missing Body or Psyche damage boxes, or add +1 to your Re-roll pool."
+    ]
+  },
+  "Power_Blasts_(Minor)": {
+    "power_name": "Power Blasts (Minor)",
+    "power_type": "minor",
+    "description": "You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.",
+    "stat_changes": {
+      "ranged_attack": 1,
+      "ranged_attack_rr": 1
+    },
+    "notes": [
+      "Power Blasts (Minor) - You can make 15in ranged attacks that inflict Body Damage"
+    ]
+  },
+  "Rage": {
+    "power_name": "Rage",
+    "power_type": "minor",
+    "description": "The madder you get, the tougher you get!",
+    "stat_changes": {},
+    "notes": [
+      "Rage - Make a 1+ Chance roll each time you suffer Body or Psyche damage. On a success you gain a cumulative +1D to melee attack and Psyche defense rolls. This bonus maxes out at +2D. Your Rage bonuses last until the end of the battle."
+    ]
+  },
+  "Rapport": {
+    "power_name": "Rapport",
+    "power_type": "minor",
+    "description": "Choose another character on your team; you possess a special mental link with that character. This link grants you both additional strength. ",
+    "stat_changes": {},
+    "notes": [
+      "Rapport - Choose a team mate, so long as both characters are not KO'ed, they can share +1D between them for any defense checks. As soon as once charter uses the +1D, it is spent until the beginning of the next round."
+    ]
+  },
+  "Reflection": {
+    "power_name": "Reflection",
+    "power_type": "minor",
+    "description": "Reflection - You can sometimes turn Body-damaging attacks back on your attacker! Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage.",
+    "stat_changes": {},
+    "notes": [
+      "Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage."
+    ]
+  },
+  "Regen": {
+    "power_name": "Regen",
+    "power_type": "minor",
+    "description": "You possess the potential to heal yourself! This could be from a natural mutant power, injected nanites, cosmic energy, or whatever.",
+    "stat_changes": {},
+    "notes": [
+      "Regen - At the beginning of any turn you begin at less than full Body or Psyche, make a Chance roll. You regain 1 + goals scored lost damage. You can spread this healing between both of your damage tracks. If you lose the last box in either damage track, but make your KO check, your healing could slow down. Make a Chance roll for Regen, but only the goals on the throw count as your healing. This power stops working for the rest of the battle if you fail a KO check."
+    ]
+  },
+  "Resistance": {
+    "power_name": "Resistance",
+    "power_type": "minor",
+    "description": "You are super-tough! Gain +1D on all defense checks from Body damaging attacks and +1D on KO checks.",
+    "stat_changes": {
+      "melee_defence": 1,
+      "ranged_defence": 1
+    },
+    "notes": [
+      "Resistance - +1D on KO checks"
+    ]
+  },
+  "Savant": {
+    "power_name": "Savant",
+    "power_type": "minor",
+    "description": "You are brilliant and you enjoy +1 Re-roll on any checks during a battle that involve non-combat situations.",
+    "stat_changes": {},
+    "notes": [
+      "Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action."
+    ]
+  },
+  "Save": {
+    "power_name": "Save",
+    "power_type": "minor",
+    "description": "You can assist a nearby character as things go bad!",
+    "stat_changes": {},
+    "notes": [
+      "Save - Once per round, as a reaction during another character's turn, you can cancel or mitigate the effects of knockdown, knockback, and falls on a character within 10in of you.",
+      "Save - You can save yourself as many times as necessary! If you choose it, cancel the effects of a knockdown or knockback on yourself. If you choose it, cancel any falls you suffer, or suffer no damage when you land after falling."
+    ]
+  },
+  "Servitor-Sidekick": {
+    "power_name": "Servitor-Sidekick",
+    "power_type": "minor",
+    "description": "You have a servitor or sidekick who sometimes shows up to help out! This might be a young ward, a robot you built, an old Army buddy, or anything else you can think of!",
+    "stat_changes": {},
+    "notes": [
+      "Servitor-Sidekick - Make a 1+ Chance Roll before each battle. If you succeed, you begin the battle with a sidekick or servitor character, otherwise it shows up at the beginning of round 2.",
+      "Servitor-Sidekick - He or she counts as an ally and team member for the battle. The model possesses a single minor power of your choice (excluding the Servitor/Sidekick and Magic Artifact powers), Body 4, Psyche 4, and a Move of 6in."
+    ]
+  },
+  "Shield": {
+    "power_name": "Shield",
+    "power_type": "minor",
+    "description": "You possess a super-hard shield.",
+    "stat_changes": {
+      "melee_attack_rr": 1,
+      "melee_defence_rr": 1,
+      "ranged_defence_rr": 1
+    },
+    "notes": [
+      "Shield - You can hurl it as a 3D, 5in ranged attack, and it always returns to your hand. Can also ricochet ranged attack to a second target within 5in of you. In this case you make a single attack goal roll, and your targets make separate, +1D defense goal rolls."
+    ]
+  },
+  "Shrinking": {
+    "power_name": "Shrinking",
+    "power_type": "minor",
+    "description": "Use a free action and shrink to bug size! You can grow back to normal size as a free action.",
+    "stat_changes": {
+      "pysche_attack": 0,
+      "pysche_attack_rr": 1
+    },
+    "notes": [
+      "Shrinking - Use a free action and shrink to bug size or grow back to normal size. While shrunken: +2D to Hide checks, +1D on defense for Body damaging, Momentum charge: start your charge shrunken and finish it at normal size and in base contact with a foe! Attack that foe at +2D instead of the normal +1D for a charge (Recharge 2+)",
+      "Shrinking - You suffer double knockback while shrunken!"
+    ]
+  },
+  "Sonic_Blasts": {
+    "power_name": "Sonic Blasts",
+    "power_type": "minor",
+    "description": "You possess sonic powers you can direct at foes with maddening force! This is a 4D[1], 15in Psyche-damage ranged attack.",
+    "stat_changes": {
+      "pysche_attack": 0,
+      "pysche_attack_rr": 1
+    },
+    "notes": [
+      "Sonic Blasts - 15in Psyche-Damage ranged attack"
+    ]
+  },
+  "Stun": {
+    "power_name": "Stun",
+    "power_type": "minor",
+    "description": "Body or Psyche based attack. Decide which when you acquire this power. Stun is a 5D, 15in ranged attack that inflicts no damage, but rather impairs a target's actions for a certain period of time.",
+    "stat_changes": {},
+    "notes": [
+      "Stun - Body or Psyche based attack. 5D, 15in ranged attack that inflicts stun."
+    ]
+  },
+  "Summoning": {
+    "power_name": "Summoning",
+    "power_type": "minor",
+    "description": "You can use a special action to summon beings to fight for you and your team! The type of being or creature you summon is based on its diffculty to summon.",
+    "stat_changes": {},
+    "notes": [
+      "Summoning - (Recharge 2+) Roll 4D and check your goals: ",
+      "\t3 goals = Body 4, Psyche 4, Move 5in, 1 minor power",
+      "\t4 goals = Body 5, Psyche 5, Move 6in, 1 minor power",
+      "\t5+ goals = Body 6, Psyche 6, Move 7in, 1 minor power",
+      "\tAlternately, on a 4+ you can choose to summon a henchmen group with one minor power.",
+      "Summoned models show up within 10in of you. Summoned characters may not possess the Magical Artifact or Summoning powers. Those summoned move and act on your activation, and may act the turn they arrive."
+    ]
+  },
+  "Super-Agility": {
+    "power_name": "Super-Agility",
+    "power_type": "minor",
+    "description": "You gain +2in to your move and +1 Re-roll on all defense checks against Body damaging attacks, and any check to avoid being knocked down. You can move up, hang from, and walk along vertical surfaces as if they were normal ground. You can also spend a Move action to move between structures or other vertical terrain pieces within 15in of each other.",
+    "stat_changes": {
+      "move": 2,
+      "melee_defence_rr": 1,
+      "ranged_defence_rr": 1
+    },
+    "notes": [
+      "Super-Agility - +1D on Knock down checks, move along verticle surfaces, and spend a Move action to move 15in"
+    ]
+  },
+  "Super-Strength_(Minor)": {
+    "power_name": "Super-Strength (Minor)",
+    "power_type": "minor",
+    "description": "You possess enhanced strength greater than any normal human.",
+    "stat_changes": {
+      "melee_attack": 1
+    },
+    "notes": [
+      "Super-Strength - +1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage"
+    ]
+  },
+  "Telekinesis": {
+    "power_name": "Telekinesis",
+    "power_type": "minor",
+    "description": "You can move objects with your mind, grapple foes at range, and levitate yourself and others!",
+    "stat_changes": {},
+    "notes": [
+      "Telekinesis - As a special or combat action lift, carry, and wield objects up to 15in away as if you had minor Super-Strength--this includes using an object as a super-club! Target must also be within 15in range.', 'Telekinesis - Use a combat action to grapple a foe up to 15in away as if you possessed minor Super-Strength.', 'Telekinesis - On your move action levitate yourself and one friendly character within 15in of you up to 6in, and up to 15in in height. Your friend must remain within your 15in sphere of TK in uence. You and your levitated friend must land at the end of your move."
+    ]
+  },
+  "Teleport": {
+    "power_name": "Teleport",
+    "power_type": "minor",
+    "description": "You can move from one point to another instantaneously!",
+    "stat_changes": {},
+    "notes": [
+      "Teleport - Teleporting costs a move action, and when you do so make a goal roll. You move up to 10in + 5in per goal scored. You can move to any point on the board whether you can see it or not. If you teleport out of melee combat, your foe still gets a free attack on you. If you are knocked back from a successful hit, measure your teleport distance from the point where your knockback ends."
+    ]
+  },
+  "Vampire": {
+    "power_name": "Vampire",
+    "power_type": "minor",
+    "description": "You're a life-draining vampire!",
+    "stat_changes": {},
+    "notes": [
+      "Vampire - You possess a 4D[1] Psyche attack you can only use in melee. Any foe you KO in melee using this power suffers an additional -1 to his Injury check, and if that foe later perishes during the post-battle sequence, make a 2+ Chance roll. On a success that foe rises again as your undead thrall!"
+    ]
+  },
+  "X-Factor": {
+    "power_name": "X-Factor",
+    "power_type": "minor",
+    "description": "You're as resourceful as they come! You will choose a new maneuver before each battle.",
+    "stat_changes": {},
+    "notes": [
+      "X-Factor - At the beginning of each game, before any characters have been placed, select one of the archetype maneuvers from Chapter 3 as a minor power for the game. "
+    ]
+  },
+  "Clever": {
+    "power_name": "Clever",
+    "power_type": "boost",
+    "description": "Your quick wits and keen mind make you a team asset!",
+    "stat_changes": {
+      "psych_points": 1
+    },
+    "notes": [
+      "Clever(Boost) - Add +1D to your leader's initiative so long as you're not KO'ed."
+    ]
+  },
+  "Fast": {
+    "power_name": "Fast",
+    "power_type": "boost",
+    "description": "You are no speedster, but you are quicker than normal!",
+    "stat_changes": {
+      "move": 4,
+      "ranged_defence_rr": 1
+    },
+    "notes": [
+      "Fast(Boost)"
+    ]
+  },
+  "Tough": {
+    "power_name": "Tough",
+    "power_type": "boost",
+    "description": "You are one tough cuss!",
+    "stat_changes": {
+      "body_points": 1,
+      "melee_defence_rr": 1
+    },
+    "notes": [
+      "Tough(Boost)"
+    ]
+  }
+}
