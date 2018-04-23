@@ -40,7 +40,7 @@
         ]
     },
     "Construct-Speed": {
-        "power_name": "Construct - Speed",
+        "power_name": "Construct-Speed",
         "power_type": "minor",
         "description": "You're an fast android, robot, golem, or some other artificial being! ",
         "stat_changes": {
@@ -50,7 +50,7 @@
         "notes": []
     },
     "Construct-Tough": {
-        "power_name": "Construct - Tough",
+        "power_name": "Construct-Tough",
         "power_type": "minor",
         "description": "You're an tough android, robot, golem, or some other artificial being! ",
         "stat_changes": {
@@ -181,6 +181,22 @@
             "Growth - 1) +4in Move and +2in Reach 2) +1D to melee attack rolls 3) attack flying models as if they were on the ground.",
             "Growth - You're large enough to serve as a 'mount' for one normal sized or shrunken model. Riders use 1in of their Move value to climb aboard or dismount when in base contact with you.",
             "Growth - Foes also gain +1D on Body-based ranged attacks against you."
+        ]
+    },
+	"Giant": {
+        "power_name": "Giant",
+        "power_type": "minor",
+        "description": "You are giant size!",
+        "stat_changes": {
+			"move": 4,
+			"body": 1,
+			"melee_attack": 1,
+			"psych_points": -1
+		},
+        "notes": [
+            "Giant - +2in Reach and attack flying models as if they were on the ground.",
+            "Giant - You're large enough to serve as a 'mount' for one normal sized or shrunken model. Riders use 1in of their Move value to climb aboard or dismount when in base contact with you.",
+            "Giant - Foes also gain +1D on Body-based ranged attacks against you."
         ]
     },
     "Immortal": {

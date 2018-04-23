@@ -366,6 +366,17 @@ def archery_sorcery_power_loop():
 	archery_sorcery_loops = hero['archery_sorcery_loops']
 	# temp_dump(archery_sorcery_loops, timestamp, 'archery_sorcery_loops')  # just checking to make sure they are saving
 
+	# remove powers that have been split
+	if current_minor_power['power_name'] == 'Grimoire - Construct-Speed':
+		del archery_sorcery_power_dict['Construct-Tough']
+
+	if current_minor_power['power_name'] == 'Grimoire - Construct-Tough':
+		del archery_sorcery_power_dict['Construct-Speed']
+	if current_minor_power['power_name'] == 'Grimoire - Growth':
+		del archery_sorcery_power_dict['Giant']
+	if current_minor_power['power_name'] == 'Grimoire - Giant':
+		del archery_sorcery_power_dict['Growth']
+
 	temp_dump(archery_sorcery_power_dict, timestamp, 'archery_sorcery_power_dict', basedir)
 	temp_dump(hero, timestamp, 'hero', basedir)
 	if hero['archery_sorcery_loops'] == 0:
@@ -452,6 +463,24 @@ def minor_power_launch():
 			for y in current_minor_power_dict.copy():
 				if x['power_name'] == y:
 					del current_minor_power_dict[y]
+
+		# remove powers that have been split
+		for y in hero['hero_minor_power_list']:
+			if y['power_name'] == 'Construct-Speed':
+				del current_minor_power_dict['Construct-Tough']
+		for y in hero['hero_minor_power_list']:
+			if y['power_name'] == 'Construct-Tough':
+				del current_minor_power_dict['Construct-Speed']
+		for y in hero['hero_minor_power_list']:
+			if y['power_name'] == 'Growth':
+				del current_minor_power_dict['Giant']
+		for y in hero['hero_minor_power_list']:
+			if y['power_name'] == 'Giant':
+				del current_minor_power_dict['Growth']
+
+
+
+
 	hero['minor_power_loops'] = arch['min_p_num']
 	hero['boost_loops'] = 1
 	if hero['hero_type'] == 'Super':
@@ -527,12 +556,16 @@ def minor_power_loop():
 	if current_minor_power['power_name'] == 'Immortal':
 		hero['minor_power_loops'] -= 1
 
-	print('begin construct stuff')
-	if current_minor_power['power_name'] == 'Construct - Speed':
+	# remove powers that have been split
+	if current_minor_power['power_name'] == 'Construct-Speed':
 		del current_minor_power_dict['Construct-Tough']
 
-	if current_minor_power['power_name'] == 'Construct - Tough':
+	if current_minor_power['power_name'] == 'Construct-Tough':
 		del current_minor_power_dict['Construct-Speed']
+	if current_minor_power['power_name'] == 'Growth':
+		del current_minor_power_dict['Giant']
+	if current_minor_power['power_name'] == 'Giant':
+		del current_minor_power_dict['Growth']
 
 	minor_power_loops = hero['minor_power_loops']
 	temp_dump(current_minor_power_dict, timestamp, 'current_minor_power_dict', basedir)

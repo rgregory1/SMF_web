@@ -1,0 +1,9 @@
+v1.03
+added Amphibious and Construct to all minor power lists
+split Construct into two powers, Construct-Speed and Construct-Tough, because it is really two separate Powers
+darkened data on printed sheet due to requests from users
+
+
+v1.04     4/23/18
+added Density_Decrease to Archetypes that were missing it
+Split Growth into Growth and Giant
