@@ -3,98 +3,130 @@ from sheet import *
 
 
 hero = {
-  "melee_attack": 5,
-  "melee_attack_rr": 1,
-  "melee_defence": 5,
+  "melee_attack": 4,
+  "melee_attack_rr": 0,
+  "melee_defence": 4,
   "melee_defence_rr": 1,
-  "ranged_attack_rr": 0,
+  "ranged_attack_rr": 1,
   "ranged_defence": 4,
-  "ranged_defence_rr": 0,
+  "ranged_defence_rr": 1,
   "psyche_attack_rr": 0,
   "psyche_defence": 4,
   "psyche_defence_rr": 0,
   "hero_notes": [
-    "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
-    "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage.",
-    "Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you have made your initial defense roll!",
-    "Melee Speicialist - +2D on any checks to break objects or escape entangles."
+    "Super-Agility - +1D on Knock down checks, move along verticle surfaces, and spend a Move action to move 15in",
+    "Power Blasts (Minor) - You can make 15in ranged attacks that inflict Body Damage"
   ],
-  "hero_type": "Standard",
+  "hero_type": "Street Level",
   "hero_archetype_list": [
     {
-      "archetype": "Brawler",
-      "power_name": "Brawler",
-      "power_type": "Standard",
-      "description": "You are a close in fighter who relies on sheer bravado,...",
-      "move": 7,
-      "body_points": 7,
-      "psych_points": 6,
-      "maj-p": [
-        "Scrapper"
-      ],
+      "archetype": "Street Level",
+      "power_name": "Street Level",
+      "power_type": "Street Level",
+      "description": "You are a hero or villain whose habits and powers keep you close to the streets. Protecting a neighborhood or small borough, or pulling small jobs like bank heists are your specialty.",
+      "move": 6,
+      "body_points": 5,
+      "psych_points": 5,
+      "maj-p": [],
       "min_p_num": 2,
       "minor_p_list": [
+        "Armor",
+        "Amphibious",
+        "Barrier",
+        "Burrowing",
+        "Construct-Speed",
+        "Construct-Tough",
+        "Damage_Field",
+        "Density_Decrease",
+        "Density_Increase",
+        "Dispel",
+        "Duplicate",
+        "Enhance_(Minor)",
         "Enhanced_Senses",
+        "Entangle",
+        "Explosion",
+        "Flight",
+        "Force-Field",
         "Fortune",
+        "Gadgets",
+        "Grenades",
+        "Growth",
+        "Giant",
+        "Invisibility",
         "Iron_Will",
+        "Leaping",
+        "Magic_Artifact",
+        "Massive",
         "Melee_Specialist",
+        "Mimic",
+        "Multiple_Limbes",
+        "Obscurement",
+        "Parasite",
+        "Power_Blasts_(Minor)",
+        "Rage",
+        "Rapport",
         "Regen",
         "Resistance",
+        "Reflection",
+        "Savant",
+        "Save",
+        "Servitor-Sidekick",
         "Shield",
-        "Super-Agility"
+        "Shrinking",
+        "Sonic_Blasts",
+        "Stun",
+        "Super-Agility",
+        "Super-Strength_(Minor)",
+        "Telekinesis",
+        "Teleport",
+        "Vampire",
+        "X-Factor"
       ]
     }
   ],
-  "hero_major_power_list": [
-    {
-      "power_name": "Scrapper",
-      "power_type": "major",
-      "description": "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
-      "stat_changes": {
-        "melee_attack": 1,
-        "melee_defence": 1
-      },
-      "notes": [
-        "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
-        "Scrapper - Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage."
-      ]
-    }
-  ],
+  "hero_major_power_list": [],
   "hero_minor_power_list": [
     {
-      "power_name": "Fortune",
+      "power_name": "Super-Agility",
       "power_type": "minor",
-      "description": "You are darn lucky or capable of manipulating probabilities in your favor when it counts the most.",
-      "stat_changes": {},
+      "description": "You gain +2in to your move and +1 Re-roll on all defense checks against Body damaging attacks, and any check to avoid being knocked down. You can move up, hang from, and walk along vertical surfaces as if they were normal ground. You can also spend a Move action to move between structures or other vertical terrain pieces within 15in of each other.",
+      "stat_changes": {
+        "move": 2,
+        "melee_defence_rr": 1,
+        "ranged_defence_rr": 1
+      },
       "notes": [
-        "Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you have made your initial defense roll!"
+        "Super-Agility - +1D on Knock down checks, move along verticle surfaces, and spend a Move action to move 15in"
       ]
     },
     {
-      "power_name": "Melee Specialist",
+      "power_name": "Power Blasts (Minor)",
       "power_type": "minor",
-      "description": "+1 Re-roll on melee attack rolls, +1 Re-roll on melee defense rolls, and +2D on any checks to break objects or escape entangles.",
+      "description": "You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.",
       "stat_changes": {
-        "melee_attack_rr": 1,
-        "melee_defence_rr": 1
+        "ranged_attack": 1,
+        "ranged_attack_rr": 1
       },
       "notes": [
-        "Melee Speicialist - +2D on any checks to break objects or escape entangles."
+        "Power Blasts (Minor) - You can make 15in ranged attacks that inflict Body Damage"
       ]
     }
   ],
   "hero_backgrounds": [
-    "Blue Collar",
-    "Business"
+    "Arcane",
+    "Athletics"
   ],
   "loops": 0,
   "power_house_loop": 0,
-  "hero_name": "Joe",
-  "body_points": 7,
-  "psych_points": 6,
-  "move": 7,
+  "hero_name": "Little Guy",
+  "body_points": 5,
+  "psych_points": 5,
+  "move": 8,
   "minor_power_loops": 0,
-  "boost_loops": 1
+  "boost_loops": 1,
+  "ranged_attack": 5
 }
 
-sheet_timestamp = print_hero(hero)
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+sheet_timestamp = print_hero(hero, basedir)

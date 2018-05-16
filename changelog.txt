@@ -6,4 +6,17 @@ darkened data on printed sheet due to requests from users
 
 v1.04     4/23/18
 added Density_Decrease to Archetypes that were missing it
-Split Growth into Growth and Giant
+Split Growth into Growth and Giants
+
+v1.04.01  4/24
+squashed bug that didn't print correct def re-roll numbers, it printed them if the attack re-rolls were larger than 0
+
+v1.04.02
+added remove_old_folders function to clear out old folders created in the temp folder during the process
+added missing Jinx and Summoning on Wild card and Street level characters
+Sorcerer allowing 2 minor power - should be only one
+fixed bug where Giant didn't add body point
+added some notes to Burrowing
+added missing entangle to Sorcerer Archetype
+Made massive CSS changes, incorporating flexbox and css grid
+added button for SMF QRF page

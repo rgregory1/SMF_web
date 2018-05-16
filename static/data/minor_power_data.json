@@ -36,7 +36,8 @@
         "description": "You can travel underground at your normal Move rate.",
         "stat_changes": {},
         "notes": [
-            "Burrowing - It costs a free action to submerge and start burrowing, or stop burrowing and re-surface, but once you have surfaced, you cannot burrow again until next turn. You can burrow through or under any intervening terrain as if it were normal ground. You cannot resurface within a solid object. Instead of attacking when you surface, you can create fissures and tremors. Use your special action to create these tremors; any enemies within 5in of you must make a TN3 check or be knocked down."
+            "Burrowing - It costs a free action to submerge and start burrowing, or stop burrowing and re-surface, but once you have surfaced, you cannot burrow again until next turn. You can burrow through or under any intervening terrain as if it were normal ground. You cannot resurface within a solid object. Instead of attacking when you surface, you can create fissures and tremors. Use your special action to create these tremors; any enemies within 5in of you must make a TN3 check or be knocked down.",
+			"Burrowing - While burrowing you remain close enough to the surface to be attacked, but you are more difficult to hit. While burrowing you gain +1 Re-roll to your defense checks against Body-damaging attacks because you are submerged."
         ]
     },
     "Construct-Speed": {
@@ -189,7 +190,7 @@
         "description": "You are giant size!",
         "stat_changes": {
 			"move": 4,
-			"body": 1,
+			"body_points": 1,
 			"melee_attack": 1,
 			"psych_points": -1
 		},

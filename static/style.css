@@ -1,19 +1,82 @@
-input {
+/* input {
   margin-top: 20px;
-}
+} */
 
 body {
-  padding: 25px;
+  /* padding: 25px; */
   font-family: 'Comfortaa', cursive;
   background-image: url("grey.png");
+  margin: 0;
 }
 
+
+.content {
+	padding: 25px;
+	/* background-color: yellow; */
+	grid-column: 1/-1;
+}
 .wrapper {
   width: 510px;
   margin: 0 auto;
 }
 
-/* The container -------------------------------------------*/
+.page-container {
+	min-height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto 1fr auto;
+	/* grid-template-rows: 50px auto 100px; */
+
+	}
+
+.header {
+	grid-column: 1/-1;
+	background-color: #000;
+	/* height: 50px; */
+	}
+
+footer{
+	grid-column: 1/-1;
+	/* margin-top:250px; */
+	text-align: center;
+	background-color: #000;
+	padding: 20px;
+
+	}
+
+/* ---------------------------------- navigation -------------------------------*/
+
+nav ul {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	list-style-type: none;
+}
+
+/* nav ul li {
+	width: 150px;
+	margin: 0 10
+} */
+
+nav ul li a {
+	display: block;
+	width: 150px;
+	color: #fff;
+	background-color: #34495E;
+	text-decoration: none;
+	text-align: center;
+	/* height: 50px; */
+	line-height: 35px;
+	margin: 7px 10px;
+	border-radius: 7px;
+}
+
+nav ul li a:hover {
+	background-color: #95a5a6;
+}
+
+
+/* --------------- The container -------------------------------------------*/
 .container {
     display: block;
     position: relative;
@@ -26,6 +89,91 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+
+/* ---------------- buttons ----------------------------------------------*/
+
+
+a.buttons {
+  background-color: #34495E;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+a.buttons:hover {
+  background-color:  #95a5a6;
+  color: #fff;
+}
+
+.button {
+    /* background-color: #4CAF50; */
+    background-color: #34495E;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.button:hover {
+    background-color: #95a5a6;
+}
+
+
+
+/* --------------- Form -------------------------------------------*/
+form{
+    width: 500px;
+    margin: 0 auto;
+    background: #95a5a6;
+
+    border-radius: 10px;
+}
+
+.form-body{
+    padding: 40px;
+}
+
+.form-body p.submitp {
+  text-align: center;
+
+}
+
+.form-header {
+  background: #34495E;
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 10px 10px 0 0;
+}
+
+.form-header p {
+  line-height: 160%;
+}
+
+form h3 {
+
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #34495E;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+
+/* ---------------------------------- radio buttons --------------------------------*/
 
 /* Hide the browser's default radio button */
 .container input {
@@ -96,87 +244,6 @@ label.container span {
 .odd {
   background-color: #fff;
 
-}
-
-a.buttons {
-  background-color: #2196F3;
-  padding: 8px 15px;
-  text-decoration: none;
-  color: #fff;
-  border-radius: 5px;
-}
-
-a.buttons:hover {
-  background-color: #999;
-  color: #fff;
-}
-
-.button {
-    /* background-color: #4CAF50; */
-    background-color: #34495E;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-family: 'Comfortaa', cursive;
-}
-
-.button:hover {
-    background-color: #2980B9;
-}
-
-footer {
-  margin-top:250px;
-  text-align: center;
-}
-
-form{
-    width: 500px;
-    margin: 0 auto;
-    background: #95a5a6;
-
-    border-radius: 10px;
-}
-
-.form-body{
-    padding: 40px;
-}
-
-.form-body p.submitp {
-  text-align: center;
-
-}
-
-.form-header {
-  background: #34495E;
-  color: #fff;
-  padding: 20px 40px;
-  border-radius: 10px 10px 0 0;
-}
-
-.form-header p {
-  line-height: 160%;
-}
-
-form h3 {
-
-}
-
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 2px solid #34495E;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 18px;
 }
 
 

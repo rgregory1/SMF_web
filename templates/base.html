@@ -1,32 +1,46 @@
 <!doctype html>
 <html>
-    <head>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115394629-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
-        gtag('config', 'UA-115394629-1');
-      </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <title>{{ the_title }}</title>
-        <link rel="stylesheet" href="static/style.css" />
-        <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Bangers|Comfortaa" rel="stylesheet">
-    </head>
-    <body>
-      <div class="wrapper">
-        {% block body %}
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115394629-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-        {% endblock %}
-        <footer>
-            <p></p>
-            <p></p>
-            <p><a class="buttons" href="/">Home</a></p>
-        </footer>
-      </div> <!--end wrapper-->
-        {% block script %}
-		    {% endblock %}
-    </body>
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-115394629-1');
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>{{ the_title }}</title>
+	<link rel="stylesheet" href="static/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Bangers|Comfortaa" rel="stylesheet">
+</head>
+
+<body>
+	<div class="page-container">
+	<nav class="header">
+		<ul>
+			<li><a href="/">SMF Creator</a></li>
+			<li><a href="https://drive.google.com/open?id=1_vxqveW12FMuVoitv-n0xygSBGvq9bLHxW9lAvH9k7w">SMF QRF</a></li>
+		</ul>
+	</nav>
+	<div class="content">
+		<div class="wrapper">
+			{% block body %} {% endblock %}
+		</div><!--end wrapper-->
+	</div><!--end content-->
+	<footer>
+		<p></p>
+		<p></p>
+		<p><a class="buttons" href="/">Home</a></p>
+	</footer>
+
+	{% block script %} {% endblock %}
+</div><!--- end page-container-->
+</body>
+
 </html>

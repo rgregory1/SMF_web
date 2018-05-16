@@ -6,6 +6,7 @@ from functions import *
 import shutil
 import copy
 from sheet import *
+from remove_folders import *
 
 app = Flask(__name__)
 
@@ -17,6 +18,11 @@ def entry_page():
 	# shutil.rmtree('temp/180220', ignore_errors=False, onerror=None)
 	global basedir
 	basedir = os.path.abspath(os.path.dirname(__file__))
+
+	# remove folders more than two days old
+	remove_old_folders()
+
+
 	temp_timestamp = str(datetime.datetime.now())
 	timestamp = simplify_timestamp(temp_timestamp)
 	# timestamp = '180220'
