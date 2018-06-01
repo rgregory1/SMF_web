@@ -37,12 +37,56 @@ body {
 
 footer{
 	grid-column: 1/-1;
-	/* margin-top:250px; */
+	margin-top:80px;
 	text-align: center;
 	background-color: #000;
 	padding: 20px;
 
 	}
+
+/* ------------------------------ upload page -----------------------------*/
+
+.error_message {
+	background-color: #e37f7f;
+	border-radius: 10px;
+	border: 2px solid #ff0000;
+	padding: 15px;
+	margin: 0 0 40px 0;
+}
+
+/* .nice_message {
+	background-color: blue;
+	border-radius: 10px;
+	border: 2px solid blue;
+	padding: 15px;
+	margin: 0 0 40px 0;
+} */
+
+#file {
+	display: none;
+}
+
+.input-label {
+	color: #fff;
+	padding: 30px 30px 30px 40px;
+	transition: 0.3s;
+	margin: 30px auto;
+	display: block;
+	width: 50%;
+	border-radius: 10px;
+	text-align: center;
+	background: #2980b9 url(upload.png) no-repeat 20px center;
+}
+
+.input-label:hover{
+	background-color: #0970b5;
+	cursor: pointer;
+}
+
+/* #label_span {
+	background: url(upload.png) no-repeat left center;
+	padding-left: 15px;
+} */
 
 /* ---------------------------------- navigation -------------------------------*/
 
@@ -51,6 +95,7 @@ nav ul {
 	justify-content: center;
 	margin: 0;
 	list-style-type: none;
+	padding: 0;
 }
 
 /* nav ul li {
@@ -60,7 +105,7 @@ nav ul {
 
 nav ul li a {
 	display: block;
-	width: 150px;
+	/* width: 150px; */
 	color: #fff;
 	background-color: #34495E;
 	text-decoration: none;
@@ -69,6 +114,7 @@ nav ul li a {
 	line-height: 35px;
 	margin: 7px 10px;
 	border-radius: 7px;
+	padding: 2px 20px 0 20px;
 }
 
 nav ul li a:hover {
@@ -137,6 +183,10 @@ form{
     border-radius: 10px;
 }
 
+form p {
+	line-height: 150%;
+}
+
 .form-body{
     padding: 40px;
 }
@@ -171,6 +221,10 @@ input[type=text], select {
     box-sizing: border-box;
     font-size: 18px;
 }
+
+/* ---------------------------------- form file uploads ----------------------------*/
+
+
 
 
 /* ---------------------------------- radio buttons --------------------------------*/

@@ -11,7 +11,7 @@ Split Growth into Growth and Giants
 v1.04.01  4/24
 squashed bug that didn't print correct def re-roll numbers, it printed them if the attack re-rolls were larger than 0
 
-v1.04.02
+v1.04.02 5/20
 added remove_old_folders function to clear out old folders created in the temp folder during the process
 added missing Jinx and Summoning on Wild card and Street level characters
 Sorcerer allowing 2 minor power - should be only one
@@ -20,3 +20,9 @@ added some notes to Burrowing
 added missing entangle to Sorcerer Archetype
 Made massive CSS changes, incorporating flexbox and css grid
 added button for SMF QRF page
+
+v1.1
+created upload page
+enabled the upload of images of characters for review
+added jQuery to upload button to fit theme
+enabled the upload of images of characters for gallery

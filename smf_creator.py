@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, escape, jsonify, Response
+from flask import Flask, flash, render_template, request, redirect, escape, jsonify, Response
+from flask_uploads import UploadSet, configure_uploads, IMAGES
 import json
 import os
 import datetime
@@ -8,7 +9,9 @@ import copy
 from sheet import *
 from remove_folders import *
 
+
 app = Flask(__name__)
+
 
 
 
@@ -18,6 +21,8 @@ def entry_page():
 	# shutil.rmtree('temp/180220', ignore_errors=False, onerror=None)
 	global basedir
 	basedir = os.path.abspath(os.path.dirname(__file__))
+	global basedir2
+
 
 	# remove folders more than two days old
 	remove_old_folders()
@@ -619,6 +624,42 @@ def show_sheet():
 	short_location = os.path.join('hero_files', hero['hero_name'] + '_' + sheet_timestamp + suffix)
 	return render_template('show_sheet.html', sheet_location=sheet_location, short_location=short_location)
 	# return '<a href="/static/text.png">Your character</a>'
+
+
+# instructions for uploading photos
+photos = UploadSet('photos', IMAGES)
+approvedphotos = UploadSet('approvedphotos', IMAGES)
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/uploads/submitted'
+app.config['UPLOADED_APPROVEDPHOTOS_DEST'] = 'static/uploads/approved'
+configure_uploads(app, (photos, approvedphotos))
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+	if request.method == 'POST' and 'photo' in request.files:
+		try:
+			filename = photos.save(request.files['photo'])
+			alert_box_class = 'nice_message'
+			results = 'If you would like to upload another, please do so now.'
+			return render_template('upload.html', results=results, alert_box_class=alert_box_class)
+		except:
+			alert_box_class = 'error_message'
+			results = 'You have tried to upload a filetype other than PNG, please try again.'
+			return render_template('upload.html', results=results, alert_box_class=alert_box_class)
+	return render_template('upload.html')
+
+@app.route('/secret_upload', methods=['GET', 'POST'])
+def secret_upload():
+	if request.method == 'POST' and 'photo' in request.files:
+		try:
+			filename = approvedphotos.save(request.files['photo'])
+			alert_box_class = 'nice_message'
+			results = 'If you would like to upload another, please do so now.'
+			return render_template('secret_upload.html', results=results, alert_box_class=alert_box_class)
+		except:
+			alert_box_class = 'error_message'
+			results = 'You have tried to upload a filetype other than PNG, please try again.'
+			return render_template('secret_upload.html', results=results, alert_box_class=alert_box_class)
+	return render_template('secret_upload.html')
 
 if __name__ == '__main__':
 	# app.run()
