@@ -35,7 +35,7 @@ zip_for_mailing = str(zip_for_mailing)
 # begin email notifications
 contents = ['Here are this weeks heroes to review', zip_for_mailing]
 
-yag.send(['mrgregory1@gmail.com', 'rgregory@fnwsu.org'], 'New Heroes for Review', contents)
+yag.send('rusti@crossoverminiatures.com', 'New Heroes for Review', contents)
 print('sent main emails')
 
 time.sleep(180)
