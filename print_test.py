@@ -118,13 +118,14 @@ hero = {
   ],
   "loops": 0,
   "power_house_loop": 0,
-  "hero_name": "Little Guy",
+  "hero_name": "Test Guy",
   "body_points": 5,
   "psych_points": 5,
   "move": 8,
   "minor_power_loops": 0,
   "boost_loops": 1,
-  "ranged_attack": 5
+  "ranged_attack": 5,
+  "tagline": "Fastest Mutant Alive"
 }
 
 hero2 = {
@@ -278,4 +279,4 @@ hero2 = {
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-sheet_timestamp = print_hero(hero2, basedir)
+sheet_timestamp = print_hero(hero, basedir)

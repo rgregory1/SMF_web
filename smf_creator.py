@@ -66,9 +66,11 @@ def archetype_page():
 
 	# get hero name from last page/form
 	heroname = request.form['heroname']
+	tagline = request.form['tagline']
 
 	#create and assign hero name in dict
 	hero['hero_name'] = heroname
+	hero['tagline'] = tagline
 
 	temp_dump(hero, timestamp, 'hero', basedir)
 	return render_template('archetype_picker.html', the_title='Choose an Archetype', arch_dict=arch_dict, heroname=heroname, timestamp=timestamp)

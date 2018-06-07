@@ -40,6 +40,9 @@ def print_hero(hero, basedir):
 		draw.text((522,205), hero['hero_archetype_list'][1]['archetype'], fill='#505050', font=heroid_large)
 		draw.text((522,246), hero['hero_archetype_list'][2]['archetype'], fill='#505050', font=heroid_large)
 
+	if hero['tagline']:
+		draw.text((333,165), hero['tagline'], fill='#505050', font=heroid_small)
+
 	# print out the hero's move
 	draw.text((294,290), str(hero['move']), fill='#505050', font=heroid_large)
 
