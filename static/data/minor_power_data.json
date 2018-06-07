@@ -122,7 +122,7 @@
     "Entangle": {
         "power_name": "Entangle",
         "power_type": "minor",
-        "description": "description here",
+        "description": "You can entrap foes with a ranged attack up to 10in away. This could be summoned tentacles, plant vines, elastic limbs, telekinesis, or anything else you can think of.",
         "stat_changes": {},
         "notes": ["Entangle - 10in Range, 5D Body-based entangle attack that does no damage"]
     },
@@ -146,9 +146,9 @@
         "description": "You wield protective energies. Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks.",
         "stat_changes": {},
         "notes": [
-            "Force-Field - (Recharge 2+) Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack.",
+            "Force-Field - Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack.",
             "Force-Field - You may also protect additional characters within 10in of you. Use a special action and make a 4D check and note your goals - 2 goals = 1 character 3 goals = 2 characters 4 goals = 3 characters. Decide which characters to protect before making your check. Protected characters must remain within 10in of you to enjoy your Force-Fields benefits.",
-            "Force-Field - Maximum Protection - You can push your Force-Field to its limits, rolling 6D instead of 4D for its protection, but succeed or fail, the power shuts down after this one enhanced use. You must decide to push your field prior to your foes attack goal roll."
+            "Force-Field - (Recharge 2+) Maximum Protection - You can push your Force-Field to its limits, rolling 6D instead of 4D for its protection, but succeed or fail, the power shuts down after this one enhanced use. You must decide to push your field prior to your foes attack goal roll."
         ]
     },
     "Fortune": {

@@ -26,3 +26,15 @@ created upload page
 enabled the upload of images of characters for review
 added jQuery to upload button to fit theme
 enabled the upload of images of characters for gallery
+
+v1.01.01 6/7
+added capability to print text smaller if notes don't fit on page
+
+
+
+# TODO
+
+- add 'tag line' under name
+- custom notes at the end
+- option to add any powers at the end (also mark as illegal build)
+- add faults & limits to options

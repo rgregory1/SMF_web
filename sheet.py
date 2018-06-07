@@ -15,6 +15,7 @@ def print_hero(hero, basedir):
 	heroid_large = ImageFont.truetype(os.path.join(basedir,'Heroid.ttf'), 42)
 	heroid = ImageFont.truetype(os.path.join(basedir,'Heroid.ttf'), 35)
 	heroid_small = ImageFont.truetype(os.path.join(basedir,'Heroid.ttf'), 25)
+	heroid_smaller_yet = ImageFont.truetype(os.path.join(basedir,'Heroid.ttf'), 20)
 	# heroid_large is 41px tall
 	# grey was used for #505050
 
@@ -93,16 +94,31 @@ def print_hero(hero, basedir):
 		draw.text((119, background_height), background, fill='#505050', font=heroid_large)
 		background_height = background_height + 40
 
-
-	# print out notes
-	notes_height = 1400
+	# test size of notes section
+	printable_lines = 0
 	for note in hero['hero_notes']:
-		notes_wrapped = textwrap.wrap(note, width=75)
-		notes_height = notes_height + 10
-		for line in notes_wrapped:
-			draw.multiline_text((95,notes_height), line, fill='#505050', font=heroid_small)
-			notes_height = notes_height + 35
+		preview_notes_wrapped = textwrap.wrap(note, width=75)
+		printable_lines += len(preview_notes_wrapped)
 
+	if printable_lines <= 26:
+		# print out notes
+		notes_height = 1400
+		for note in hero['hero_notes']:
+			notes_wrapped = textwrap.wrap(note, width=75)
+			notes_height = notes_height + 10
+			for line in notes_wrapped:
+				draw.multiline_text((95,notes_height), line, fill='#505050', font=heroid_small)
+				notes_height = notes_height + 35
+
+	else:
+		# print out notes smaller
+		notes_height = 1400
+		for note in hero['hero_notes']:
+			notes_wrapped = textwrap.wrap(note, width=98)
+			notes_height = notes_height + 8
+			for line in notes_wrapped:
+				draw.multiline_text((95,notes_height), line, fill='#505050', font=heroid_smaller_yet)
+				notes_height = notes_height + 26
 
 
 
