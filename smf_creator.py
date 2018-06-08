@@ -13,15 +13,16 @@ import pathlib
 
 app = Flask(__name__)
 
-
+global basedir
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 @app.route('/')
 def entry_page():
 	# os.rmdir('temp/180220')
 	# shutil.rmtree('temp/180220', ignore_errors=False, onerror=None)
-	global basedir
-	basedir = os.path.abspath(os.path.dirname(__file__))
+	# global basedir
+	# basedir = os.path.abspath(os.path.dirname(__file__))
 	#global basedir2
 
 
@@ -629,15 +630,16 @@ def show_sheet():
 	# return '<a href="/static/text.png">Your character</a>'
 
 
-basedir2 = pathlib.Path.cwd()
-submitted_dest = basedir2 / 'static' / 'uploads' / 'submitted'
+# basedir2 = pathlib.Path.cwd()
+# submitted_dest = basedir2 / 'static' / 'uploads' / 'submitted'
 
 
 # instructions for uploading photos
 photos = UploadSet('photos', IMAGES)
 approvedphotos = UploadSet('approvedphotos', IMAGES)
 # app.config['UPLOADED_PHOTOS_DEST'] = 'static/uploads/submitted'
-app.config['UPLOADED_PHOTOS_DEST'] = submitted_dest
+app.config['UPLOADED_PHOTOS_DEST'] = os.path.join(basedir, 'static', 'uploads', 'submitted')
+#app.config['UPLOADED_PHOTOS_DEST'] = submitted_dest
 #app.config['UPLOADED_APPROVEDPHOTOS_DEST'] = 'static/uploads/approved'
 # configure_uploads(app, (photos, approvedphotos))
 configure_uploads(app, photos)
