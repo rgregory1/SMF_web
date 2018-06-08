@@ -30,6 +30,6 @@ def remove_old_folders():
 	if today != '01' or today != '02':
 		for folder in old_files2.copy():
 			if int(folder) < two_days_ago:
-				print('here we go\n')
+				# print('here we go\n')
 				shutil.rmtree(os.path.join(this_basedir, 'static', 'temp', folder))
 				pass
